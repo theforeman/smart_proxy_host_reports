@@ -1,0 +1,129 @@
+require:
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 2.5
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
+
+Layout/ParameterAlignment:
+  Enabled: false
+
+Layout/DotPosition:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Enabled: false
+
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+Lint/RescueException:
+  Enabled: false
+
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Performance/Casecmp:
+  Enabled: false
+
+Performance/RedundantMatch:
+  Enabled: true
+
+Performance/RedundantMerge:
+  Enabled: true
+
+Performance/RegexpMatch:
+  Enabled: false
+
+Security/Eval:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/ClassCheck:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+# Don't enforce documentation
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+# Don't enforce frozen string literals
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Support both, Ruby 1.9 hashmap and hash-rocket syntax
+Style/HashSyntax:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/InverseMethods:
+  Enabled: false
+
+Style/LineEndConcatenation:
+  Enabled: false
+
+Style/MultipleComparison:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/ParenthesesAroundCondition:
+  Enabled: false
+
+Style/PreferredHashMethods:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+  MinSize: 1
+
+Style/TernaryParentheses:
+  EnforcedStyle: require_parentheses_when_complex
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/WordArray:
+  Enabled: false

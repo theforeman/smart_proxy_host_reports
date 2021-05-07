@@ -1,0 +1,5606 @@
+--- !ruby/object:Puppet::Transaction::Report
+host: dis.example.com
+time: '2021-01-19T12:41:04.974581868Z'
+configuration_version: 1611060084
+transaction_uuid: 004122d8-1d02-422f-8a41-f27c5001a8ea
+report_format: 10
+puppet_version: 6.15.0
+status: unchanged
+transaction_completed: true
+noop: false
+noop_pending: false
+environment: production
+logs:
+- level: notice
+  message: Applied catalog in 2.08 seconds
+  source: "//dis.example.com/Puppet"
+  tags:
+  - notice
+  time: '2021-01-19T12:41:30.504548774+00:00'
+  file:
+  line:
+metrics:
+  resources:
+    name: resources
+    label: Resources
+    values:
+    - - total
+      - Total
+      - 168
+    - - skipped
+      - Skipped
+      - 0
+    - - failed
+      - Failed
+      - 0
+    - - failed_to_restart
+      - Failed to restart
+      - 0
+    - - restarted
+      - Restarted
+      - 0
+    - - changed
+      - Changed
+      - 0
+    - - out_of_sync
+      - Out of sync
+      - 0
+    - - scheduled
+      - Scheduled
+      - 0
+    - - corrective_change
+      - Corrective change
+      - 0
+  time:
+    name: time
+    label: Time
+    values:
+    - - user
+      - User
+      - 0.027407397
+    - - ssh_authorized_key
+      - Ssh authorized key
+      - 0.001241409
+    - - file
+      - File
+      - 0.4687960659999998
+    - - package
+      - Package
+      - 0.003484742
+    - - augeas
+      - Augeas
+      - 0.21258698
+    - - anchor
+      - Anchor
+      - 0.00040659499999999994
+    - - mailalias
+      - Mailalias
+      - 0.000568941
+    - - service
+      - Service
+      - 0.39846323100000003
+    - - file_line
+      - File line
+      - 0.001298746
+    - - sshd_config
+      - Sshd config
+      - 0.11637576200000001
+    - - exec
+      - Exec
+      - 0.005762384000000001
+    - - concat_file
+      - Concat file
+      - 0.000299103
+    - - cron
+      - Cron
+      - 0.049443492
+    - - concat_fragment
+      - Concat fragment
+      - 0.0031844620000000003
+    - - filebucket
+      - Filebucket
+      - 0.000248378
+    - - startup_time
+      - Startup time
+      - 1.772872907
+    - - node_retrieval
+      - Node retrieval
+      - 1.365152295678854
+    - - plugin_sync
+      - Plugin sync
+      - 3.1558513902127743
+    - - fact_generation
+      - Fact generation
+      - 10.662513446062803
+    - - convert_catalog
+      - Convert catalog
+      - 1.3233906924724579
+    - - config_retrieval
+      - Config retrieval
+      - 5.042090158909559
+    - - transaction_evaluation
+      - Transaction evaluation
+      - 1.9755116924643517
+    - - catalog_application
+      - Catalog application
+      - 2.075961295515299
+    - - total
+      - Total
+      - 25.531861094
+  changes:
+    name: changes
+    label: Changes
+    values:
+    - - total
+      - Total
+      - 0
+  events:
+    name: events
+    label: Events
+    values:
+    - - total
+      - Total
+      - 0
+    - - failure
+      - Failure
+      - 0
+    - - success
+      - Success
+      - 0
+resource_statuses:
+  User[foreman_rex]:
+    title: foreman_rex
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/foreman_proxy/manifests/plugin/remote_execution/ssh_user.pp"
+    line: 22
+    resource: User[foreman_rex]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Foreman_proxy::Plugin::Remote_execution::Ssh_user
+    - User[foreman_rex]
+    evaluation_time: 0.003754502
+    tags:
+    - user
+    - foreman_rex
+    - class
+    - foreman_proxy::plugin::remote_execution::ssh_user
+    - foreman_proxy
+    - plugin
+    - remote_execution
+    - ssh_user
+    time: '2021-01-19T12:41:28.728677814+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Ssh_authorized_key[foreman-proxy@puppetmaster]:
+    title: foreman-proxy@puppetmaster
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/foreman_proxy/manifests/plugin/remote_execution/ssh_user.pp"
+    line: 40
+    resource: Ssh_authorized_key[foreman-proxy@puppetmaster]
+    resource_type: Ssh_authorized_key
+    provider_used: parsed
+    containment_path:
+    - Stage[main]
+    - Foreman_proxy::Plugin::Remote_execution::Ssh_user
+    - Ssh_authorized_key[foreman-proxy@puppetmaster]
+    evaluation_time: 0.001241409
+    tags:
+    - ssh_authorized_key
+    - class
+    - foreman_proxy::plugin::remote_execution::ssh_user
+    - foreman_proxy
+    - plugin
+    - remote_execution
+    - ssh_user
+    time: '2021-01-19T12:41:28.734828620+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/puppetlabs/puppet]:
+    title: "/etc/puppetlabs/puppet"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/config.pp"
+    line: 77
+    resource: File[/etc/puppetlabs/puppet]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - File[/etc/puppetlabs/puppet]
+    evaluation_time: 0.000480205
+    tags:
+    - file
+    - class
+    - puppet::config
+    - puppet
+    - config
+    time: '2021-01-19T12:41:28.739679869+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[puppet-agent]:
+    title: puppet-agent
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/install.pp"
+    line: 11
+    resource: Package[puppet-agent]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Install
+    - Package[puppet-agent]
+    evaluation_time: 0.000471247
+    tags:
+    - package
+    - puppet-agent
+    - class
+    - puppet::agent::install
+    - puppet
+    - agent
+    - install
+    - puppet::agent
+    time: '2021-01-19T12:41:28.788053928+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Augeas[puppet::set_start]:
+    title: puppet::set_start
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/config.pp"
+    line: 60
+    resource: Augeas[puppet::set_start]
+    resource_type: Augeas
+    provider_used: augeas
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Augeas[puppet::set_start]
+    evaluation_time: 0.21258698
+    tags:
+    - augeas
+    - puppet::set_start
+    - puppet
+    - set_start
+    - class
+    - puppet::agent::config
+    - agent
+    - config
+    - puppet::agent
+    time: '2021-01-19T12:41:28.798995439+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/var/lib/puppet/state/agent_disabled.lock]:
+    title: "/var/lib/puppet/state/agent_disabled.lock"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/config.pp"
+    line: 67
+    resource: File[/var/lib/puppet/state/agent_disabled.lock]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - File[/var/lib/puppet/state/agent_disabled.lock]
+    evaluation_time: 0.004329757
+    tags:
+    - file
+    - class
+    - puppet::agent::config
+    - puppet
+    - agent
+    - config
+    - puppet::agent
+    time: '2021-01-19T12:41:29.012069506+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/example]:
+    title: "/etc/example"
+    file: "/etc/puppetlabs/code/environments/production/modules/example/manifests/init.pp"
+    line: 9
+    resource: File[/etc/example]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Example
+    - File[/etc/example]
+    evaluation_time: 0.002503005
+    tags:
+    - file
+    - class
+    - example
+    time: '2021-01-19T12:41:29.016781794+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/usr/bin/example-snapshot]:
+    title: "/usr/bin/example-snapshot"
+    file: "/etc/puppetlabs/code/environments/production/modules/example/manifests/init.pp"
+    line: 16
+    resource: File[/usr/bin/example-snapshot]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Example
+    - File[/usr/bin/example-snapshot]
+    evaluation_time: 0.25101413
+    tags:
+    - file
+    - class
+    - example
+    time: '2021-01-19T12:41:29.019729256+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Anchor[sudo::begin]:
+    title: sudo::begin
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/init.pp"
+    line: 203
+    resource: Anchor[sudo::begin]
+    resource_type: Anchor
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Sudo
+    - Anchor[sudo::begin]
+    evaluation_time: 0.000247626
+    tags:
+    - anchor
+    - sudo::begin
+    - sudo
+    - begin
+    - class
+    - users
+    time: '2021-01-19T12:41:29.273088023+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[sudo]:
+    title: sudo
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/package.pp"
+    line: 77
+    resource: Package[sudo]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Sudo::Package
+    - Package[sudo]
+    evaluation_time: 0.00044083
+    tags:
+    - package
+    - sudo
+    - class
+    - sudo::package
+    - users
+    time: '2021-01-19T12:41:29.274575485+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/sudoers]:
+    title: "/etc/sudoers"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/init.pp"
+    line: 169
+    resource: File[/etc/sudoers]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Sudo
+    - File[/etc/sudoers]
+    evaluation_time: 0.003070354
+    tags:
+    - file
+    - class
+    - sudo
+    - users
+    time: '2021-01-19T12:41:29.275790695+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/sudoers.d]:
+    title: "/etc/sudoers.d"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/init.pp"
+    line: 178
+    resource: File[/etc/sudoers.d]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Sudo
+    - File[/etc/sudoers.d]
+    evaluation_time: 0.000606883
+    tags:
+    - file
+    - class
+    - sudo
+    - users
+    time: '2021-01-19T12:41:29.303819397+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/sudoers.d/foreman_rex]:
+    title: "/etc/sudoers.d/foreman_rex"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/foreman_proxy/manifests/plugin/remote_execution/ssh_user.pp"
+    line: 51
+    resource: File[/etc/sudoers.d/foreman_rex]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Foreman_proxy::Plugin::Remote_execution::Ssh_user
+    - File[/etc/sudoers.d/foreman_rex]
+    evaluation_time: 0.000398711
+    tags:
+    - file
+    - class
+    - foreman_proxy::plugin::remote_execution::ssh_user
+    - foreman_proxy
+    - plugin
+    - remote_execution
+    - ssh_user
+    time: '2021-01-19T12:41:29.304812488+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Anchor[sudo::end]:
+    title: sudo::end
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/init.pp"
+    line: 205
+    resource: Anchor[sudo::end]
+    resource_type: Anchor
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Sudo
+    - Anchor[sudo::end]
+    evaluation_time: 0.000158969
+    tags:
+    - anchor
+    - sudo::end
+    - sudo
+    - end
+    - class
+    - users
+    time: '2021-01-19T12:41:29.305421295+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/motd]:
+    title: "/etc/motd"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/motd/manifests/init.pp"
+    line: 28
+    resource: File[/etc/motd]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Motd
+    - File[/etc/motd]
+    evaluation_time: 0.003559797
+    tags:
+    - file
+    - class
+    - motd
+    - utility
+    time: '2021-01-19T12:41:29.309755158+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[sources.list]:
+    title: sources.list
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/init.pp"
+    line: 228
+    resource: File[sources.list]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Apt
+    - File[sources.list]
+    evaluation_time: 0.001356445
+    tags:
+    - file
+    - sources.list
+    - class
+    - apt
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.316237881+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[sources.list.d]:
+    title: sources.list.d
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/init.pp"
+    line: 237
+    resource: File[sources.list.d]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Apt
+    - File[sources.list.d]
+    evaluation_time: 0.000934451
+    tags:
+    - file
+    - sources.list.d
+    - class
+    - apt
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.317961467+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[preferences]:
+    title: preferences
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/init.pp"
+    line: 248
+    resource: File[preferences]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Apt
+    - File[preferences]
+    evaluation_time: 0.000799807
+    tags:
+    - file
+    - preferences
+    - class
+    - apt
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.319165175+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[preferences.d]:
+    title: preferences.d
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/init.pp"
+    line: 257
+    resource: File[preferences.d]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Apt
+    - File[preferences.d]
+    evaluation_time: 0.000935002
+    tags:
+    - file
+    - preferences.d
+    - class
+    - apt
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.320274765+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[apt.conf.d]:
+    title: apt.conf.d
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/init.pp"
+    line: 268
+    resource: File[apt.conf.d]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Apt
+    - File[apt.conf.d]
+    evaluation_time: 0.000697084
+    tags:
+    - file
+    - apt.conf.d
+    - class
+    - apt
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.321537313+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/apt/auth.conf]:
+    title: "/etc/apt/auth.conf"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/init.pp"
+    line: 307
+    resource: File[/etc/apt/auth.conf]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Apt
+    - File[/etc/apt/auth.conf]
+    evaluation_time: 0.000352655
+    tags:
+    - file
+    - class
+    - apt
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.322769134+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[gnupg]:
+    title: gnupg
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/init.pp"
+    line: 323
+    resource: Package[gnupg]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Apt
+    - Package[gnupg]
+    evaluation_time: 0.000215435
+    tags:
+    - package
+    - gnupg
+    - class
+    - apt
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.323419850+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[unattended-upgrades]:
+    title: unattended-upgrades
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/unattended_upgrades/manifests/init.pp"
+    line: 47
+    resource: Package[unattended-upgrades]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Unattended_upgrades
+    - Package[unattended-upgrades]
+    evaluation_time: 0.000173515
+    tags:
+    - package
+    - unattended-upgrades
+    - class
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.323856053+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[vim]:
+    title: vim
+    file: "/etc/puppetlabs/code/environments/production/modules/utility/manifests/init.pp"
+    line: 11
+    resource: Package[vim]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Utility
+    - Package[vim]
+    evaluation_time: 0.000222739
+    tags:
+    - package
+    - vim
+    - class
+    - utility
+    time: '2021-01-19T12:41:29.326325945+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[htop]:
+    title: htop
+    file: "/etc/puppetlabs/code/environments/production/modules/utility/manifests/init.pp"
+    line: 11
+    resource: Package[htop]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Utility
+    - Package[htop]
+    evaluation_time: 0.000190018
+    tags:
+    - package
+    - htop
+    - class
+    - utility
+    time: '2021-01-19T12:41:29.326777215+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[iftop]:
+    title: iftop
+    file: "/etc/puppetlabs/code/environments/production/modules/utility/manifests/init.pp"
+    line: 11
+    resource: Package[iftop]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Utility
+    - Package[iftop]
+    evaluation_time: 0.000177014
+    tags:
+    - package
+    - iftop
+    - class
+    - utility
+    time: '2021-01-19T12:41:29.327184311+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[screen]:
+    title: screen
+    file: "/etc/puppetlabs/code/environments/production/modules/utility/manifests/init.pp"
+    line: 11
+    resource: Package[screen]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Utility
+    - Package[screen]
+    evaluation_time: 0.000193014
+    tags:
+    - package
+    - screen
+    - class
+    - utility
+    time: '2021-01-19T12:41:29.327610875+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[ruby-shadow]:
+    title: ruby-shadow
+    file: "/etc/puppetlabs/code/environments/production/modules/utility/manifests/init.pp"
+    line: 11
+    resource: Package[ruby-shadow]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Utility
+    - Package[ruby-shadow]
+    evaluation_time: 0.000185189
+    tags:
+    - package
+    - ruby-shadow
+    - class
+    - utility
+    time: '2021-01-19T12:41:29.328036116+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Mailalias[sysadmins]:
+    title: sysadmins
+    file: "/etc/puppetlabs/code/environments/production/modules/utility/manifests/init.pp"
+    line: 15
+    resource: Mailalias[sysadmins]
+    resource_type: Mailalias
+    provider_used: aliases
+    containment_path:
+    - Stage[main]
+    - Utility
+    - Mailalias[sysadmins]
+    evaluation_time: 0.000359738
+    tags:
+    - mailalias
+    - sysadmins
+    - class
+    - utility
+    time: '2021-01-19T12:41:29.331885808+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Mailalias[root]:
+    title: root
+    file: "/etc/puppetlabs/code/environments/production/modules/utility/manifests/init.pp"
+    line: 19
+    resource: Mailalias[root]
+    resource_type: Mailalias
+    provider_used: aliases
+    containment_path:
+    - Stage[main]
+    - Utility
+    - Mailalias[root]
+    evaluation_time: 0.000209203
+    tags:
+    - mailalias
+    - root
+    - class
+    - utility
+    time: '2021-01-19T12:41:29.332455252+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/dirvish]:
+    title: "/etc/dirvish"
+    file: "/etc/puppetlabs/code/environments/production/git_modules/dirvish/manifests/client.pp"
+    line: 31
+    resource: File[/etc/dirvish]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Dirvish::Client
+    - File[/etc/dirvish]
+    evaluation_time: 0.002355728
+    tags:
+    - file
+    - class
+    - dirvish::client
+    - dirvish
+    - client
+    time: '2021-01-19T12:41:29.333417083+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/dirvish/pre_client]:
+    title: "/etc/dirvish/pre_client"
+    file: "/etc/puppetlabs/code/environments/production/git_modules/dirvish/manifests/client.pp"
+    line: 37
+    resource: File[/etc/dirvish/pre_client]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Dirvish::Client
+    - File[/etc/dirvish/pre_client]
+    evaluation_time: 0.004056042
+    tags:
+    - file
+    - class
+    - dirvish::client
+    - dirvish
+    - client
+    time: '2021-01-19T12:41:29.336180870+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[rsync]:
+    title: rsync
+    file: "/etc/puppetlabs/code/environments/production/git_modules/dirvish/manifests/client.pp"
+    line: 46
+    resource: Package[rsync]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Dirvish::Client
+    - Package[rsync]
+    evaluation_time: 0.000500755
+    tags:
+    - package
+    - rsync
+    - class
+    - dirvish::client
+    - dirvish
+    - client
+    time: '2021-01-19T12:41:29.340787217+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[ntp]:
+    title: ntp
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/ntp/manifests/install.pp"
+    line: 10
+    resource: Package[ntp]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Ntp::Install
+    - Package[ntp]
+    evaluation_time: 0.000270629
+    tags:
+    - package
+    - ntp
+    - class
+    - ntp::install
+    - install
+    time: '2021-01-19T12:41:29.342163762+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/ntp.conf]:
+    title: "/etc/ntp.conf"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/ntp/manifests/config.pp"
+    line: 108
+    resource: File[/etc/ntp.conf]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Ntp::Config
+    - File[/etc/ntp.conf]
+    evaluation_time: 0.002371878
+    tags:
+    - file
+    - class
+    - ntp::config
+    - ntp
+    - config
+    time: '2021-01-19T12:41:29.343410480+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Service[ntp]:
+    title: ntp
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/ntp/manifests/service.pp"
+    line: 9
+    resource: Service[ntp]
+    resource_type: Service
+    provider_used: systemd
+    containment_path:
+    - Stage[main]
+    - Ntp::Service
+    - Service[ntp]
+    evaluation_time: 0.14506023
+    tags:
+    - service
+    - ntp
+    - class
+    - ntp::service
+    time: '2021-01-19T12:41:29.348111896+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/root/.ssh/authorized_keys]:
+    title: "/root/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/ssh/manifests/init.pp"
+    line: 2
+    resource: File[/root/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Ssh
+    - File[/root/.ssh/authorized_keys]
+    evaluation_time: 0.003039686
+    tags:
+    - file
+    - class
+    - ssh
+    time: '2021-01-19T12:41:29.494162592+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File_line[dirvish_ssh_pubkey]:
+    title: dirvish_ssh_pubkey
+    file: "/etc/puppetlabs/code/environments/production/git_modules/dirvish/manifests/client.pp"
+    line: 14
+    resource: File_line[dirvish_ssh_pubkey]
+    resource_type: File_line
+    provider_used: ruby
+    containment_path:
+    - Stage[main]
+    - Dirvish::Client
+    - File_line[dirvish_ssh_pubkey]
+    evaluation_time: 0.001298746
+    tags:
+    - file_line
+    - dirvish_ssh_pubkey
+    - class
+    - dirvish::client
+    - dirvish
+    - client
+    time: '2021-01-19T12:41:29.497680800+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/ssh/sshd_config]:
+    title: "/etc/ssh/sshd_config"
+    file: "/etc/puppetlabs/code/environments/production/modules/ssh/manifests/init.pp"
+    line: 11
+    resource: File[/etc/ssh/sshd_config]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Ssh
+    - File[/etc/ssh/sshd_config]
+    evaluation_time: 0.002503035
+    tags:
+    - file
+    - class
+    - ssh
+    time: '2021-01-19T12:41:29.499681159+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Sshd_config[PermitRootLogin]:
+    title: PermitRootLogin
+    file: "/etc/puppetlabs/code/environments/production/modules/ssh/manifests/init.pp"
+    line: 25
+    resource: Sshd_config[PermitRootLogin]
+    resource_type: Sshd_config
+    provider_used: augeas
+    containment_path:
+    - Stage[main]
+    - Ssh
+    - Sshd_config[PermitRootLogin]
+    evaluation_time: 0.109033
+    tags:
+    - sshd_config
+    - permitrootlogin
+    - class
+    - ssh
+    time: '2021-01-19T12:41:29.502529594+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Sshd_config[PasswordAuthentication]:
+    title: PasswordAuthentication
+    file: "/etc/puppetlabs/code/environments/production/modules/ssh/manifests/init.pp"
+    line: 30
+    resource: Sshd_config[PasswordAuthentication]
+    resource_type: Sshd_config
+    provider_used: augeas
+    containment_path:
+    - Stage[main]
+    - Ssh
+    - Sshd_config[PasswordAuthentication]
+    evaluation_time: 0.004471743
+    tags:
+    - sshd_config
+    - passwordauthentication
+    - class
+    - ssh
+    time: '2021-01-19T12:41:29.612096591+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Sshd_config[StrictModes]:
+    title: StrictModes
+    file: "/etc/puppetlabs/code/environments/production/modules/ssh/manifests/init.pp"
+    line: 35
+    resource: Sshd_config[StrictModes]
+    resource_type: Sshd_config
+    provider_used: augeas
+    containment_path:
+    - Stage[main]
+    - Ssh
+    - Sshd_config[StrictModes]
+    evaluation_time: 0.001626554
+    tags:
+    - sshd_config
+    - strictmodes
+    - class
+    - ssh
+    time: '2021-01-19T12:41:29.617061043+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Sshd_config[LogLevel]:
+    title: LogLevel
+    file: "/etc/puppetlabs/code/environments/production/modules/ssh/manifests/init.pp"
+    line: 41
+    resource: Sshd_config[LogLevel]
+    resource_type: Sshd_config
+    provider_used: augeas
+    containment_path:
+    - Stage[main]
+    - Ssh
+    - Sshd_config[LogLevel]
+    evaluation_time: 0.001244465
+    tags:
+    - sshd_config
+    - loglevel
+    - class
+    - ssh
+    time: '2021-01-19T12:41:29.618962565+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Service[ssh]:
+    title: ssh
+    file: "/etc/puppetlabs/code/environments/production/modules/ssh/manifests/init.pp"
+    line: 18
+    resource: Service[ssh]
+    resource_type: Service
+    provider_used: systemd
+    containment_path:
+    - Stage[main]
+    - Ssh
+    - Service[ssh]
+    evaluation_time: 0.071854201
+    tags:
+    - service
+    - ssh
+    - class
+    time: '2021-01-19T12:41:29.620729323+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Package[tzdata]:
+    title: tzdata
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/timezone/manifests/init.pp"
+    line: 62
+    resource: Package[tzdata]
+    resource_type: Package
+    provider_used: apt
+    containment_path:
+    - Stage[main]
+    - Timezone
+    - Package[tzdata]
+    evaluation_time: 0.000444357
+    tags:
+    - package
+    - tzdata
+    - class
+    - timezone
+    time: '2021-01-19T12:41:29.696059263+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/localtime]:
+    title: "/etc/localtime"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/timezone/manifests/init.pp"
+    line: 44
+    resource: File[/etc/localtime]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Timezone
+    - File[/etc/localtime]
+    evaluation_time: 0.003026261
+    tags:
+    - file
+    - class
+    - timezone
+    time: '2021-01-19T12:41:29.696864990+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/timezone]:
+    title: "/etc/timezone"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/timezone/manifests/init.pp"
+    line: 66
+    resource: File[/etc/timezone]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Timezone
+    - File[/etc/timezone]
+    evaluation_time: 0.002297588
+    tags:
+    - file
+    - class
+    - timezone
+    time: '2021-01-19T12:41:29.700233446+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_foreman-proxy-rex]:
+    title: 10_foreman-proxy-rex
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_foreman-proxy-rex]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Foreman_proxy::Plugin::Remote_execution::Ssh_user
+    - Sudo::Conf[foreman-proxy-rex]
+    - File[10_foreman-proxy-rex]
+    evaluation_time: 0.003910997
+    tags:
+    - file
+    - 10_foreman-proxy-rex
+    - sudo::conf
+    - sudo
+    - conf
+    - foreman-proxy-rex
+    - class
+    - foreman_proxy::plugin::remote_execution::ssh_user
+    - foreman_proxy
+    - plugin
+    - remote_execution
+    - ssh_user
+    time: '2021-01-19T12:41:29.703664039+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_foreman-proxy-rex]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_foreman-proxy-rex
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_foreman-proxy-rex]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Foreman_proxy::Plugin::Remote_execution::Ssh_user
+    - Sudo::Conf[foreman-proxy-rex]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_foreman-proxy-rex]
+    evaluation_time: 0.000318069
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - foreman-proxy-rex
+    - class
+    - foreman_proxy::plugin::remote_execution::ssh_user
+    - foreman_proxy
+    - plugin
+    - remote_execution
+    - ssh_user
+    time: '2021-01-19T12:41:29.708087452+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_file[/etc/puppetlabs/puppet/puppet.conf]:
+    title: "/etc/puppetlabs/puppet/puppet.conf"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/init.pp"
+    line: 123
+    resource: Concat_file[/etc/puppetlabs/puppet/puppet.conf]
+    resource_type: Concat_file
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Concat[/etc/puppetlabs/puppet/puppet.conf]
+    - Concat_file[/etc/puppetlabs/puppet/puppet.conf]
+    evaluation_time: 0.000299103
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_file
+    - concat
+    - class
+    - puppet::config
+    - puppet
+    - config
+    time: '2021-01-19T12:41:29.728199710+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/puppetlabs/puppet/puppet.conf]:
+    title: "/etc/puppetlabs/puppet/puppet.conf"
+    file:
+    line:
+    resource: File[/etc/puppetlabs/puppet/puppet.conf]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Concat[/etc/puppetlabs/puppet/puppet.conf]
+    - File[/etc/puppetlabs/puppet/puppet.conf]
+    evaluation_time: 0.003641791
+    tags:
+    - file
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_file
+    - concat
+    - class
+    - puppet::config
+    - puppet
+    - config
+    time: '2021-01-19T12:41:29.728976282+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/puppetlabs/puppet/auth.conf]:
+    title: "/etc/puppetlabs/puppet/auth.conf"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/config.pp"
+    line: 97
+    resource: File[/etc/puppetlabs/puppet/auth.conf]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - File[/etc/puppetlabs/puppet/auth.conf]
+    evaluation_time: 0.001352308
+    tags:
+    - file
+    - class
+    - puppet::config
+    - puppet
+    - config
+    time: '2021-01-19T12:41:29.734257361+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/example/dis.example.com.yaml]:
+    title: "/etc/example/dis.example.com.yaml"
+    file: "/etc/puppetlabs/code/environments/production/modules/example/manifests/cron.pp"
+    line: 9
+    resource: File[/etc/example/dis.example.com.yaml]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Example
+    - Example::Cron[dis.example.com]
+    - File[/etc/example/dis.example.com.yaml]
+    evaluation_time: 0.006133926
+    tags:
+    - file
+    - example::cron
+    - example
+    - cron
+    - dis.example.com
+    - class
+    time: '2021-01-19T12:41:29.741763091+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Cron[example-snapshot-dis.example.com]:
+    title: example-snapshot-dis.example.com
+    file: "/etc/puppetlabs/code/environments/production/modules/example/manifests/cron.pp"
+    line: 17
+    resource: Cron[example-snapshot-dis.example.com]
+    resource_type: Cron
+    provider_used: crontab
+    containment_path:
+    - Stage[main]
+    - Example
+    - Example::Cron[dis.example.com]
+    - Cron[example-snapshot-dis.example.com]
+    evaluation_time: 0.038420787
+    tags:
+    - cron
+    - example-snapshot-dis.example.com
+    - example::cron
+    - example
+    - dis.example.com
+    - class
+    time: '2021-01-19T12:41:29.792543203+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[gregsutcliffe]:
+    title: gregsutcliffe
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[gregsutcliffe]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[gregsutcliffe]
+    - User[gregsutcliffe]
+    evaluation_time: 0.00599854
+    tags:
+    - user
+    - gregsutcliffe
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.834122060+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/gregsutcliffe]:
+    title: "/home/gregsutcliffe"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/gregsutcliffe]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[gregsutcliffe]
+    - File[/home/gregsutcliffe]
+    evaluation_time: 0.002745301
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - gregsutcliffe
+    - class
+    time: '2021-01-19T12:41:29.840757470+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/gregsutcliffe/.ssh]:
+    title: "/home/gregsutcliffe/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/gregsutcliffe/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[gregsutcliffe]
+    - File[/home/gregsutcliffe/.ssh]
+    evaluation_time: 0.003139093
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - gregsutcliffe
+    - class
+    time: '2021-01-19T12:41:29.843913155+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/gregsutcliffe/.ssh/authorized_keys]:
+    title: "/home/gregsutcliffe/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/gregsutcliffe/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[gregsutcliffe]
+    - File[/home/gregsutcliffe/.ssh/authorized_keys]
+    evaluation_time: 0.00264911
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - gregsutcliffe
+    - class
+    time: '2021-01-19T12:41:29.847458794+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[ohadlevy]:
+    title: ohadlevy
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[ohadlevy]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ohadlevy]
+    - User[ohadlevy]
+    evaluation_time: 0.003283045
+    tags:
+    - user
+    - ohadlevy
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.852749942+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ohadlevy]:
+    title: "/home/ohadlevy"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/ohadlevy]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ohadlevy]
+    - File[/home/ohadlevy]
+    evaluation_time: 0.00172515
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ohadlevy
+    - class
+    time: '2021-01-19T12:41:29.856528991+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ohadlevy/.ssh]:
+    title: "/home/ohadlevy/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/ohadlevy/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ohadlevy]
+    - File[/home/ohadlevy/.ssh]
+    evaluation_time: 0.00562161
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ohadlevy
+    - class
+    time: '2021-01-19T12:41:29.858637494+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ohadlevy/.ssh/authorized_keys]:
+    title: "/home/ohadlevy/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/ohadlevy/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ohadlevy]
+    - File[/home/ohadlevy/.ssh/authorized_keys]
+    evaluation_time: 0.004837903
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ohadlevy
+    - class
+    time: '2021-01-19T12:41:29.864722757+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[lzap]:
+    title: lzap
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[lzap]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[lzap]
+    - User[lzap]
+    evaluation_time: 0.001535712
+    tags:
+    - user
+    - lzap
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.872212817+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/lzap]:
+    title: "/home/lzap"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/lzap]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[lzap]
+    - File[/home/lzap]
+    evaluation_time: 0.001059006
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - lzap
+    - class
+    time: '2021-01-19T12:41:29.874267507+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/lzap/.ssh]:
+    title: "/home/lzap/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/lzap/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[lzap]
+    - File[/home/lzap/.ssh]
+    evaluation_time: 0.003271272
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - lzap
+    - class
+    time: '2021-01-19T12:41:29.875819722+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/lzap/.ssh/authorized_keys]:
+    title: "/home/lzap/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/lzap/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[lzap]
+    - File[/home/lzap/.ssh/authorized_keys]
+    evaluation_time: 0.00379532
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - lzap
+    - class
+    time: '2021-01-19T12:41:29.879875272+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[ehelms]:
+    title: ehelms
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[ehelms]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ehelms]
+    - User[ehelms]
+    evaluation_time: 0.002074197
+    tags:
+    - user
+    - ehelms
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.885984330+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ehelms]:
+    title: "/home/ehelms"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/ehelms]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ehelms]
+    - File[/home/ehelms]
+    evaluation_time: 0.002589249
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ehelms
+    - class
+    time: '2021-01-19T12:41:29.888649179+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ehelms/.ssh]:
+    title: "/home/ehelms/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/ehelms/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ehelms]
+    - File[/home/ehelms/.ssh]
+    evaluation_time: 0.002101229
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ehelms
+    - class
+    time: '2021-01-19T12:41:29.891672856+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ehelms/.ssh/authorized_keys]:
+    title: "/home/ehelms/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/ehelms/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ehelms]
+    - File[/home/ehelms/.ssh/authorized_keys]
+    evaluation_time: 0.004918265
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ehelms
+    - class
+    time: '2021-01-19T12:41:29.894119185+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[dlobatog]:
+    title: dlobatog
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[dlobatog]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[dlobatog]
+    - User[dlobatog]
+    evaluation_time: 0.000872424
+    tags:
+    - user
+    - dlobatog
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.901667956+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/dlobatog]:
+    title: "/home/dlobatog"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/dlobatog]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[dlobatog]
+    - File[/home/dlobatog]
+    evaluation_time: 0.00128529
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - dlobatog
+    - class
+    time: '2021-01-19T12:41:29.903015635+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/dlobatog/.ssh]:
+    title: "/home/dlobatog/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/dlobatog/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[dlobatog]
+    - File[/home/dlobatog/.ssh]
+    evaluation_time: 0.003657231
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - dlobatog
+    - class
+    time: '2021-01-19T12:41:29.904727519+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/dlobatog/.ssh/authorized_keys]:
+    title: "/home/dlobatog/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/dlobatog/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[dlobatog]
+    - File[/home/dlobatog/.ssh/authorized_keys]
+    evaluation_time: 0.005397978
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - dlobatog
+    - class
+    time: '2021-01-19T12:41:29.908757311+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[ekohl]:
+    title: ekohl
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[ekohl]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ekohl]
+    - User[ekohl]
+    evaluation_time: 0.001040579
+    tags:
+    - user
+    - ekohl
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.915899516+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ekohl]:
+    title: "/home/ekohl"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/ekohl]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ekohl]
+    - File[/home/ekohl]
+    evaluation_time: 0.000683389
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ekohl
+    - class
+    time: '2021-01-19T12:41:29.917315853+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ekohl/.ssh]:
+    title: "/home/ekohl/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/ekohl/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ekohl]
+    - File[/home/ekohl/.ssh]
+    evaluation_time: 0.002279143
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ekohl
+    - class
+    time: '2021-01-19T12:41:29.918237270+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/ekohl/.ssh/authorized_keys]:
+    title: "/home/ekohl/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/ekohl/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ekohl]
+    - File[/home/ekohl/.ssh/authorized_keys]
+    evaluation_time: 0.005317598
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - ekohl
+    - class
+    time: '2021-01-19T12:41:29.921307012+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[evgeni]:
+    title: evgeni
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[evgeni]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[evgeni]
+    - User[evgeni]
+    evaluation_time: 0.000730607
+    tags:
+    - user
+    - evgeni
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.927923125+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/evgeni]:
+    title: "/home/evgeni"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/evgeni]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[evgeni]
+    - File[/home/evgeni]
+    evaluation_time: 0.000757177
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - evgeni
+    - class
+    time: '2021-01-19T12:41:29.929085134+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/evgeni/.ssh]:
+    title: "/home/evgeni/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/evgeni/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[evgeni]
+    - File[/home/evgeni/.ssh]
+    evaluation_time: 0.001444641
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - evgeni
+    - class
+    time: '2021-01-19T12:41:29.930214362+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/evgeni/.ssh/authorized_keys]:
+    title: "/home/evgeni/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/evgeni/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[evgeni]
+    - File[/home/evgeni/.ssh/authorized_keys]
+    evaluation_time: 0.002003964
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - evgeni
+    - class
+    time: '2021-01-19T12:41:29.932337552+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[oprazak]:
+    title: oprazak
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[oprazak]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[oprazak]
+    - User[oprazak]
+    evaluation_time: 0.001929935
+    tags:
+    - user
+    - oprazak
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.936680383+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/oprazak]:
+    title: "/home/oprazak"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/oprazak]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[oprazak]
+    - File[/home/oprazak]
+    evaluation_time: 0.00067407
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - oprazak
+    - class
+    time: '2021-01-19T12:41:29.938976438+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/oprazak/.ssh]:
+    title: "/home/oprazak/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/oprazak/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[oprazak]
+    - File[/home/oprazak/.ssh]
+    evaluation_time: 0.002822858
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - oprazak
+    - class
+    time: '2021-01-19T12:41:29.939878317+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/oprazak/.ssh/authorized_keys]:
+    title: "/home/oprazak/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/oprazak/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[oprazak]
+    - File[/home/oprazak/.ssh/authorized_keys]
+    evaluation_time: 0.003002717
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - oprazak
+    - class
+    time: '2021-01-19T12:41:29.943182622+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[tbrisker]:
+    title: tbrisker
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[tbrisker]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[tbrisker]
+    - User[tbrisker]
+    evaluation_time: 0.001033277
+    tags:
+    - user
+    - tbrisker
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.947963538+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/tbrisker]:
+    title: "/home/tbrisker"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/tbrisker]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[tbrisker]
+    - File[/home/tbrisker]
+    evaluation_time: 0.000761295
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - tbrisker
+    - class
+    time: '2021-01-19T12:41:29.949408580+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/tbrisker/.ssh]:
+    title: "/home/tbrisker/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/tbrisker/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[tbrisker]
+    - File[/home/tbrisker/.ssh]
+    evaluation_time: 0.001848211
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - tbrisker
+    - class
+    time: '2021-01-19T12:41:29.950628710+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/tbrisker/.ssh/authorized_keys]:
+    title: "/home/tbrisker/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/tbrisker/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[tbrisker]
+    - File[/home/tbrisker/.ssh/authorized_keys]
+    evaluation_time: 0.001966014
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - tbrisker
+    - class
+    time: '2021-01-19T12:41:29.953190145+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[pcreech]:
+    title: pcreech
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[pcreech]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[pcreech]
+    - User[pcreech]
+    evaluation_time: 0.001387474
+    tags:
+    - user
+    - pcreech
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.956430128+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/pcreech]:
+    title: "/home/pcreech"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/pcreech]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[pcreech]
+    - File[/home/pcreech]
+    evaluation_time: 0.000947025
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - pcreech
+    - class
+    time: '2021-01-19T12:41:29.958323775+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/pcreech/.ssh]:
+    title: "/home/pcreech/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/pcreech/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[pcreech]
+    - File[/home/pcreech/.ssh]
+    evaluation_time: 0.002911845
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - pcreech
+    - class
+    time: '2021-01-19T12:41:29.959719405+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/pcreech/.ssh/authorized_keys]:
+    title: "/home/pcreech/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/pcreech/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[pcreech]
+    - File[/home/pcreech/.ssh/authorized_keys]
+    evaluation_time: 0.0034666
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - pcreech
+    - class
+    time: '2021-01-19T12:41:29.963104121+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[zhunting]:
+    title: zhunting
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[zhunting]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[zhunting]
+    - User[zhunting]
+    evaluation_time: 0.001016104
+    tags:
+    - user
+    - zhunting
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.967607955+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/zhunting]:
+    title: "/home/zhunting"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/zhunting]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[zhunting]
+    - File[/home/zhunting]
+    evaluation_time: 0.0024366
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - zhunting
+    - class
+    time: '2021-01-19T12:41:29.969304531+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/zhunting/.ssh]:
+    title: "/home/zhunting/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/zhunting/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[zhunting]
+    - File[/home/zhunting/.ssh]
+    evaluation_time: 0.003737911
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - zhunting
+    - class
+    time: '2021-01-19T12:41:29.972557179+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/zhunting/.ssh/authorized_keys]:
+    title: "/home/zhunting/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/zhunting/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[zhunting]
+    - File[/home/zhunting/.ssh/authorized_keys]
+    evaluation_time: 0.002433974
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - zhunting
+    - class
+    time: '2021-01-19T12:41:29.976961155+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[wclark]:
+    title: wclark
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[wclark]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[wclark]
+    - User[wclark]
+    evaluation_time: 0.001006766
+    tags:
+    - user
+    - wclark
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.981545712+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/wclark]:
+    title: "/home/wclark"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 18
+    resource: File[/home/wclark]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[wclark]
+    - File[/home/wclark]
+    evaluation_time: 0.000641879
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - wclark
+    - class
+    time: '2021-01-19T12:41:29.982905494+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/wclark/.ssh]:
+    title: "/home/wclark/.ssh"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 25
+    resource: File[/home/wclark/.ssh]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[wclark]
+    - File[/home/wclark/.ssh]
+    evaluation_time: 0.002896908
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - wclark
+    - class
+    time: '2021-01-19T12:41:29.984339725+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/home/wclark/.ssh/authorized_keys]:
+    title: "/home/wclark/.ssh/authorized_keys"
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 32
+    resource: File[/home/wclark/.ssh/authorized_keys]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[wclark]
+    - File[/home/wclark/.ssh/authorized_keys]
+    evaluation_time: 0.002575974
+    tags:
+    - file
+    - users::account
+    - users
+    - account
+    - wclark
+    - class
+    time: '2021-01-19T12:41:29.987560843+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  User[mmoll]:
+    title: mmoll
+    file: "/etc/puppetlabs/code/environments/production/modules/users/manifests/account.pp"
+    line: 8
+    resource: User[mmoll]
+    resource_type: User
+    provider_used: useradd
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[mmoll]
+    - User[mmoll]
+    evaluation_time: 0.001744235
+    tags:
+    - user
+    - mmoll
+    - users::account
+    - users
+    - account
+    - class
+    time: '2021-01-19T12:41:29.992676220+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/apt/apt.conf.d/15update-stamp]:
+    title: "/etc/apt/apt.conf.d/15update-stamp"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/setting.pp"
+    line: 68
+    resource: File[/etc/apt/apt.conf.d/15update-stamp]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Apt
+    - Apt::Setting[conf-update-stamp]
+    - File[/etc/apt/apt.conf.d/15update-stamp]
+    evaluation_time: 0.003905478
+    tags:
+    - file
+    - apt::setting
+    - apt
+    - setting
+    - conf-update-stamp
+    - class
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:29.995287809+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[apt_update]:
+    title: apt_update
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/update.pp"
+    line: 59
+    resource: Exec[apt_update]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Apt::Update
+    - Exec[apt_update]
+    evaluation_time: 0.000486245
+    tags:
+    - exec
+    - apt_update
+    - class
+    - apt::update
+    - apt
+    - update
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:30.000655171+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-gregsutcliffe]:
+    title: 10_sudo-puppet-gregsutcliffe
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-gregsutcliffe]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[gregsutcliffe]
+    - Sudo::Conf[sudo-puppet-gregsutcliffe]
+    - File[10_sudo-puppet-gregsutcliffe]
+    evaluation_time: 0.002910904
+    tags:
+    - file
+    - 10_sudo-puppet-gregsutcliffe
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-gregsutcliffe
+    - users::account
+    - users
+    - account
+    - gregsutcliffe
+    - class
+    time: '2021-01-19T12:41:30.013313486+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-gregsutcliffe]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-gregsutcliffe
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-gregsutcliffe]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[gregsutcliffe]
+    - Sudo::Conf[sudo-puppet-gregsutcliffe]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-gregsutcliffe]
+    evaluation_time: 0.000422737
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-gregsutcliffe
+    - users::account
+    - users
+    - account
+    - gregsutcliffe
+    - class
+    time: '2021-01-19T12:41:30.016592984+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-ohadlevy]:
+    title: 10_sudo-puppet-ohadlevy
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-ohadlevy]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ohadlevy]
+    - Sudo::Conf[sudo-puppet-ohadlevy]
+    - File[10_sudo-puppet-ohadlevy]
+    evaluation_time: 0.004748306
+    tags:
+    - file
+    - 10_sudo-puppet-ohadlevy
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-ohadlevy
+    - users::account
+    - users
+    - account
+    - ohadlevy
+    - class
+    time: '2021-01-19T12:41:30.019808502+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ohadlevy]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ohadlevy
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ohadlevy]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ohadlevy]
+    - Sudo::Conf[sudo-puppet-ohadlevy]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ohadlevy]
+    evaluation_time: 0.000399994
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-ohadlevy
+    - users::account
+    - users
+    - account
+    - ohadlevy
+    - class
+    time: '2021-01-19T12:41:30.025131640+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-lzap]:
+    title: 10_sudo-puppet-lzap
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-lzap]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[lzap]
+    - Sudo::Conf[sudo-puppet-lzap]
+    - File[10_sudo-puppet-lzap]
+    evaluation_time: 0.001640059
+    tags:
+    - file
+    - 10_sudo-puppet-lzap
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-lzap
+    - users::account
+    - users
+    - account
+    - lzap
+    - class
+    time: '2021-01-19T12:41:30.027026491+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-lzap]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-lzap
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-lzap]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[lzap]
+    - Sudo::Conf[sudo-puppet-lzap]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-lzap]
+    evaluation_time: 0.000456211
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-lzap
+    - users::account
+    - users
+    - account
+    - lzap
+    - class
+    time: '2021-01-19T12:41:30.029222036+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-ehelms]:
+    title: 10_sudo-puppet-ehelms
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-ehelms]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ehelms]
+    - Sudo::Conf[sudo-puppet-ehelms]
+    - File[10_sudo-puppet-ehelms]
+    evaluation_time: 0.008444447
+    tags:
+    - file
+    - 10_sudo-puppet-ehelms
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-ehelms
+    - users::account
+    - users
+    - account
+    - ehelms
+    - class
+    time: '2021-01-19T12:41:30.038116472+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ehelms]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ehelms
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ehelms]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ehelms]
+    - Sudo::Conf[sudo-puppet-ehelms]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ehelms]
+    evaluation_time: 0.0003347
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-ehelms
+    - users::account
+    - users
+    - account
+    - ehelms
+    - class
+    time: '2021-01-19T12:41:30.047120895+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-dlobatog]:
+    title: 10_sudo-puppet-dlobatog
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-dlobatog]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[dlobatog]
+    - Sudo::Conf[sudo-puppet-dlobatog]
+    - File[10_sudo-puppet-dlobatog]
+    evaluation_time: 0.005379826
+    tags:
+    - file
+    - 10_sudo-puppet-dlobatog
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-dlobatog
+    - users::account
+    - users
+    - account
+    - dlobatog
+    - class
+    time: '2021-01-19T12:41:30.049144686+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-dlobatog]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-dlobatog
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-dlobatog]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[dlobatog]
+    - Sudo::Conf[sudo-puppet-dlobatog]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-dlobatog]
+    evaluation_time: 0.00039841
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-dlobatog
+    - users::account
+    - users
+    - account
+    - dlobatog
+    - class
+    time: '2021-01-19T12:41:30.055421471+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-ekohl]:
+    title: 10_sudo-puppet-ekohl
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-ekohl]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ekohl]
+    - Sudo::Conf[sudo-puppet-ekohl]
+    - File[10_sudo-puppet-ekohl]
+    evaluation_time: 0.002442681
+    tags:
+    - file
+    - 10_sudo-puppet-ekohl
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-ekohl
+    - users::account
+    - users
+    - account
+    - ekohl
+    - class
+    time: '2021-01-19T12:41:30.056953548+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ekohl]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ekohl
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ekohl]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[ekohl]
+    - Sudo::Conf[sudo-puppet-ekohl]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ekohl]
+    evaluation_time: 0.000337806
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-ekohl
+    - users::account
+    - users
+    - account
+    - ekohl
+    - class
+    time: '2021-01-19T12:41:30.059845816+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-evgeni]:
+    title: 10_sudo-puppet-evgeni
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-evgeni]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[evgeni]
+    - Sudo::Conf[sudo-puppet-evgeni]
+    - File[10_sudo-puppet-evgeni]
+    evaluation_time: 0.008423529
+    tags:
+    - file
+    - 10_sudo-puppet-evgeni
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-evgeni
+    - users::account
+    - users
+    - account
+    - evgeni
+    - class
+    time: '2021-01-19T12:41:30.062143024+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-evgeni]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-evgeni
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-evgeni]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[evgeni]
+    - Sudo::Conf[sudo-puppet-evgeni]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-evgeni]
+    evaluation_time: 0.000347174
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-evgeni
+    - users::account
+    - users
+    - account
+    - evgeni
+    - class
+    time: '2021-01-19T12:41:30.071068499+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-oprazak]:
+    title: 10_sudo-puppet-oprazak
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-oprazak]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[oprazak]
+    - Sudo::Conf[sudo-puppet-oprazak]
+    - File[10_sudo-puppet-oprazak]
+    evaluation_time: 0.001797607
+    tags:
+    - file
+    - 10_sudo-puppet-oprazak
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-oprazak
+    - users::account
+    - users
+    - account
+    - oprazak
+    - class
+    time: '2021-01-19T12:41:30.072497851+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-oprazak]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-oprazak
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-oprazak]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[oprazak]
+    - Sudo::Conf[sudo-puppet-oprazak]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-oprazak]
+    evaluation_time: 0.000282231
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-oprazak
+    - users::account
+    - users
+    - account
+    - oprazak
+    - class
+    time: '2021-01-19T12:41:30.074697826+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-tbrisker]:
+    title: 10_sudo-puppet-tbrisker
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-tbrisker]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[tbrisker]
+    - Sudo::Conf[sudo-puppet-tbrisker]
+    - File[10_sudo-puppet-tbrisker]
+    evaluation_time: 0.004138726
+    tags:
+    - file
+    - 10_sudo-puppet-tbrisker
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-tbrisker
+    - users::account
+    - users
+    - account
+    - tbrisker
+    - class
+    time: '2021-01-19T12:41:30.075972587+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-tbrisker]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-tbrisker
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-tbrisker]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[tbrisker]
+    - Sudo::Conf[sudo-puppet-tbrisker]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-tbrisker]
+    evaluation_time: 0.000329971
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-tbrisker
+    - users::account
+    - users
+    - account
+    - tbrisker
+    - class
+    time: '2021-01-19T12:41:30.080624691+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-pcreech]:
+    title: 10_sudo-puppet-pcreech
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-pcreech]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[pcreech]
+    - Sudo::Conf[sudo-puppet-pcreech]
+    - File[10_sudo-puppet-pcreech]
+    evaluation_time: 0.003718655
+    tags:
+    - file
+    - 10_sudo-puppet-pcreech
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-pcreech
+    - users::account
+    - users
+    - account
+    - pcreech
+    - class
+    time: '2021-01-19T12:41:30.082279909+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-pcreech]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-pcreech
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-pcreech]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[pcreech]
+    - Sudo::Conf[sudo-puppet-pcreech]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-pcreech]
+    evaluation_time: 0.000241926
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-pcreech
+    - users::account
+    - users
+    - account
+    - pcreech
+    - class
+    time: '2021-01-19T12:41:30.086666392+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-zhunting]:
+    title: 10_sudo-puppet-zhunting
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-zhunting]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[zhunting]
+    - Sudo::Conf[sudo-puppet-zhunting]
+    - File[10_sudo-puppet-zhunting]
+    evaluation_time: 0.002035164
+    tags:
+    - file
+    - 10_sudo-puppet-zhunting
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-zhunting
+    - users::account
+    - users
+    - account
+    - zhunting
+    - class
+    time: '2021-01-19T12:41:30.087601824+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-zhunting]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-zhunting
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-zhunting]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[zhunting]
+    - Sudo::Conf[sudo-puppet-zhunting]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-zhunting]
+    evaluation_time: 0.000370218
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-zhunting
+    - users::account
+    - users
+    - account
+    - zhunting
+    - class
+    time: '2021-01-19T12:41:30.089957702+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-wclark]:
+    title: 10_sudo-puppet-wclark
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-wclark]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[wclark]
+    - Sudo::Conf[sudo-puppet-wclark]
+    - File[10_sudo-puppet-wclark]
+    evaluation_time: 0.003443367
+    tags:
+    - file
+    - 10_sudo-puppet-wclark
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-wclark
+    - users::account
+    - users
+    - account
+    - wclark
+    - class
+    time: '2021-01-19T12:41:30.091036514+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-wclark]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-wclark
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-wclark]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[wclark]
+    - Sudo::Conf[sudo-puppet-wclark]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-wclark]
+    evaluation_time: 0.000211458
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-wclark
+    - users::account
+    - users
+    - account
+    - wclark
+    - class
+    time: '2021-01-19T12:41:30.094817016+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[10_sudo-puppet-mmoll]:
+    title: 10_sudo-puppet-mmoll
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 119
+    resource: File[10_sudo-puppet-mmoll]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[mmoll]
+    - Sudo::Conf[sudo-puppet-mmoll]
+    - File[10_sudo-puppet-mmoll]
+    evaluation_time: 0.002018883
+    tags:
+    - file
+    - 10_sudo-puppet-mmoll
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-mmoll
+    - users::account
+    - users
+    - account
+    - mmoll
+    - class
+    time: '2021-01-19T12:41:30.095779710+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-mmoll]:
+    title: sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-mmoll
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/sudo/manifests/conf.pp"
+    line: 132
+    resource: Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-mmoll]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Users
+    - Users::Account[mmoll]
+    - Sudo::Conf[sudo-puppet-mmoll]
+    - Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-mmoll]
+    evaluation_time: 0.000233219
+    tags:
+    - exec
+    - sudo::conf
+    - sudo
+    - conf
+    - sudo-puppet-mmoll
+    - users::account
+    - users
+    - account
+    - mmoll
+    - class
+    time: '2021-01-19T12:41:30.098142851+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/apt/apt.conf.d/50unattended-upgrades]:
+    title: "/etc/apt/apt.conf.d/50unattended-upgrades"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/setting.pp"
+    line: 68
+    resource: File[/etc/apt/apt.conf.d/50unattended-upgrades]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Unattended_upgrades
+    - Apt::Conf[unattended-upgrades]
+    - Apt::Setting[conf-unattended-upgrades]
+    - File[/etc/apt/apt.conf.d/50unattended-upgrades]
+    evaluation_time: 0.002194684
+    tags:
+    - file
+    - apt::setting
+    - apt
+    - setting
+    - conf-unattended-upgrades
+    - apt::conf
+    - conf
+    - unattended-upgrades
+    - class
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:30.099666512+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/apt/apt.conf.d/10periodic]:
+    title: "/etc/apt/apt.conf.d/10periodic"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/setting.pp"
+    line: 68
+    resource: File[/etc/apt/apt.conf.d/10periodic]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Unattended_upgrades
+    - Apt::Conf[periodic]
+    - Apt::Setting[conf-periodic]
+    - File[/etc/apt/apt.conf.d/10periodic]
+    evaluation_time: 0.003361032
+    tags:
+    - file
+    - apt::setting
+    - apt
+    - setting
+    - conf-periodic
+    - apt::conf
+    - conf
+    - periodic
+    - class
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:30.103360792+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/apt/apt.conf.d/20auto-upgrades]:
+    title: "/etc/apt/apt.conf.d/20auto-upgrades"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/setting.pp"
+    line: 68
+    resource: File[/etc/apt/apt.conf.d/20auto-upgrades]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Unattended_upgrades
+    - Apt::Conf[auto-upgrades]
+    - Apt::Setting[conf-auto-upgrades]
+    - File[/etc/apt/apt.conf.d/20auto-upgrades]
+    evaluation_time: 0.003010933
+    tags:
+    - file
+    - apt::setting
+    - apt
+    - setting
+    - conf-auto-upgrades
+    - apt::conf
+    - conf
+    - auto-upgrades
+    - class
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:30.108865762+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/apt/apt.conf.d/10options]:
+    title: "/etc/apt/apt.conf.d/10options"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/apt/manifests/setting.pp"
+    line: 68
+    resource: File[/etc/apt/apt.conf.d/10options]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Unattended_upgrades
+    - Apt::Conf[options]
+    - Apt::Setting[conf-options]
+    - File[/etc/apt/apt.conf.d/10options]
+    evaluation_time: 0.003309916
+    tags:
+    - file
+    - apt::setting
+    - apt
+    - setting
+    - conf-options
+    - apt::conf
+    - conf
+    - options
+    - class
+    - unattended_upgrades
+    - unattended
+    time: '2021-01-19T12:41:30.113783496+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main]:
+    title: puppet.conf_main
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[vardir]
+    - Puppet::Config::Entry[mainvardir]
+    - Concat::Fragment[puppet.conf_main]
+    - Concat_fragment[puppet.conf_main]
+    evaluation_time: 0.000175801
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainvardir
+    - puppet::config::main
+    - main
+    - vardir
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.118174098+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_vardir]:
+    title: puppet.conf_main_vardir
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_vardir]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[vardir]
+    - Puppet::Config::Entry[mainvardir]
+    - Concat::Fragment[puppet.conf_main_vardir]
+    - Concat_fragment[puppet.conf_main_vardir]
+    evaluation_time: 7.2417e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_vardir
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainvardir
+    - puppet::config::main
+    - main
+    - vardir
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.118846184+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_logdir]:
+    title: puppet.conf_main_logdir
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_logdir]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[logdir]
+    - Puppet::Config::Entry[mainlogdir]
+    - Concat::Fragment[puppet.conf_main_logdir]
+    - Concat_fragment[puppet.conf_main_logdir]
+    evaluation_time: 8.1314e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_logdir
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainlogdir
+    - puppet::config::main
+    - main
+    - logdir
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.119708728+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_rundir]:
+    title: puppet.conf_main_rundir
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_rundir]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[rundir]
+    - Puppet::Config::Entry[mainrundir]
+    - Concat::Fragment[puppet.conf_main_rundir]
+    - Concat_fragment[puppet.conf_main_rundir]
+    evaluation_time: 8.8436e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_rundir
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainrundir
+    - puppet::config::main
+    - main
+    - rundir
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.120670270+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_ssldir]:
+    title: puppet.conf_main_ssldir
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_ssldir]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[ssldir]
+    - Puppet::Config::Entry[mainssldir]
+    - Concat::Fragment[puppet.conf_main_ssldir]
+    - Concat_fragment[puppet.conf_main_ssldir]
+    evaluation_time: 0.000189718
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_ssldir
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainssldir
+    - puppet::config::main
+    - main
+    - ssldir
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.122553247+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_privatekeydir]:
+    title: puppet.conf_main_privatekeydir
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_privatekeydir]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[privatekeydir]
+    - Puppet::Config::Entry[mainprivatekeydir]
+    - Concat::Fragment[puppet.conf_main_privatekeydir]
+    - Concat_fragment[puppet.conf_main_privatekeydir]
+    evaluation_time: 0.000108796
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_privatekeydir
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainprivatekeydir
+    - puppet::config::main
+    - main
+    - privatekeydir
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.123646035+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_hostprivkey]:
+    title: puppet.conf_main_hostprivkey
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_hostprivkey]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[hostprivkey]
+    - Puppet::Config::Entry[mainhostprivkey]
+    - Concat::Fragment[puppet.conf_main_hostprivkey]
+    - Concat_fragment[puppet.conf_main_hostprivkey]
+    evaluation_time: 6.9802e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_hostprivkey
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainhostprivkey
+    - puppet::config::main
+    - main
+    - hostprivkey
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.124494433+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_show_diff]:
+    title: puppet.conf_main_show_diff
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_show_diff]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[show_diff]
+    - Puppet::Config::Entry[mainshow_diff]
+    - Concat::Fragment[puppet.conf_main_show_diff]
+    - Concat_fragment[puppet.conf_main_show_diff]
+    evaluation_time: 0.000183686
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_show_diff
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainshow_diff
+    - puppet::config::main
+    - main
+    - show_diff
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.126158388+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_codedir]:
+    title: puppet.conf_main_codedir
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_codedir]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[codedir]
+    - Puppet::Config::Entry[maincodedir]
+    - Concat::Fragment[puppet.conf_main_codedir]
+    - Concat_fragment[puppet.conf_main_codedir]
+    evaluation_time: 0.000115889
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_codedir
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - maincodedir
+    - puppet::config::main
+    - main
+    - codedir
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.129987371+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_server]:
+    title: puppet.conf_main_server
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_server]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[server]
+    - Puppet::Config::Entry[mainserver]
+    - Concat::Fragment[puppet.conf_main_server]
+    - Concat_fragment[puppet.conf_main_server]
+    evaluation_time: 0.000136998
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_server
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainserver
+    - puppet::config::main
+    - main
+    - server
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.131452051+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_pluginsource]:
+    title: puppet.conf_main_pluginsource
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_pluginsource]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[pluginsource]
+    - Puppet::Config::Entry[mainpluginsource]
+    - Concat::Fragment[puppet.conf_main_pluginsource]
+    - Concat_fragment[puppet.conf_main_pluginsource]
+    evaluation_time: 0.000120257
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_pluginsource
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainpluginsource
+    - puppet::config::main
+    - main
+    - pluginsource
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.132914425+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_pluginfactsource]:
+    title: puppet.conf_main_pluginfactsource
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_pluginfactsource]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[pluginfactsource]
+    - Puppet::Config::Entry[mainpluginfactsource]
+    - Concat::Fragment[puppet.conf_main_pluginfactsource]
+    - Concat_fragment[puppet.conf_main_pluginfactsource]
+    evaluation_time: 7.6824e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_pluginfactsource
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - mainpluginfactsource
+    - puppet::config::main
+    - main
+    - pluginfactsource
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.134040307+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_main_certname]:
+    title: puppet.conf_main_certname
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_main_certname]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Config
+    - Puppet::Config::Main[certname]
+    - Puppet::Config::Entry[maincertname]
+    - Concat::Fragment[puppet.conf_main_certname]
+    - Concat_fragment[puppet.conf_main_certname]
+    evaluation_time: 7.6833e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_main_certname
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - maincertname
+    - puppet::config::main
+    - main
+    - certname
+    - class
+    - puppet::config
+    time: '2021-01-19T12:41:30.134966071+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent]:
+    title: puppet.conf_agent
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[classfile]
+    - Puppet::Config::Entry[agent_classfile]
+    - Concat::Fragment[puppet.conf_agent]
+    - Concat_fragment[puppet.conf_agent]
+    evaluation_time: 0.000170542
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_classfile
+    - puppet::config::agent
+    - agent
+    - classfile
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.136855690+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_classfile]:
+    title: puppet.conf_agent_classfile
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_classfile]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[classfile]
+    - Puppet::Config::Entry[agent_classfile]
+    - Concat::Fragment[puppet.conf_agent_classfile]
+    - Concat_fragment[puppet.conf_agent_classfile]
+    evaluation_time: 0.000137689
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_classfile
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_classfile
+    - puppet::config::agent
+    - agent
+    - classfile
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.137814066+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_localconfig]:
+    title: puppet.conf_agent_localconfig
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_localconfig]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[localconfig]
+    - Puppet::Config::Entry[agent_localconfig]
+    - Concat::Fragment[puppet.conf_agent_localconfig]
+    - Concat_fragment[puppet.conf_agent_localconfig]
+    evaluation_time: 0.000192883
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_localconfig
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_localconfig
+    - puppet::config::agent
+    - agent
+    - localconfig
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.139546259+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_default_schedules]:
+    title: puppet.conf_agent_default_schedules
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_default_schedules]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[default_schedules]
+    - Puppet::Config::Entry[agent_default_schedules]
+    - Concat::Fragment[puppet.conf_agent_default_schedules]
+    - Concat_fragment[puppet.conf_agent_default_schedules]
+    evaluation_time: 0.000280979
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_default_schedules
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_default_schedules
+    - puppet::config::agent
+    - agent
+    - default_schedules
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.140763031+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_report]:
+    title: puppet.conf_agent_report
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_report]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[report]
+    - Puppet::Config::Entry[agent_report]
+    - Concat::Fragment[puppet.conf_agent_report]
+    - Concat_fragment[puppet.conf_agent_report]
+    evaluation_time: 8.1843e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_report
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_report
+    - puppet::config::agent
+    - agent
+    - report
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.142246586+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_masterport]:
+    title: puppet.conf_agent_masterport
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_masterport]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[masterport]
+    - Puppet::Config::Entry[agent_masterport]
+    - Concat::Fragment[puppet.conf_agent_masterport]
+    - Concat_fragment[puppet.conf_agent_masterport]
+    evaluation_time: 8.2626e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_masterport
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_masterport
+    - puppet::config::agent
+    - agent
+    - masterport
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.143187268+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_environment]:
+    title: puppet.conf_agent_environment
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_environment]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[environment]
+    - Puppet::Config::Entry[agent_environment]
+    - Concat::Fragment[puppet.conf_agent_environment]
+    - Concat_fragment[puppet.conf_agent_environment]
+    evaluation_time: 8.0022e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_environment
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_environment
+    - puppet::config::agent
+    - agent
+    - environment
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.144142126+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_listen]:
+    title: puppet.conf_agent_listen
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_listen]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[listen]
+    - Puppet::Config::Entry[agent_listen]
+    - Concat::Fragment[puppet.conf_agent_listen]
+    - Concat_fragment[puppet.conf_agent_listen]
+    evaluation_time: 9.3206e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_listen
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_listen
+    - puppet::config::agent
+    - agent
+    - listen
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.145441615+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_splay]:
+    title: puppet.conf_agent_splay
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_splay]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[splay]
+    - Puppet::Config::Entry[agent_splay]
+    - Concat::Fragment[puppet.conf_agent_splay]
+    - Concat_fragment[puppet.conf_agent_splay]
+    evaluation_time: 0.000136387
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_splay
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_splay
+    - puppet::config::agent
+    - agent
+    - splay
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.147155734+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_splaylimit]:
+    title: puppet.conf_agent_splaylimit
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_splaylimit]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[splaylimit]
+    - Puppet::Config::Entry[agent_splaylimit]
+    - Concat::Fragment[puppet.conf_agent_splaylimit]
+    - Concat_fragment[puppet.conf_agent_splaylimit]
+    evaluation_time: 9.9869e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_splaylimit
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_splaylimit
+    - puppet::config::agent
+    - agent
+    - splaylimit
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.148464359+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_runinterval]:
+    title: puppet.conf_agent_runinterval
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_runinterval]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[runinterval]
+    - Puppet::Config::Entry[agent_runinterval]
+    - Concat::Fragment[puppet.conf_agent_runinterval]
+    - Concat_fragment[puppet.conf_agent_runinterval]
+    evaluation_time: 0.000131738
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_runinterval
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_runinterval
+    - puppet::config::agent
+    - agent
+    - runinterval
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.150964319+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_noop]:
+    title: puppet.conf_agent_noop
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_noop]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[noop]
+    - Puppet::Config::Entry[agent_noop]
+    - Concat::Fragment[puppet.conf_agent_noop]
+    - Concat_fragment[puppet.conf_agent_noop]
+    evaluation_time: 0.000112151
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_noop
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_noop
+    - puppet::config::agent
+    - agent
+    - noop
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.153580959+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Concat_fragment[puppet.conf_agent_usecacheonfailure]:
+    title: puppet.conf_agent_usecacheonfailure
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/concat/manifests/fragment.pp"
+    line: 38
+    resource: Concat_fragment[puppet.conf_agent_usecacheonfailure]
+    resource_type: Concat_fragment
+    provider_used:
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Config
+    - Puppet::Config::Agent[usecacheonfailure]
+    - Puppet::Config::Entry[agent_usecacheonfailure]
+    - Concat::Fragment[puppet.conf_agent_usecacheonfailure]
+    - Concat_fragment[puppet.conf_agent_usecacheonfailure]
+    evaluation_time: 8.7756e-05
+    tags:
+    - _etc_puppetlabs_puppet_puppet.conf
+    - concat_fragment
+    - puppet.conf_agent_usecacheonfailure
+    - concat::fragment
+    - concat
+    - fragment
+    - puppet::config::entry
+    - puppet
+    - config
+    - entry
+    - agent_usecacheonfailure
+    - puppet::config::agent
+    - agent
+    - usecacheonfailure
+    - class
+    - puppet::agent::config
+    - puppet::agent
+    time: '2021-01-19T12:41:30.154508926+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Service[puppet]:
+    title: puppet
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/service/daemon.pp"
+    line: 17
+    resource: Service[puppet]
+    resource_type: Service
+    provider_used: systemd
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Service::Daemon
+    - Service[puppet]
+    evaluation_time: 0.079028368
+    tags:
+    - service
+    - puppet
+    - class
+    - puppet::agent::service::daemon
+    - agent
+    - daemon
+    - puppet::agent::service
+    - puppet::agent
+    time: '2021-01-19T12:41:30.162257372+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Service[puppet-run.timer]:
+    title: puppet-run.timer
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/service/systemd.pp"
+    line: 52
+    resource: Service[puppet-run.timer]
+    resource_type: Service
+    provider_used: systemd
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Service::Systemd
+    - Service[puppet-run.timer]
+    evaluation_time: 0.102520432
+    tags:
+    - service
+    - puppet-run.timer
+    - class
+    - puppet::agent::service::systemd
+    - puppet
+    - agent
+    - systemd
+    - puppet::agent::service
+    - puppet::agent
+    time: '2021-01-19T12:41:30.242597220+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/systemd/system/puppet-run.timer]:
+    title: "/etc/systemd/system/puppet-run.timer"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/service/systemd.pp"
+    line: 63
+    resource: File[/etc/systemd/system/puppet-run.timer]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Service::Systemd
+    - File[/etc/systemd/system/puppet-run.timer]
+    evaluation_time: 0.000704158
+    tags:
+    - file
+    - class
+    - puppet::agent::service::systemd
+    - puppet
+    - agent
+    - service
+    - systemd
+    - puppet::agent::service
+    - puppet::agent
+    time: '2021-01-19T12:41:30.345840613+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  File[/etc/systemd/system/puppet-run.service]:
+    title: "/etc/systemd/system/puppet-run.service"
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/service/systemd.pp"
+    line: 68
+    resource: File[/etc/systemd/system/puppet-run.service]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Service::Systemd
+    - File[/etc/systemd/system/puppet-run.service]
+    evaluation_time: 0.001037385
+    tags:
+    - file
+    - class
+    - puppet::agent::service::systemd
+    - puppet
+    - agent
+    - service
+    - systemd
+    - puppet::agent::service
+    - puppet::agent
+    time: '2021-01-19T12:41:30.346878408+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Exec[systemctl-daemon-reload-puppet]:
+    title: systemctl-daemon-reload-puppet
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/service/systemd.pp"
+    line: 9
+    resource: Exec[systemctl-daemon-reload-puppet]
+    resource_type: Exec
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Service::Systemd
+    - Exec[systemctl-daemon-reload-puppet]
+    evaluation_time: 0.000592015
+    tags:
+    - exec
+    - systemctl-daemon-reload-puppet
+    - class
+    - puppet::agent::service::systemd
+    - puppet
+    - agent
+    - service
+    - systemd
+    - puppet::agent::service
+    - puppet::agent
+    time: '2021-01-19T12:41:30.348386731+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Cron[puppet]:
+    title: puppet
+    file: "/etc/puppetlabs/code/environments/production/forge_modules/puppet/manifests/agent/service/cron.pp"
+    line: 16
+    resource: Cron[puppet]
+    resource_type: Cron
+    provider_used: crontab
+    containment_path:
+    - Stage[main]
+    - Puppet::Agent::Service::Cron
+    - Cron[puppet]
+    evaluation_time: 0.011022705
+    tags:
+    - cron
+    - puppet
+    - class
+    - puppet::agent::service::cron
+    - agent
+    - service
+    - puppet::agent::service
+    - puppet::agent
+    time: '2021-01-19T12:41:30.351615112+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Filebucket[puppet]:
+    title: puppet
+    file:
+    line:
+    resource: Filebucket[puppet]
+    resource_type: Filebucket
+    provider_used:
+    containment_path:
+    - Filebucket[puppet]
+    evaluation_time: 0.000248378
+    tags:
+    - filebucket
+    - puppet
+    time: '2021-01-19T12:41:30.365270126+00:00'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+corrective_change: false
+catalog_uuid: d79b4567-1b87-4d3b-8d22-497cfbb50b9f
+cached_catalog_status: not_used

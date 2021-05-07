@@ -1,0 +1,8 @@
+---
+:enabled: true
+
+# Proxy hostname to appear in reports JSON
+:reported_proxy_hostname: localhost
+
+# Print intput and output to the debug level
+:debug_payload: false
