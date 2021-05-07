@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.summary = 'Foreman Host Reports processor'
   s.description = 'Transform and upload Foreman host reports via REST API'
   s.authors = ['Lukas Zapletal']
-  s.email = 'lzap+spam@redhat.com'
+  s.email = 'lukas-x@zapletalovi.com'
   s.extra_rdoc_files = ['README.md', 'LICENSE']
   s.files = Dir['{lib,settings.d,bundler.d}/**/*'] + s.extra_rdoc_files
   s.homepage = 'http://github.com/theforeman/smart_proxy_host_reports'
