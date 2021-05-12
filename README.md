@@ -1,12 +1,15 @@
 # Smart Proxy Host Reports
 
-Transforms configuration and security management reports into Foreman-friendly JSON and sends them to a Foreman instance. For more information about Foreman JSON report format, visit [foreman_host_reports](https://github.com/theforeman/foreman_host_reports).
+Transforms configuration and security management reports into Foreman-friendly
+JSON and sends them to a Foreman instance. For more information about Foreman
+JSON report format, visit
+[foreman_host_reports](https://github.com/theforeman/foreman_host_reports).
 
 ## Usage
 
 Send a POST HTTP call to `/host_reports/FORMAT` where FORMAT is one of the following formats.
 
-## Puppet
+### Puppet
 
 Accepts Puppet Server YAML format:
 

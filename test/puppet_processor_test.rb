@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PuppetProcessorTest < Test::Unit::TestCase
   def test_deb
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/foreman-deb.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-deb.yaml'))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
     assert_equal "puppet", result["format"]
@@ -16,7 +16,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_dis
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/foreman-dis.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-dis.yaml'))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
     assert_equal "puppet", result["format"]
@@ -30,7 +30,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_jen
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/foreman-jen.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-jen.yaml'))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
     assert_equal "puppet", result["format"]
@@ -44,7 +44,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_old
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/foreman-old.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-old.yaml'))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
     assert_equal "puppet", result["format"]
@@ -58,7 +58,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_red
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/foreman-red.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-red.yaml'))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
     assert_equal "puppet", result["format"]
@@ -72,7 +72,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_web
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/foreman-web.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-web.yaml'))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
     assert_equal "puppet", result["format"]
@@ -92,7 +92,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_web_snapshot
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/foreman-web.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-web.yaml'))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
     snapshot_filename = 'snapshots/foreman-web.json'
