@@ -97,9 +97,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
     result = processor.to_foreman
     snapshot_filename = 'snapshots/foreman-web.json'
     output_file = File.join(File.dirname(__FILE__), snapshot_filename)
-    if File.exist? output_file
-      output = File.read(output_file)
-    else
+    unless File.exist? output_file
       output = result
       File.write(output_file, JSON.pretty_generate(result))
     end
