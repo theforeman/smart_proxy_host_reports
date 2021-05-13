@@ -29,10 +29,10 @@ class PuppetProcessorTest < Test::Unit::TestCase
     assert_equal [], result["keywords"]
   end
 
-  def test_jen
+  def test_jen_as_json
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-jen.yaml'))
     processor = Processor.new_processor("puppet", input)
-    result = processor.to_foreman
+    result = JSON.parse(processor.to_foreman_as_json)
     assert_equal "puppet", result["format"]
     assert_equal "jen.example.com", result["host"]
     assert_equal 11, result["report_format"]

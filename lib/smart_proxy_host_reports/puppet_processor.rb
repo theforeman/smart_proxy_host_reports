@@ -1,15 +1,14 @@
 # frozen_string_literal: true
-require 'proxy/log'
 
-class PuppetProcessor
-  include ::Proxy::Log
-
+class PuppetProcessor < Processor
   YAML_CLEAN = /!ruby\/object.*$/.freeze
   KEYS_TO_COPY = %w[report_format puppet_version environment metrics].freeze
   MAX_EVAL_TIMES = 29
 
   def initialize(data)
-    @data = YAML.safe_load(data.gsub(YAML_CLEAN,''), permitted_classes: [Symbol, Time, Date])
+    measure :parse do
+      @data = YAML.safe_load(data.gsub(YAML_CLEAN,''), permitted_classes: [Symbol, Time, Date])
+    end
     @result = {}
     @evaluation_times = []
     @keywords_set = {}
@@ -85,19 +84,21 @@ class PuppetProcessor
   end
 
   def to_foreman
-    @result['format'] = 'puppet'
-    @result['id'] = report_id
-    @result['host'] = @data['host']
-    @result['proxy'] = Proxy::HostReports::Plugin.settings.reported_proxy_hostname
-    @result['reported_at'] = @data['time']
-    KEYS_TO_COPY.each do |key|
-      @result[key] = @data[key]
+    measure :process do
+      @result['format'] = 'puppet'
+      @result['id'] = report_id
+      @result['host'] = @data['host']
+      @result['proxy'] = Proxy::HostReports::Plugin.settings.reported_proxy_hostname
+      @result['reported_at'] = @data['time']
+      KEYS_TO_COPY.each do |key|
+        @result[key] = @data[key]
+      end
+      @result['logs'] = process_logs
+      @result['resource_statuses'] = process_resource_statuses
+      @result['keywords'] = @keywords_set.keys.to_a
+      @result['evaluation_times'] = process_evaluation_times
+      @result['errors'] = @errors unless @errors.empty?
     end
-    @result['logs'] = process_logs
-    @result['resource_statuses'] = process_resource_statuses
-    @result['keywords'] = @keywords_set.keys.to_a
-    @result['evaluation_times'] = process_evaluation_times
-    @result['errors'] = @errors unless @errors.empty?
     if debug_payload?
       logger.debug { JSON.pretty_generate(@result) }
     end
