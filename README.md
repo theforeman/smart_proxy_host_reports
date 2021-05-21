@@ -16,6 +16,30 @@ Accepts Puppet Server YAML format:
 * [Example input](test/fixtures/foreman-web.yaml)
 * [Example output](test/snapshots/foreman-web.json)
 
+## Development setup
+
+Few words about setting up a dev setup.
+
+### Ansible
+
+Checkoud foreman-ansible-modules and build it via `make` command. Configure
+Ansible collection path to the build directory:
+
+    [defaults]
+    collection_path = /home/lzap/work/foreman-ansible-modules/build
+    callback_whitelist = foreman
+    [callback_foreman]
+    url = http://localhost:8448/host_reports
+    verify_certs = 0
+    client_cert = /home/lzap/DummyX509/client-one.crt
+    client_key = /home/lzap/DummyX509/client-one.key
+
+Configure Foreman Ansible callback with the correct Foreman URL:
+
+Then call Ansible:
+
+    ANSIBLE_LOAD_CALLBACK_PLUGINS=1 ansible localhost -m ping -vvv
+
 ## Contributing
 
 Fork and send a Pull Request. Thanks!

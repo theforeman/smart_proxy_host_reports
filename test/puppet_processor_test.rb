@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class PuppetProcessorTest < Test::Unit::TestCase
+  def setup
+    Proxy::HostReports::Plugin.settings.stubs(:reported_proxy_hostname).returns('test-proxy.example.com')
+  end
+
   def test_deb
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-deb.yaml'))
     processor = Processor.new_processor("puppet", input)
