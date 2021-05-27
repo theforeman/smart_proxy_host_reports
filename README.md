@@ -9,11 +9,11 @@ JSON report format, visit
 
 Send a POST HTTP call to `/host_reports/FORMAT` where FORMAT is one of the following formats.
 
-### Puppet
+### Puppet
 
 Accepts Puppet Server YAML format:
 
-* [Example input](test/fixtures/foreman-web.yaml)
+* [Example input](test/fixtures/puppet6-foreman-web.yaml)
 * [Example output](test/snapshots/foreman-web.json)
 
 ## Development setup
