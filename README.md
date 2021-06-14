@@ -52,6 +52,31 @@ To import a report directly info Foreman:
 curl -H "Accept:application/json,version=2" -H "Content-Type:application/json" -X POST -d @test/snapshots/foreman-web.json http://localhost:5000/api/v2/host_reports
 ```
 
+### Puppet
+
+To install and configure a Puppetserver on EL7, run the following:
+
+```bash
+# Install the server - modify as needed for your platform
+yum -y install https://yum.puppet.com/puppet7-release-el-7.noarch.rpm
+yum -y install puppetserver
+# Correct $PATH in the current shell - happens on start of fresh shells automatically
+source /etc/profile.d/puppet-agent.sh
+# Configure the HTTP report processor
+puppet config set reports store,http
+puppet config set reporturl http://$HOSTNAME:8000/host_reports/puppet
+# Enable & start the service
+systemctl enable --now puppetserver
+```
+
+By default an agent connects to `puppet` which may not resolve. Set it to your hostname:
+
+```bash
+puppet config set server $HOSTNAME
+```
+
+You can manually trigger a puppet run by using `puppet agent -t`. You may need to look at `/var/log/puppetlabs/puppetserver/puppetserver.log` to see errors.
+
 ## Contributing
 
 Fork and send a Pull Request. Thanks!
