@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 require 'proxy/log'
 
+# TODO: move everything into a module
+
 class Processor
   include ::Proxy::Log
 
@@ -11,6 +13,38 @@ class Processor
     else
       NotImplementedError.new
     end
+  end
+
+  def initialize(data)
+    @keywords_set = {}
+    @errors = []
+  end
+
+  def to_foreman
+    # not implemented
+  end
+
+  def debug_payload?
+    Proxy::HostReports::Plugin.settings.debug_payload
+  end
+
+  def add_keywords(*keywords)
+    keywords.each do |keyword|
+      @keywords_set[keyword] = true
+    end
+  end
+
+  def keywords
+    @keywords_set.keys.to_a rescue []
+  end
+
+  attr_reader :errors
+  def log_error(message)
+    @errors << message.to_s
+  end
+
+  def errors?
+    @errors&.any?
   end
 
   attr_reader :telemetry

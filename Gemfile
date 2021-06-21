@@ -4,6 +4,7 @@ gemspec
 
 group :development do
   gem 'mocha'
+  gem 'webmock'
   gem 'rack-test'
   gem 'rake'
   gem 'rubocop'

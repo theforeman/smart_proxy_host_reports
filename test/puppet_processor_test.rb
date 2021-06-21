@@ -102,7 +102,6 @@ class PuppetProcessorTest < Test::Unit::TestCase
     snapshot_filename = 'snapshots/foreman-web.json'
     output_file = File.join(File.dirname(__FILE__), snapshot_filename)
     unless File.exist? output_file
-      output = result
       File.write(output_file, JSON.pretty_generate(result))
     end
     diff_result = ::JsonDiff.diff(JSON.parse(File.read(output_file), quirks_mode: true), result)

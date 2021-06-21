@@ -6,29 +6,18 @@ class PuppetProcessor < Processor
   MAX_EVAL_TIMES = 29
 
   def initialize(data)
+    super(data)
     measure :parse do
       @data = YAML.safe_load(data.gsub(YAML_CLEAN,''), permitted_classes: [Symbol, Time, Date])
     end
     @result = {}
     @evaluation_times = []
-    @keywords_set = {}
-    @errors = []
     logger.debug "Processing report #{report_id}"
     logger.debug(@data) if debug_payload?
   end
 
-  def debug_payload?
-    Proxy::HostReports::Plugin.settings.debug_payload
-  end
-
   def report_id
     @data['transaction_uuid'] || SecureRandom.uuid
-  end
-
-  def add_keywords(*keywords)
-    keywords.each do |keyword|
-      @keywords_set[keyword] = true
-    end
   end
 
   def process_logs
@@ -83,7 +72,7 @@ class PuppetProcessor < Processor
     []
   end
 
-  def to_foreman
+  def process
     measure :process do
       @result['format'] = 'puppet'
       @result['id'] = report_id
@@ -95,10 +84,14 @@ class PuppetProcessor < Processor
       end
       @result['logs'] = process_logs
       @result['resource_statuses'] = process_resource_statuses
-      @result['keywords'] = @keywords_set.keys.to_a
+      @result['keywords'] = keywords
       @result['evaluation_times'] = process_evaluation_times
-      @result['errors'] = @errors unless @errors.empty?
+      @result['errors'] = errors if errors?
     end
+  end
+
+  def to_foreman
+    process
     if debug_payload?
       logger.debug { JSON.pretty_generate(@result) }
     end
