@@ -1,6 +1,7 @@
 {
   "host_report": {
     "format": "puppet",
+    "version": 1,
     "host": "report.example.com",
     "reported_at": "2021-01-19T12:34:02.841645028Z",
     "status": 0,
