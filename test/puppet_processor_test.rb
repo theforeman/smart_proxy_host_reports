@@ -2,90 +2,88 @@ require 'test_helper'
 
 class PuppetProcessorTest < Test::Unit::TestCase
   def setup
-    Proxy::HostReports::Plugin.settings.stubs(:reported_proxy_hostname).returns('test-proxy.example.com')
+    Proxy::HostReports::Plugin.settings.stubs(:reported_proxy_hostname).returns('localhost')
   end
 
   def test_deb
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-deb.yaml'))
     processor = Processor.new_processor("puppet", input)
-    result = processor.to_foreman
+    result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "deb.example.com", result["host"]
-    assert_equal 10, result["report_format"]
-    assert_equal "6.16.0", result["puppet_version"]
-    assert_equal ["notice", "//deb.example.com/Puppet","Applied catalog in 8.03 seconds"], result["logs"].first
-    assert_equal 405, result["metrics"]["resources"]["values"].first[2]
-    assert_equal 30, result["evaluation_times"].count
+    assert_equal 10, result["body"]["report_format"]
+    assert_equal "6.16.0", result["body"]["puppet_version"]
+    assert_equal ["notice", "//deb.example.com/Puppet","Applied catalog in 8.03 seconds"], result["body"]["logs"].first
+    assert_equal 405, result["body"]["metrics"]["resources"]["values"].first[2]
+    assert_equal 30, result["body"]["evaluation_times"].count
     assert_equal ["PuppetResourceFailed:Package[bzip2]", "PuppetHasFailure"], result["keywords"]
   end
 
   def test_dis
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-dis.yaml'))
     processor = Processor.new_processor("puppet", input)
-    result = processor.to_foreman
+    result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "dis.example.com", result["host"]
-    assert_equal 10, result["report_format"]
-    assert_equal "6.15.0", result["puppet_version"]
-    assert_equal ["notice", "//dis.example.com/Puppet", "Applied catalog in 2.08 seconds"], result["logs"].first
-    assert_equal 168, result["metrics"]["resources"]["values"].first[2]
-    assert_equal 30, result["evaluation_times"].count
+    assert_equal ["notice", "//dis.example.com/Puppet", "Applied catalog in 2.08 seconds"], result["body"]["logs"].first
+    assert_equal 168, result["body"]["metrics"]["resources"]["values"].first[2]
+    assert_equal 30, result["body"]["evaluation_times"].count
     assert_equal [], result["keywords"]
   end
 
   def test_jen_as_json
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-jen.yaml'))
     processor = Processor.new_processor("puppet", input)
-    result = JSON.parse(processor.to_foreman_as_json)
+    result = JSON.parse(processor.to_foreman_as_json)["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "jen.example.com", result["host"]
-    assert_equal 11, result["report_format"]
-    assert_equal "6.19.1", result["puppet_version"]
-    assert_equal ["notice", "//jen.example.com/Puppet", "Applied catalog in 34.49 seconds"], result["logs"].first
-    assert_equal 346, result["metrics"]["resources"]["values"].first[2]
-    assert_equal 30, result["evaluation_times"].count
+    assert_equal 11, result["body"]["report_format"]
+    assert_equal "6.19.1", result["body"]["puppet_version"]
+    assert_equal ["notice", "//jen.example.com/Puppet", "Applied catalog in 34.49 seconds"], result["body"]["logs"].first
+    assert_equal 346, result["body"]["metrics"]["resources"]["values"].first[2]
+    assert_equal 30, result["body"]["evaluation_times"].count
     assert_equal [], result["keywords"]
   end
 
   def test_old
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-old.yaml'))
     processor = Processor.new_processor("puppet", input)
-    result = processor.to_foreman
+    result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "old.example.com", result["host"]
-    assert_equal 6, result["report_format"]
-    assert_equal "4.10.12", result["puppet_version"]
-    assert_equal ["notice", "Puppet", "Applied catalog in 0.06 seconds"], result["logs"].first
-    assert_equal 7, result["metrics"]["resources"]["values"].first[2]
-    assert_equal 7, result["evaluation_times"].count
+    assert_equal 6, result["body"]["report_format"]
+    assert_equal "4.10.12", result["body"]["puppet_version"]
+    assert_equal ["notice", "Puppet", "Applied catalog in 0.06 seconds"], result["body"]["logs"].first
+    assert_equal 7, result["body"]["metrics"]["resources"]["values"].first[2]
+    assert_equal 7, result["body"]["evaluation_times"].count
     assert_equal [], result["keywords"]
   end
 
   def test_red
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-red.yaml'))
     processor = Processor.new_processor("puppet", input)
-    result = processor.to_foreman
+    result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "red.example.com", result["host"]
-    assert_equal 11, result["report_format"]
-    assert_equal "6.19.1", result["puppet_version"]
-    assert_equal ["notice", "//red.example.com/Puppet", "Applied catalog in 14.33 seconds"], result["logs"].first
-    assert_equal 400, result["metrics"]["resources"]["values"].first[2]
-    assert_equal 30, result["evaluation_times"].count
+    assert_equal 11, result["body"]["report_format"]
+    assert_equal "6.19.1", result["body"]["puppet_version"]
+    assert_equal ["notice", "//red.example.com/Puppet", "Applied catalog in 14.33 seconds"], result["body"]["logs"].first
+    assert_equal 400, result["body"]["metrics"]["resources"]["values"].first[2]
+    assert_equal 30, result["body"]["evaluation_times"].count
     assert_equal ["PuppetIsOutOfSync"], result["keywords"]
   end
 
   def test_web
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-web.yaml'))
     processor = Processor.new_processor("puppet", input)
-    result = processor.to_foreman
+    result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
-    assert_equal "web.example.com", result["host"]
-    assert_equal 11, result["report_format"]
-    assert_equal "6.19.1", result["puppet_version"]
-    assert_equal ["notice", "//web.example.com/Puppet", "Applied catalog in 8.08 seconds"], result["logs"].first
-    assert_equal 539, result["metrics"]["resources"]["values"].first[2]
-    assert_equal 30, result["evaluation_times"].count
+    assert_equal "report.example.com", result["host"]
+    assert_equal 11, result["body"]["report_format"]
+    assert_equal "6.19.1", result["body"]["puppet_version"]
+    assert_equal ["notice", "//report.example.com/Puppet", "Applied catalog in 8.08 seconds"], result["body"]["logs"].first
+    assert_equal 539, result["body"]["metrics"]["resources"]["values"].first[2]
+    assert_equal 30, result["body"]["evaluation_times"].count
     assert_equal [
       "PuppetHasCorrectiveChange",
       "PuppetHasSkips",
@@ -99,6 +97,8 @@ class PuppetProcessorTest < Test::Unit::TestCase
     input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-web.yaml'))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
+    # remove volatile fields
+    result["host_report"]["body"]["telemetry"] = {}
     snapshot_filename = 'snapshots/foreman-web.json'
     output_file = File.join(File.dirname(__FILE__), snapshot_filename)
     unless File.exist? output_file

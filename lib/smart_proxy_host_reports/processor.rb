@@ -24,6 +24,23 @@ class Processor
     # not implemented
   end
 
+  def build_report_root(format:, version:, host:, reported_at:, status:, proxy:, body:, keywords:)
+    {
+      "host_report" => {
+        "format" => format,
+        "version" => version,
+        "host" => host,
+        "reported_at" => reported_at,
+        "status" => status,
+        "proxy" => proxy,
+        "body" => body,
+        "keywords" => keywords
+      }
+    }
+    # TODO add body string serialization and metric with total time
+    # and for tests there must be an option to turn this off
+  end
+
   def debug_payload?
     Proxy::HostReports::Plugin.settings.debug_payload
   end
@@ -47,6 +64,7 @@ class Processor
     @errors&.any?
   end
 
+  # TODO support multiple metrics and adding total time
   attr_reader :telemetry
   def measure(metric)
     t1 = Process.clock_gettime(Process::CLOCK_MONOTONIC)

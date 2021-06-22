@@ -1,5 +1,5 @@
 --- !ruby/object:Puppet::Transaction::Report
-host: web.example.com
+host: report.example.com
 time: '2021-01-19T12:34:02.841645028Z'
 configuration_version: 1611059652
 transaction_uuid: 3db9c6aa-694a-47e5-896d-b115b68487c2
@@ -13,7 +13,7 @@ environment: production
 logs:
 - level: notice
   message: Applied catalog in 8.08 seconds
-  source: "//web.example.com/Puppet"
+  source: "//report.example.com/Puppet"
   tags:
   - notice
   time: '2021-01-19T12:34:35.217683019+00:00'

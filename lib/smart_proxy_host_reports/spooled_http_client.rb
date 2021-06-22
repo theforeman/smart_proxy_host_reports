@@ -26,8 +26,8 @@ class SpooledHttpClient
     @worker = Thread.new do
       while true do
         begin
-          Thread.stop
           process
+          Thread.stop
         rescue Exception => e
           logger.error "Error during spool processing: #{e}", e
         end
@@ -40,9 +40,11 @@ class SpooledHttpClient
     client = ::Proxy::HttpRequest::ForemanRequest.new
     factory = client.request_factory
     # send all files via a single persistent HTTP connection
+    logger.debug "Opening HTTP connection to Foreman"
     client.http.start do |http|
       Dir.glob(spool_path("todo", "*")) do |filename|
         basename = File.basename(filename)
+        logger.debug "Sending #{basename}"
         begin
           post = factory.create_post("/api/v2/host_reports", File.read(filename))
           http.request(post)
@@ -58,7 +60,7 @@ class SpooledHttpClient
         end
       end
     end
-    logger.debug "Finished uploading #{processed} reports"
+    logger.debug "Finished uploading #{processed} reports, closing connection"
   end
 
   def wakeup
@@ -66,7 +68,7 @@ class SpooledHttpClient
   end
 
   def spool(filename, data)
-    filename = filename.gsub(/[^0-9a-z_-]/i, '')
+    filename = filename.gsub(/[^0-9a-z]/i, '')
     file = spool_path("temp", filename)
     File.open(file, 'w') { |f| f.write(data) }
     spool_move("temp", "todo", filename)

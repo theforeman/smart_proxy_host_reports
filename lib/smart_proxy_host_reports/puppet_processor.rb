@@ -10,7 +10,7 @@ class PuppetProcessor < Processor
     measure :parse do
       @data = YAML.safe_load(data.gsub(YAML_CLEAN,''), permitted_classes: [Symbol, Time, Date])
     end
-    @result = {}
+    @body = {}
     @evaluation_times = []
     logger.debug "Processing report #{report_id}"
     logger.debug(@data) if debug_payload?
@@ -74,27 +74,37 @@ class PuppetProcessor < Processor
 
   def process
     measure :process do
-      @result['format'] = 'puppet'
-      @result['id'] = report_id
-      @result['host'] = @data['host']
-      @result['proxy'] = Proxy::HostReports::Plugin.settings.reported_proxy_hostname
-      @result['reported_at'] = @data['time']
+      @body['format'] = 'puppet'
+      @body['id'] = report_id
+      @body['host'] = @data['host']
+      @body['proxy'] = Proxy::HostReports::Plugin.settings.reported_proxy_hostname
+      @body['reported_at'] = @data['time']
       KEYS_TO_COPY.each do |key|
-        @result[key] = @data[key]
+        @body[key] = @data[key]
       end
-      @result['logs'] = process_logs
-      @result['resource_statuses'] = process_resource_statuses
-      @result['keywords'] = keywords
-      @result['evaluation_times'] = process_evaluation_times
-      @result['errors'] = errors if errors?
+      @body['logs'] = process_logs
+      @body['resource_statuses'] = process_resource_statuses
+      @body['keywords'] = keywords
+      @body['evaluation_times'] = process_evaluation_times
+      @body['telemetry'] = telemetry
+      @body['errors'] = errors if errors?
     end
   end
 
   def to_foreman
     process
     if debug_payload?
-      logger.debug { JSON.pretty_generate(@result) }
+      logger.debug { JSON.pretty_generate(@body) }
     end
-    @result
+    build_report_root(
+      format: 'puppet',
+      version: 1,
+      host: @body['host'],
+      reported_at: @body['reported_at'],
+      status: 0,
+      proxy: @body['proxy'],
+      body: @body,
+      keywords: @body['keywords']
+    )
   end
 end
