@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{lib,settings.d,bundler.d}/**/*'] + s.extra_rdoc_files
   s.homepage = 'http://github.com/theforeman/smart_proxy_host_reports'
   s.license = 'GPL-3.0-or-later'
+  s.required_ruby_version = ">= 2.5"
 
   s.add_dependency "concurrent-ruby", "~> 1.0"
   s.add_dependency "json", ">= 2.3.0"

@@ -15,7 +15,7 @@ class Processor
     end
   end
 
-  def initialize(data)
+  def initialize(*)
     @keywords_set = {}
     @errors = []
   end

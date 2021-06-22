@@ -16,6 +16,7 @@ class AnsibleProcessor < Processor
         uuid = @data['xxx'] || SecureRandom.uuid
         logger.debug "Processing report #{uuid}"
         logger.debug(@data) if debug_payload?
+        logger.debug play
       end
     end
   

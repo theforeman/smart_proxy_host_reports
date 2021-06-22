@@ -28,7 +28,7 @@ class SpooledHttpClient
         begin
           process
           Thread.stop
-        rescue Exception => e
+        rescue StandardError => e
           logger.error "Error during spool processing: #{e}", e
         end
       end
@@ -54,7 +54,7 @@ class SpooledHttpClient
             FileUtils.rm_f spool_path("todo", basename)
           end
           processed += 1
-        rescue Exception => e
+        rescue StandardError => e
           logger.warn "Unable to send #{basename}, will try on next request: #{e}", e
           raise if ENV["RACK_ENV"] == "test"
         end

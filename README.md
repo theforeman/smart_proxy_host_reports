@@ -40,6 +40,18 @@ Then call Ansible:
 
     ANSIBLE_LOAD_CALLBACK_PLUGINS=1 ansible localhost -m ping -vvv
 
+## Example data
+
+For testing, there are several example data. Before importing them into Foreman, make sure to have `localhost` smart proxy and also a host named `report.example.com`.
+
+### Importing into Foreman directly
+
+To import a report directly info Foreman:
+
+```
+curl -H "Accept:application/json,version=2" -H "Content-Type:application/json" -X POST -d @test/snapshots/foreman-web.json http://localhost:5000/api/v2/host_reports
+```
+
 ## Contributing
 
 Fork and send a Pull Request. Thanks!
