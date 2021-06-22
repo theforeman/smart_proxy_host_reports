@@ -13,7 +13,7 @@ group :development do
   gem "test-unit"
   gem "pry"
   gem "json-diff"
-  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
     gem "rufo"
   end
 end
