@@ -36,23 +36,26 @@ class SpooledHttpClient
   end
 
   def process
+    processed = 0
     client = ::Proxy::HttpRequest::ForemanRequest.new
     factory = client.request_factory
-    processed = 0
-    Dir.glob(spool_path("todo", "*")) do |filename|
-      basename = File.basename(filename)
-      begin
-        post = factory.create_post("/api/v2/host_reports", File.read(filename))
-        client.send_request(post)
-        if Proxy::HostReports::Plugin.settings.keep_reports
-          spool_move("todo", "done", basename)
-        else
-          FileUtils.rm_f spool_path("todo", basename)
+    # send all files via a single persistent HTTP connection
+    client.http.start do |http|
+      Dir.glob(spool_path("todo", "*")) do |filename|
+        basename = File.basename(filename)
+        begin
+          post = factory.create_post("/api/v2/host_reports", File.read(filename))
+          http.request(post)
+          if Proxy::HostReports::Plugin.settings.keep_reports
+            spool_move("todo", "done", basename)
+          else
+            FileUtils.rm_f spool_path("todo", basename)
+          end
+          processed += 1
+        rescue Exception => e
+          logger.warn "Unable to send #{basename}, will try on next request: #{e}", e
+          raise if ENV["RACK_ENV"] == "test"
         end
-        processed += 1
-      rescue Exception => e
-        logger.warn "Unable to send #{basename}, will try on next request: #{e}", e
-        raise if ENV["RACK_ENV"] == "test"
       end
     end
     logger.debug "Finished uploading #{processed} reports"
