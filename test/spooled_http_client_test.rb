@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class SpooledHttpClientTest < Test::Unit::TestCase
   def setup
@@ -38,14 +38,14 @@ class SpooledHttpClientTest < Test::Unit::TestCase
   end
 
   def test_process_plain
-    stub_request(:post, @foreman_url + '/api/v2/host_reports').with(:body => "body").to_return(:status => [200, 'OK'], :body => "body")
+    stub_request(:post, @foreman_url + "/api/v2/host_reports").with(:body => "body").to_return(:status => [200, "OK"], :body => "body")
     @client.spool("uuid", "body")
     @client.process
     assert assert_spool("done", "uuid")
   end
 
   def test_process_plain_two
-    stub_request(:post, @foreman_url + '/api/v2/host_reports').with(:body => "body").to_return(:status => [200, 'OK'], :body => "body")
+    stub_request(:post, @foreman_url + "/api/v2/host_reports").with(:body => "body").to_return(:status => [200, "OK"], :body => "body")
     @client.spool("uuid1", "body")
     @client.spool("uuid2", "body")
     @client.process

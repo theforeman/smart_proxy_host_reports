@@ -1,26 +1,26 @@
-require 'test_helper'
+require "test_helper"
 
 class PuppetProcessorTest < Test::Unit::TestCase
   def setup
-    Proxy::HostReports::Plugin.settings.stubs(:reported_proxy_hostname).returns('localhost')
+    Proxy::HostReports::Plugin.settings.stubs(:reported_proxy_hostname).returns("localhost")
   end
 
   def test_deb
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-deb.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-deb.yaml"))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "deb.example.com", result["host"]
     assert_equal 10, result["body"]["report_format"]
     assert_equal "6.16.0", result["body"]["puppet_version"]
-    assert_equal ["notice", "//deb.example.com/Puppet","Applied catalog in 8.03 seconds"], result["body"]["logs"].first
+    assert_equal ["notice", "//deb.example.com/Puppet", "Applied catalog in 8.03 seconds"], result["body"]["logs"].first
     assert_equal 405, result["body"]["metrics"]["resources"]["values"].first[2]
     assert_equal 30, result["body"]["evaluation_times"].count
     assert_equal ["PuppetResourceFailed:Package[bzip2]", "PuppetHasFailure"], result["keywords"]
   end
 
   def test_dis
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-dis.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-dis.yaml"))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
@@ -32,7 +32,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_jen_as_json
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-jen.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-jen.yaml"))
     processor = Processor.new_processor("puppet", input)
     result = JSON.parse(processor.to_foreman_as_json)["host_report"]
     assert_equal "puppet", result["format"]
@@ -46,7 +46,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_old
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-old.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-old.yaml"))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
@@ -60,7 +60,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_red
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-red.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-red.yaml"))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
@@ -74,7 +74,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
   end
 
   def test_web
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-web.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-web.yaml"))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman["host_report"]
     assert_equal "puppet", result["format"]
@@ -89,17 +89,17 @@ class PuppetProcessorTest < Test::Unit::TestCase
       "PuppetHasSkips",
       "PuppetResourceFailed:File[mime_magic.conf]",
       "PuppetHasFailure",
-      "PuppetHasChange"
+      "PuppetHasChange",
     ], result["keywords"]
   end
 
   def test_web_snapshot
-    input = File.read(File.join(File.dirname(__FILE__), 'fixtures/puppet6-foreman-web.yaml'))
+    input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-web.yaml"))
     processor = Processor.new_processor("puppet", input)
     result = processor.to_foreman
     # remove volatile fields
     result["host_report"]["body"]["telemetry"] = {}
-    snapshot_filename = 'snapshots/foreman-web.json'
+    snapshot_filename = "snapshots/foreman-web.json"
     output_file = File.join(File.dirname(__FILE__), snapshot_filename)
     unless File.exist? output_file
       File.write(output_file, JSON.pretty_generate(result))

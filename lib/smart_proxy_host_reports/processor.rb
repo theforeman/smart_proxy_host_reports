@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'proxy/log'
+require "proxy/log"
 
 # TODO: move everything into a module
 
@@ -8,7 +8,7 @@ class Processor
 
   def self.new_processor(format, data)
     case format
-    when 'puppet'
+    when "puppet"
       PuppetProcessor.new(data)
     else
       NotImplementedError.new
@@ -34,8 +34,8 @@ class Processor
         "status" => status,
         "proxy" => proxy,
         "body" => body,
-        "keywords" => keywords
-      }
+        "keywords" => keywords,
+      },
     }
     # TODO add body string serialization and metric with total time
     # and for tests there must be an option to turn this off
@@ -56,6 +56,7 @@ class Processor
   end
 
   attr_reader :errors
+
   def log_error(message)
     @errors << message.to_s
   end
@@ -66,6 +67,7 @@ class Processor
 
   # TODO support multiple metrics and adding total time
   attr_reader :telemetry
+
   def measure(metric)
     t1 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     yield

@@ -24,7 +24,7 @@ class SpooledHttpClient
 
   def start_processing
     @worker = Thread.new do
-      while true do
+      while true
         begin
           process
           Thread.stop
@@ -68,9 +68,9 @@ class SpooledHttpClient
   end
 
   def spool(filename, data)
-    filename = filename.gsub(/[^0-9a-z]/i, '')
+    filename = filename.gsub(/[^0-9a-z]/i, "")
     file = spool_path("temp", filename)
-    File.open(file, 'w') { |f| f.write(data) }
+    File.open(file, "w") { |f| f.write(data) }
     spool_move("temp", "todo", filename)
     wakeup
   end

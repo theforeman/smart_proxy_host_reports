@@ -1,8 +1,8 @@
-require 'sinatra'
-require 'yaml'
-require 'smart_proxy_host_reports/host_reports'
-require 'smart_proxy_host_reports/processor'
-require 'smart_proxy_host_reports/puppet_processor'
+require "sinatra"
+require "yaml"
+require "smart_proxy_host_reports/host_reports"
+require "smart_proxy_host_reports/processor"
+require "smart_proxy_host_reports/puppet_processor"
 
 module Proxy::HostReports
   class Api < ::Sinatra::Base
@@ -10,11 +10,11 @@ module Proxy::HostReports
     helpers ::Proxy::Helpers
 
     before do
-      content_type 'application/json'
+      content_type "application/json"
       halt(415, "Content type must be application/x-yaml") if request.env["CONTENT_TYPE"] != "application/x-yaml"
     end
-    
-    post '/:format' do
+
+    post "/:format" do
       format = params[:format]
       halt(404, "Format argument not specified") unless format
       input = request.body.read
