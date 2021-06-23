@@ -8,7 +8,12 @@ class PuppetProcessor < Processor
   def initialize(data)
     super(data)
     measure :parse do
-      @data = YAML.safe_load(data.gsub(YAML_CLEAN, ""), permitted_classes: [Symbol, Time, Date])
+      if Gem::Version.new(RUBY_VERSION) < Gem::Version.new("2.6.0")
+        # Ruby 2.5 or older does not have permitted_classes argument available
+        @data = YAML.load(data.gsub(YAML_CLEAN, ""))
+      else
+        @data = YAML.safe_load(data.gsub(YAML_CLEAN, ""), permitted_classes: [Symbol, Time, Date])
+      end
     end
     @body = {}
     @evaluation_times = []

@@ -22,3 +22,7 @@ Style:
 
 Bundler:
   Enabled: false
+
+Security/YAMLLoad:
+  Exclude:
+    - lib/smart_proxy_host_reports/puppet_processor.rb
