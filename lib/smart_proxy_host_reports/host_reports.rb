@@ -4,7 +4,7 @@ module Proxy::HostReports
       require "smart_proxy_host_reports/spooled_http_client"
     end
 
-    def load_dependency_injection_wirings(container, settings)
+    def load_dependency_injection_wirings(container, _settings)
       container.singleton_dependency :host_reports_spool, SpooledHttpClient
     end
   end
