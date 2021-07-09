@@ -22,17 +22,25 @@ class SpooledHttpClient
     end
   end
 
-  def start_processing
+  def start
+    @worker_running = true
     @worker = Thread.new do
-      while true
+      while @worker_running
         begin
+          logger.info "Started host reports spooled http client"
           process
           Thread.stop
         rescue StandardError => e
           logger.error "Error during spool processing: #{e}", e
         end
       end
+      logger.info "Stopped host reports spooled http client"
     end
+  end
+
+  def stop
+    @worker_running = false
+    wakeup
   end
 
   def process

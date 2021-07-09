@@ -1,3 +1,4 @@
+# TODO remove me
 class Spool
   class << self
     def initialize
