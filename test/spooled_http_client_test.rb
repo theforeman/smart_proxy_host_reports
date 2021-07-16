@@ -6,7 +6,7 @@ class SpooledHttpClientTest < Test::Unit::TestCase
     Proxy::SETTINGS.stubs(:foreman_url).returns(@foreman_url)
     Proxy::HostReports::Plugin.settings.stubs(:keep_reports).returns(true)
     @tmpdir = Dir.mktmpdir("spool-http-client-test")
-    @client = SpooledHttpClient.new(@tmpdir)
+    @client = SpooledHttpClient.instance.initialize_directory(@tmpdir)
   end
 
   def teardown

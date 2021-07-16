@@ -18,7 +18,7 @@ class PuppetProcessor < Processor
     @body = {}
     @evaluation_times = []
     logger.debug "Processing report #{report_id}"
-    logger.debug(@data) if debug_payload?
+    debug_payload("Input", @data)
   end
 
   def report_id
@@ -96,12 +96,12 @@ class PuppetProcessor < Processor
     end
   end
 
-  def to_foreman
+  def build_report
     process
     if debug_payload?
       logger.debug { JSON.pretty_generate(@body) }
     end
-    build_report_root(
+    report = build_report_root(
       format: "puppet",
       version: 1,
       host: @body["host"],
@@ -111,5 +111,14 @@ class PuppetProcessor < Processor
       body: @body,
       keywords: @body["keywords"],
     )
+  end
+
+  def spool_report
+    report_hash = build_report
+    debug_payload("Output", report_hash)
+    payload = measure :format do
+      report_hash.to_json
+    end
+    SpooledHttpClient.instance.spool(report_id, payload)
   end
 end

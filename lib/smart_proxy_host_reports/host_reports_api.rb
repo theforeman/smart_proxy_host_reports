@@ -21,7 +21,7 @@ module Proxy::HostReports
       input = request.body.read
       log_halt(415, "Missing body") if input.empty?
       processor = Processor.new_processor(format, input)
-      processor.to_foreman_as_json
+      processor.spool_report
     rescue => e
       log_halt 415, e, "Error during report processing: #{e.message}"
     end

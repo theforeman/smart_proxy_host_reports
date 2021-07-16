@@ -1,5 +1,6 @@
 class SpooledHttpClient
   include Proxy::Log
+  include Singleton
 
   def spool_path(state = "temp", filename = nil)
     if filename
@@ -14,12 +15,17 @@ class SpooledHttpClient
     FileUtils.mv(spool_path(from_state, filename), spool_path(to_state, filename))
   end
 
-  def initialize(spool_dir = Proxy::HostReports::Plugin.settings.spool_dir)
-    @spool_dir = spool_dir
+  def initialize
     @worker = nil
-    ["temp", "todo", "done"].each do |state|
+  end
+
+  def initialize_directory(spool_dir = Proxy::HostReports::Plugin.settings.spool_dir)
+    raise("Setting spool_dir uninitialized") unless spool_dir
+    @spool_dir = spool_dir
+    ["temp", "todo", "done", "fail"].each do |state|
       FileUtils.mkdir_p(spool_path(state))
     end
+    self
   end
 
   def start
@@ -29,18 +35,20 @@ class SpooledHttpClient
         begin
           logger.info "Started host reports spooled http client"
           process
-          Thread.stop
         rescue StandardError => e
           logger.error "Error during spool processing: #{e}", e
         end
+        Thread.stop
       end
       logger.info "Stopped host reports spooled http client"
     end
   end
 
+  # smart proxy currently does not support stopping services
   def stop
     @worker_running = false
     wakeup
+    @worker.join
   end
 
   def process
@@ -52,14 +60,21 @@ class SpooledHttpClient
     client.http.start do |http|
       Dir.glob(spool_path("todo", "*")) do |filename|
         basename = File.basename(filename)
-        logger.debug "Sending #{basename}"
+        logger.debug "Sending report #{basename}"
         begin
           post = factory.create_post("/api/v2/host_reports", File.read(filename))
-          http.request(post)
-          if Proxy::HostReports::Plugin.settings.keep_reports
-            spool_move("todo", "done", basename)
+          response = http.request(post)
+          logger.info "Report #{basename} sent with HTTP response #{response.code}"
+          logger.debug { "Response body: #{response.body}"}
+          if response.code.start_with?("2")
+            if Proxy::HostReports::Plugin.settings.keep_reports
+              spool_move("todo", "done", basename)
+            else
+              FileUtils.rm_f spool_path("todo", basename)
+            end
           else
-            FileUtils.rm_f spool_path("todo", basename)
+            logger.debug { "Moving failed report to 'fail' spool directory"}
+            spool_move("todo", "done", basename)
           end
           processed += 1
         rescue StandardError => e

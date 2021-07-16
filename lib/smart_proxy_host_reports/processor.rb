@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "pp"
 require "proxy/log"
 
 # TODO: move everything into a module
@@ -20,10 +21,6 @@ class Processor
     @errors = []
   end
 
-  def to_foreman
-    # not implemented
-  end
-
   def build_report_root(format:, version:, host:, reported_at:, status:, proxy:, body:, keywords:)
     {
       "host_report" => {
@@ -43,6 +40,11 @@ class Processor
 
   def debug_payload?
     Proxy::HostReports::Plugin.settings.debug_payload
+  end
+
+  def debug_payload(prefix, data)
+    return unless debug_payload?
+    logger.debug { "#{prefix}: #{data.pretty_inspect}" }
   end
 
   def add_keywords(*keywords)
@@ -85,11 +87,8 @@ class Processor
     result.join(", ")
   end
 
-  def to_foreman_as_json
-    result = measure :format do
-      to_foreman.to_json
-    end
-    logger.debug "Finished report #{report_id}: #{telemetry_as_string}"
-    result
+  def spool_report
+    super
+    logger.debug "Spooled #{report_id}: #{telemetry_as_string}"
   end
 end
