@@ -11,6 +11,8 @@ class Processor
     case format
     when "puppet"
       PuppetProcessor.new(data)
+    when "ansible"
+      AnsibleProcessor.new(data)
     else
       NotImplementedError.new
     end
@@ -19,6 +21,14 @@ class Processor
   def initialize(*)
     @keywords_set = {}
     @errors = []
+  end
+
+  def generated_report_id
+    @generated_report_id ||= SecureRandom.uuid
+  end
+
+  def hostname_from_config
+    @hostname_from_config ||= Proxy::HostReports::Plugin.settings.override_hostname
   end
 
   def build_report_root(format:, version:, host:, reported_at:, status:, proxy:, body:, keywords:)

@@ -22,7 +22,7 @@ class PuppetProcessor < Processor
   end
 
   def report_id
-    @data["transaction_uuid"] || SecureRandom.uuid
+    @data["transaction_uuid"] || generated_report_id
   end
 
   def process_logs
@@ -81,7 +81,7 @@ class PuppetProcessor < Processor
     measure :process do
       @body["format"] = "puppet"
       @body["id"] = report_id
-      @body["host"] = @data["host"]
+      @body["host"] = hostname_from_config || @data["host"]
       @body["proxy"] = Proxy::HostReports::Plugin.settings.reported_proxy_hostname
       @body["reported_at"] = @data["time"]
       KEYS_TO_COPY.each do |key|

@@ -3,6 +3,7 @@ require "yaml"
 require "smart_proxy_host_reports/host_reports"
 require "smart_proxy_host_reports/processor"
 require "smart_proxy_host_reports/puppet_processor"
+require "smart_proxy_host_reports/ansible_processor"
 
 module Proxy::HostReports
   class Api < ::Sinatra::Base
@@ -11,13 +12,23 @@ module Proxy::HostReports
 
     before do
       content_type "application/json"
+    end
+
+    def check_content_type(format)
       request_type = request.env["CONTENT_TYPE"]
-      log_halt(415, "Content type must be application/x-yaml, was: #{request_type}") unless request_type.start_with?("application/x-yaml")
+      if format == "puppet"
+        log_halt(415, "Content type must be application/x-yaml, was: #{request_type}") unless request_type.start_with?("application/x-yaml")
+      elsif format == "ansible"
+        log_halt(415, "Content type must be application/json, was: #{request_type}") unless request_type.start_with?("application/json")
+      else
+        log_halt(415, "Unknown format: #{format}")
+      end
     end
 
     post "/:format" do
       format = params[:format]
       log_halt(404, "Format argument not specified") unless format
+      check_content_type(format)
       input = request.body.read
       log_halt(415, "Missing body") if input.empty?
       processor = Processor.new_processor(format, input)
