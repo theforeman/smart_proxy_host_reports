@@ -14,3 +14,8 @@
 # - when enabled, move files from the place on
 # a regular basis (e.g. via cronjob).
 :keep_reports: false
+
+# Override host name coming from the report
+# Set to nil or false to disable.
+# Set to prefered host name to override.
+:override_hostname: nil
