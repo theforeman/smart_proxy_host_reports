@@ -65,7 +65,7 @@ class SpooledHttpClient
           post = factory.create_post("/api/v2/host_reports", File.read(filename))
           response = http.request(post)
           logger.info "Report #{basename} sent with HTTP response #{response.code}"
-          logger.debug { "Response body: #{response.body}"}
+          logger.debug { "Response body: #{response.body}" }
           if response.code.start_with?("2")
             if Proxy::HostReports::Plugin.settings.keep_reports
               spool_move("todo", "done", basename)
@@ -73,7 +73,7 @@ class SpooledHttpClient
               FileUtils.rm_f spool_path("todo", basename)
             end
           else
-            logger.debug { "Moving failed report to 'fail' spool directory"}
+            logger.debug { "Moving failed report to 'fail' spool directory" }
             spool_move("todo", "done", basename)
           end
           processed += 1

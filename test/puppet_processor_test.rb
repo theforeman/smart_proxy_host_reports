@@ -7,7 +7,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
 
   def test_deb
     input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-deb.yaml"))
-    processor = Processor.new_processor("puppet", input)
+    processor = Processor.new_processor("puppet", input, json_body: false)
     result = processor.build_report["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "deb.example.com", result["host"]
@@ -21,7 +21,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
 
   def test_dis
     input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-dis.yaml"))
-    processor = Processor.new_processor("puppet", input)
+    processor = Processor.new_processor("puppet", input, json_body: false)
     result = processor.build_report["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "dis.example.com", result["host"]
@@ -33,7 +33,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
 
   def test_jen
     input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-jen.yaml"))
-    processor = Processor.new_processor("puppet", input)
+    processor = Processor.new_processor("puppet", input, json_body: false)
     result = processor.build_report["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "jen.example.com", result["host"]
@@ -47,7 +47,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
 
   def test_old
     input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-old.yaml"))
-    processor = Processor.new_processor("puppet", input)
+    processor = Processor.new_processor("puppet", input, json_body: false)
     result = processor.build_report["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "old.example.com", result["host"]
@@ -61,7 +61,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
 
   def test_red
     input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-red.yaml"))
-    processor = Processor.new_processor("puppet", input)
+    processor = Processor.new_processor("puppet", input, json_body: false)
     result = processor.build_report["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "red.example.com", result["host"]
@@ -75,7 +75,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
 
   def test_web
     input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-web.yaml"))
-    processor = Processor.new_processor("puppet", input)
+    processor = Processor.new_processor("puppet", input, json_body: false)
     result = processor.build_report["host_report"]
     assert_equal "puppet", result["format"]
     assert_equal "report.example.com", result["host"]
@@ -95,7 +95,7 @@ class PuppetProcessorTest < Test::Unit::TestCase
 
   def test_web_snapshot
     input = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-web.yaml"))
-    processor = Processor.new_processor("puppet", input)
+    processor = Processor.new_processor("puppet", input, json_body: false)
     result = processor.build_report
     # remove volatile fields
     result["host_report"]["body"]["telemetry"] = {}

@@ -5,8 +5,8 @@ class PuppetProcessor < Processor
   KEYS_TO_COPY = %w[report_format puppet_version environment metrics].freeze
   MAX_EVAL_TIMES = 29
 
-  def initialize(data)
-    super(data)
+  def initialize(data, json_body: true)
+    super(data, json_body: json_body)
     measure :parse do
       if Gem::Version.new(RUBY_VERSION) < Gem::Version.new("2.6.0")
         # Ruby 2.5 or older does not have permitted_classes argument available
@@ -101,7 +101,7 @@ class PuppetProcessor < Processor
     if debug_payload?
       logger.debug { JSON.pretty_generate(@body) }
     end
-    report = build_report_root(
+    build_report_root(
       format: "puppet",
       version: 1,
       host: @body["host"],

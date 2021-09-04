@@ -7,20 +7,21 @@ require "proxy/log"
 class Processor
   include ::Proxy::Log
 
-  def self.new_processor(format, data)
+  def self.new_processor(format, data, json_body: true)
     case format
     when "puppet"
-      PuppetProcessor.new(data)
+      PuppetProcessor.new(data, json_body: json_body)
     when "ansible"
-      AnsibleProcessor.new(data)
+      AnsibleProcessor.new(data, json_body: json_body)
     else
       NotImplementedError.new
     end
   end
 
-  def initialize(*)
+  def initialize(*, json_body: true)
     @keywords_set = {}
     @errors = []
+    @json_body = json_body
   end
 
   def generated_report_id
@@ -40,12 +41,11 @@ class Processor
         "reported_at" => reported_at,
         "status" => status,
         "proxy" => proxy,
-        "body" => body,
+        "body" => @json_body ? body.to_json : body,
         "keywords" => keywords,
       },
     }
-    # TODO add body string serialization and metric with total time
-    # and for tests there must be an option to turn this off
+    # TODO add metric with total time
   end
 
   def debug_payload?

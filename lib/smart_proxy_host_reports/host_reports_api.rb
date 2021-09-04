@@ -8,6 +8,7 @@ require "smart_proxy_host_reports/ansible_processor"
 module Proxy::HostReports
   class Api < ::Sinatra::Base
     include ::Proxy::Log
+    include ::Proxy::Util
     helpers ::Proxy::Helpers
 
     before do
@@ -31,7 +32,8 @@ module Proxy::HostReports
       check_content_type(format)
       input = request.body.read
       log_halt(415, "Missing body") if input.empty?
-      processor = Processor.new_processor(format, input)
+      json_body = to_bool(params[:json_body], true)
+      processor = Processor.new_processor(format, input, json_body: json_body)
       processor.spool_report
     rescue => e
       log_halt 415, e, "Error during report processing: #{e.message}"
