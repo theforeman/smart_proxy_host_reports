@@ -5,9 +5,9 @@ module Proxy::HostReports
     end
 
     def load_dependency_injection_wirings(container, _settings)
-      container.singleton_dependency :host_reports_spool, (lambda do
-        SpooledHttpClient.instance.initialize_directory
-      end)
+      container.singleton_dependency :host_reports_spool, -> {
+          SpooledHttpClient.instance.initialize_directory
+        }
     end
   end
 

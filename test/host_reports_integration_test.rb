@@ -7,8 +7,13 @@ class HostReportsIntegrationTest < Test::Unit::TestCase
     Proxy::HostReports::Api.new
   end
 
-  def test_without_content_type
+  def test_without_content_type_and_format
     post "/"
+    assert_equal 404, last_response.status
+  end
+
+  def test_without_content_type
+    post "/puppet"
     assert_equal 415, last_response.status
   end
 
