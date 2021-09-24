@@ -18,15 +18,23 @@ class AnsibleProcessor < Processor
   end
 
   def process_logs
-    # TODO: find keywords
     logs = []
     @data["logs"]&.each do |log|
       logs << [log_level(log), log_source(log), log_message(log)]
+      process_keywords(log)
     end
     logs
   rescue StandardError => e
     logger.error "Unable to parse logs", e
     logs
+  end
+
+  def process_keywords(log)
+    if log["failed"]
+      add_keywords("HasFailure")
+    elsif log["changed"]
+      add_keywords("HasChange")
+    end
   end
 
   def process
