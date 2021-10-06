@@ -26,11 +26,22 @@ module Proxy::HostReports
       end
     end
 
+    EXTS = {
+      puppet: "yaml",
+      ansible: "json",
+    }.freeze
+
+    def save_payload(input, format)
+      filename = File.join(Proxy::HostReports::Plugin.settings.incoming_save_dir, "#{format}-#{Time.now.to_i}.#{EXTS[format.to_sym]}")
+      File.open(filename, "w") { |f| f.write(input) }
+    end
+
     post "/:format" do
       format = params[:format]
       log_halt(404, "Format argument not specified") unless format
       check_content_type(format)
       input = request.body.read
+      save_payload(input, format) if Proxy::HostReports::Plugin.settings.incoming_save_dir
       log_halt(415, "Missing body") if input.empty?
       json_body = to_bool(params[:json_body], true)
       processor = Processor.new_processor(format, input, json_body: json_body)

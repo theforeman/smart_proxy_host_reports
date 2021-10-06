@@ -1,0 +1,7 @@
+Harmless tests
+==============
+
+1) They MUST work without root
+2) The first run must be eventful
+3) The 2nd (and more) runs must be without changes
+4) Cleanup must be documented

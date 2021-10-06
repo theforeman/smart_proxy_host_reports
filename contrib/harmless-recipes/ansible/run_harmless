@@ -1,0 +1,14 @@
+#!/bin/bash
+export ANSIBLE_LOAD_CALLBACK_PLUGINS=1
+export ANSIBLE_COMMAND_WARNINGS=0
+export ANSIBLE_STDOUT_CALLBACK="theforeman.foreman.foreman"
+export FOREMAN_REPORT_TYPE="proxy"
+export FOREMAN_URL="http://localhost:5000"
+export FOREMAN_PROXY_URL="http://localhost:8000"
+export FOREMAN_SSL_CERT="/dev/zero"
+export FOREMAN_SSL_KEY="/dev/zero"
+
+# override ENV variables in your own file if you want
+[[ -f ansible.conf.sh ]] && source ansible.conf.sh
+
+ansible-playbook -i localhost, harmless.yaml
