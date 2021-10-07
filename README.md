@@ -69,6 +69,30 @@ puppet config set reporturl http://$HOSTNAME:8000/host_reports/puppet
 systemctl enable --now puppetserver
 ```
 
+If you prefer to use HTTPS, set the different reporturl and configure the CA certificates according to the example below
+```
+# use HTTPS, without Katello the port is 8443, with Katello it's 9090
+puppet config set reporturl https://$HOSTNAME:8443/host_reports/puppet
+# install the Smart Proxy CA certificate to the Puppet's localcacert store
+## first find the correct pem file
+grep :ssl_ca_file /etc/foreman-proxy/settings.yml
+## find the localcacert puppet storage
+puppet config print --section server localcacert
+## then copy the content of both pem files to each other
+cp /etc/foreman-proxy/ssl_ca.pem /tmp/smart-proxy.pem
+cp /etc/puppetlabs/puppet/ssl/certs/ca.pem /tmp/puppet-ca.pem
+cat /tmp/smart-proxy.pem >> /etc/puppetlabs/puppet/ssl/certs/ca.pem
+cat /tmp/puppet-ca.pem >> /etc/foreman-proxy/ssl_ca.pem
+# restart the services
+systemctl restart puppetserver
+systemctl restart foreman-proxy
+```
+Note that this means that the Puppetserver API will trust client certificates signed by the Smart Proxy CA
+certificate and will be subject to authorization defined in puppet's auth.conf, e.g. a client with the certificate
+of the same cname can get a catalog for such node. That is typically not a bad thing but you need to consider the
+implications in your SSL certificates layout. Similarly the proxy will now trust certificates signed by the
+Puppet CA, however they are still subject to smart proxy trusted hosts authorization.
+
 By default an agent connects to `puppet` which may not resolve. Set it to your hostname:
 
 ```bash
