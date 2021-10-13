@@ -670,6 +670,7 @@
         "Filebucket[puppet]"
       ],
       "keywords": [
+        "PuppetEnvironment:production",
         "PuppetIsOutOfSync"
       ],
       "evaluation_times": [
@@ -798,6 +799,7 @@
       }
     },
     "keywords": [
+      "PuppetEnvironment:production",
       "PuppetIsOutOfSync"
     ],
     "applied": 0,

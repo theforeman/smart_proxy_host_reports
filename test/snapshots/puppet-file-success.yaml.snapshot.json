@@ -164,7 +164,8 @@
       ],
       "keywords": [
         "PuppetHasChange",
-        "PuppetIsOutOfSync"
+        "PuppetIsOutOfSync",
+        "PuppetEnvironment:production"
       ],
       "evaluation_times": [
         [
@@ -205,7 +206,8 @@
     },
     "keywords": [
       "PuppetHasChange",
-      "PuppetIsOutOfSync"
+      "PuppetIsOutOfSync",
+      "PuppetEnvironment:production"
     ],
     "applied": 1,
     "failed": 0,

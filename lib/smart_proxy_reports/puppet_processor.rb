@@ -59,6 +59,8 @@ module Proxy::Reports
         add_keywords("PuppetHasSkips") if value["skipped"]
         # corrective changes
         add_keywords("PuppetHasCorrectiveChange") if value["corrective_change"]
+        # others
+        add_keywords("PuppetEnvironment:#{@data["environment"]}") if @data["environment"]
       end
       statuses
     rescue StandardError => e
