@@ -794,6 +794,7 @@
         "Filebucket[puppet]"
       ],
       "keywords": [
+        "PuppetEnvironment:production",
         "PuppetHasCorrectiveChange",
         "PuppetHasSkips",
         "PuppetResourceFailed:File[mime_magic.conf]",
@@ -926,6 +927,7 @@
       }
     },
     "keywords": [
+      "PuppetEnvironment:production",
       "PuppetHasCorrectiveChange",
       "PuppetHasSkips",
       "PuppetResourceFailed:File[mime_magic.conf]",

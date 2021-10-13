@@ -700,6 +700,7 @@
         "Filebucket[puppet]"
       ],
       "keywords": [
+        "PuppetEnvironment:production",
         "PuppetResourceFailed:Package[bzip2]",
         "PuppetHasFailure"
       ],
@@ -829,6 +830,7 @@
       }
     },
     "keywords": [
+      "PuppetEnvironment:production",
       "PuppetResourceFailed:Package[bzip2]",
       "PuppetHasFailure"
     ],

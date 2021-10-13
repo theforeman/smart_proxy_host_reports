@@ -403,7 +403,7 @@
         "Filebucket[puppet]"
       ],
       "keywords": [
-
+        "PuppetEnvironment:production"
       ],
       "evaluation_times": [
         [
@@ -531,7 +531,7 @@
       }
     },
     "keywords": [
-
+      "PuppetEnvironment:production"
     ],
     "applied": 0,
     "failed": 0,

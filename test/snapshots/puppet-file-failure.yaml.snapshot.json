@@ -170,7 +170,8 @@
       "keywords": [
         "PuppetResourceFailed:File[/tmp/xyz.txt]",
         "PuppetHasFailure",
-        "PuppetIsOutOfSync"
+        "PuppetIsOutOfSync",
+        "PuppetEnvironment:production"
       ],
       "evaluation_times": [
         [
@@ -212,7 +213,8 @@
     "keywords": [
       "PuppetResourceFailed:File[/tmp/xyz.txt]",
       "PuppetHasFailure",
-      "PuppetIsOutOfSync"
+      "PuppetIsOutOfSync",
+      "PuppetEnvironment:production"
     ],
     "applied": 0,
     "failed": 1,
