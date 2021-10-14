@@ -1,0 +1,39 @@
+---
+- name: A harmless playbook
+  connection: local
+  gather_facts: true
+  hosts: all
+  tasks:
+    - name: Ping the host
+      ansible.builtin.ping:
+
+    - name: Create a directory
+      file:
+        path: /var/tmp/ansible-testing
+        state: directory
+        mode: 0755
+
+    - name: Create a file from a template
+      template:
+        src: dummy.j2
+        dest: /var/tmp/ansible-testing/file.txt
+
+    - name: Create a symlink
+      file:
+        src: /var/tmp/ansible-testing/file.txt
+        dest: /var/tmp/ansible-testing/symlink.txt
+        state: link
+
+    - name: Recursively find /var/tmp files with last access time greater than 3600 seconds
+      find:
+        paths: /var/tmp/ansible-testing
+        age: "3600"
+        age_stamp: atime
+        recurse: yes
+
+    - name: Reboot the host
+      ansible.builtin.debug:
+        msg:
+        - "I AM JOKING! Don't worry. :-)"
+        - "Finished with the harmless Ansible playbook."
+        - "Remove /var/tmp/ansible-testing to clean things up."
