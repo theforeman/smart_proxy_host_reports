@@ -1,4 +1,4 @@
-# Smart Proxy Host Reports
+ Smart Proxy Host Reports
 
 Transforms configuration and security management reports into Foreman-friendly
 JSON and sends them to a Foreman instance. For more information about Foreman
@@ -29,7 +29,7 @@ Ansible collection path to the build directory:
     collection_path = /home/lzap/work/foreman-ansible-modules/build
     callback_whitelist = foreman
     [callback_foreman]
-    url = http://localhost:8448/host_reports
+    url = http://localhost:8000/host_reports
     verify_certs = 0
     client_cert = /home/lzap/DummyX509/client-one.crt
     client_key = /home/lzap/DummyX509/client-one.key
@@ -48,7 +48,7 @@ For testing, there are several example data. Before importing them into Foreman,
 $ contrib/upload-fixture
 Usage:
   contrib/upload-fixture -h               Display this help message
-  contrib/upload-fixture -u URL           Proxy URL (http://localhost:8448)
+  contrib/upload-fixture -u URL           Proxy URL (http://localhost:8000)
   contrib/upload-fixture -f FILE          Fixture to upload
   contrib/upload-fixture -a               Upload all fixtures
 
