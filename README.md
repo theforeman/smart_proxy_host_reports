@@ -29,7 +29,8 @@ Ansible collection path to the build directory:
     collection_path = /home/lzap/work/foreman-ansible-modules/build
     callback_whitelist = foreman
     [callback_foreman]
-    url = http://localhost:8000/host_reports
+    report_type = proxy
+    proxy_url = http://localhost:8000/host_reports
     verify_certs = 0
     client_cert = /home/lzap/DummyX509/client-one.crt
     client_key = /home/lzap/DummyX509/client-one.key
