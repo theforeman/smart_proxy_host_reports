@@ -1,3 +1,5 @@
+require_relative "friendly_message"
+
 # frozen_string_literal: true
 
 module Proxy::Reports
@@ -20,9 +22,12 @@ module Proxy::Reports
 
     def process_results
       @data["results"]&.each do |result|
+        raise("Report do not contain required 'results/result' element") unless result["result"]
+        raise("Report do not contain required 'results/task' element") unless result["task"]
         process_facts(result)
         process_level(result)
-        process_message(result)
+        friendly_message = FriendlyMessage.new(result)
+        result["friendly_message"] = friendly_message.generate_message
         process_keywords(result)
       end
       @data["results"]
@@ -97,41 +102,6 @@ module Proxy::Reports
       else
         result["level"] = "info"
       end
-    end
-
-    def process_message(result)
-      msg = "N/A"
-      return result["friendly_message"] = msg if result["task"].nil? || result["task"]["action"].nil?
-      return result["friendly_message"] = result["result"]["msg"] if result["failed"]
-      result_tree = result["result"]
-      task_tree = result["task"]
-      raise("Report do not contain required 'results/result' element") unless result_tree
-      raise("Report do not contain required 'results/task' element") unless task_tree
-      module_args_tree = result_tree.dig("invocation", "module_args")
-
-      case task_tree["action"]
-      when "ansible.builtin.package", "package"
-        detail = result_tree["results"] || result_tree["msg"] || "No details"
-        msg = "Package(s) #{module_args_tree["name"].join(",")} are #{module_args_tree["state"]}: #{detail}"
-      when "ansible.builtin.template", "template"
-        msg = "Render template #{module_args_tree["_original_basename"]} to #{result_tree["dest"]}"
-      when "ansible.builtin.service", "service"
-        msg = "Service #{result_tree["name"]} is #{result_tree["state"]} and enabled: #{result_tree["enabled"]}"
-      when "ansible.builtin.group", "group"
-        msg = "User group #{result_tree["name"]} is #{result_tree["state"]} with gid: #{result_tree["gid"]}"
-      when "ansible.builtin.user", "user"
-        msg = "User #{result_tree["name"]} is #{result_tree["state"]} with uid: #{result_tree["uid"]}"
-      when "ansible.builtin.cron", "cron"
-        msg = "Cron job: #{module_args_tree["minute"]} #{module_args_tree["hour"]} #{module_args_tree["day"]} #{module_args_tree["month"]} #{module_args_tree["weekday"]} #{module_args_tree["job"]} and disabled: #{module_args_tree["disabled"]}"
-      when "ansible.builtin.copy", "copy"
-        msg = "Copy #{module_args_tree["_original_basename"]} to #{result_tree["dest"]}"
-      when "ansible.builtin.command", "ansible.builtin.shell", "command", "shell"
-        msg = result_tree["stdout_lines"]
-      end
-    rescue StandardError => e
-      logger.debug "Unable to parse result (#{e.message}): #{result.inspect}"
-    ensure
-      result["friendly_message"] = msg
     end
 
     def process_statuses
