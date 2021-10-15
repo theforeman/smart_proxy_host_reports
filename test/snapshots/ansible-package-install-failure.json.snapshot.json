@@ -67,7 +67,7 @@
             "uuid": "1c697a0b-ae03-2b39-2a80-000000000009"
           },
           "level": "err",
-          "friendly_message": "N/A"
+          "friendly_message": "Failed to install some of the specified packages"
         }
       ],
       "keywords": [
