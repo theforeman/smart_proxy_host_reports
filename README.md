@@ -120,6 +120,27 @@ puppet config set server $HOSTNAME
 
 You can manually trigger a puppet run by using `puppet agent -t`. You may need to look at `/var/log/puppetlabs/puppetserver/puppetserver.log` to see errors.
 
+## Status mapping
+
+### Puppet
+
+* changed -> applied
+* corrective_change -> applied
+* failed -> failed
+* failed_to_restart -> failed
+* scheduled -> pending
+* restarted -> other
+* skipped -> other
+* out_of_sync
+* total
+
+### Ansible
+
+* applied -> applied
+* failed -> failed
+* skipped -> other
+* pending -> pending
+
 ## Contributing
 
 Fork and send a Pull Request. Thanks!
