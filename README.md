@@ -124,6 +124,21 @@ You can manually trigger a puppet run by using `puppet agent -t`. You may need t
 
 Fork and send a Pull Request. Thanks!
 
+### Unit tests
+
+To run unit tests:
+
+    bundle exec rake test
+
+There are few snapshot tests which compare input JSON/YAML with snapshot fixtures. When they fail, you are asked to delete those fixtures, re-run tests, review and push the changes into git:
+
+```
+rm test/snapshots/*
+bundle exec rake test
+git diff
+git commit
+```
+
 ## License
 
 GNU GPLv3, see LICENSE file for more information.
