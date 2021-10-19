@@ -4,7 +4,6 @@
     "version": 1,
     "host": "report.example.com",
     "reported_at": "",
-    "status": 0,
     "proxy": "localhost",
     "body": {
       "format": "puppet",
@@ -207,6 +206,10 @@
     "keywords": [
       "PuppetHasChange",
       "PuppetIsOutOfSync"
-    ]
+    ],
+    "applied": 1,
+    "failed": 0,
+    "pending": 0,
+    "other": 1
   }
 }

@@ -4,7 +4,6 @@
     "version": 1,
     "host": "report.example.com",
     "reported_at": "",
-    "status": 0,
     "proxy": "localhost",
     "body": {
       "format": "puppet",
@@ -932,6 +931,10 @@
       "PuppetResourceFailed:File[mime_magic.conf]",
       "PuppetHasFailure",
       "PuppetHasChange"
-    ]
+    ],
+    "applied": 2,
+    "failed": 0,
+    "pending": 0,
+    "other": 1
   }
 }

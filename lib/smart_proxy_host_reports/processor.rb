@@ -32,18 +32,17 @@ class Processor
     @hostname_from_config ||= Proxy::HostReports::Plugin.settings.override_hostname
   end
 
-  def build_report_root(format:, version:, host:, reported_at:, status:, proxy:, body:, keywords:)
+  def build_report_root(format:, version:, host:, reported_at:, statuses:, proxy:, body:, keywords:)
     {
       "host_report" => {
         "format" => format,
         "version" => version,
         "host" => host,
         "reported_at" => reported_at,
-        "status" => status,
         "proxy" => proxy,
         "body" => @json_body ? body.to_json : body,
         "keywords" => keywords,
-      },
+      }.merge(statuses),
     }
     # TODO add metric with total time
   end

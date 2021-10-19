@@ -4,7 +4,6 @@
     "version": 1,
     "host": "report.example.com",
     "reported_at": "",
-    "status": 0,
     "proxy": "localhost",
     "body": {
       "format": "puppet",
@@ -214,6 +213,10 @@
       "PuppetResourceFailed:File[/tmp/xyz.txt]",
       "PuppetHasFailure",
       "PuppetIsOutOfSync"
-    ]
+    ],
+    "applied": 0,
+    "failed": 1,
+    "pending": 0,
+    "other": 1
   }
 }

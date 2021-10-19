@@ -4,7 +4,6 @@
     "version": 1,
     "host": "red.example.com",
     "reported_at": "",
-    "status": 0,
     "proxy": "localhost",
     "body": {
       "format": "puppet",
@@ -800,6 +799,10 @@
     },
     "keywords": [
       "PuppetIsOutOfSync"
-    ]
+    ],
+    "applied": 0,
+    "failed": 0,
+    "pending": 0,
+    "other": 2
   }
 }

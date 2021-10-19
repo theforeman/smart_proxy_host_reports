@@ -4,7 +4,6 @@
     "version": 1,
     "host": "localhost",
     "reported_at": "",
-    "status": 0,
     "proxy": "localhost",
     "body": {
       "format": "ansible",
@@ -94,6 +93,10 @@
     },
     "keywords": [
       "HasChange"
-    ]
+    ],
+    "applied": 1,
+    "failed": 0,
+    "pending": 0,
+    "other": 0
   }
 }
