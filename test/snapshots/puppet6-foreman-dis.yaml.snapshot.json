@@ -4,7 +4,6 @@
     "version": 1,
     "host": "dis.example.com",
     "reported_at": "",
-    "status": 0,
     "proxy": "localhost",
     "body": {
       "format": "puppet",
@@ -533,6 +532,10 @@
     },
     "keywords": [
 
-    ]
+    ],
+    "applied": 0,
+    "failed": 0,
+    "pending": 0,
+    "other": 0
   }
 }

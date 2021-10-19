@@ -107,7 +107,7 @@ class PuppetProcessor < Processor
       version: 1,
       host: @body["host"],
       reported_at: @body["reported_at"],
-      status: 0,
+      statuses: process_statuses,
       proxy: @body["proxy"],
       body: @body,
       keywords: @body["keywords"],
@@ -121,5 +121,20 @@ class PuppetProcessor < Processor
       report_hash.to_json
     end
     SpooledHttpClient.instance.spool(report_id, payload)
+  end
+
+  private
+
+  def process_statuses
+    stats = @body["metrics"]["resources"]["values"].collect { |s| [s[0], s[2]] }.to_h
+    {
+      "applied" => stats["changed"] + stats["corrective_change"],
+      "failed" => stats["failed"] + stats["failed_to_restart"],
+      "pending" => stats["scheduled"],
+      "other" => stats["restarted"] + stats["skipped"] + stats["out_of_sync"],
+    }
+  rescue StandardError => e
+    logger.error "Unable to process statuses", e
+    { "applied" => 0, "failed" => 0, "pending" => 0, "other" => 0 }
   end
 end

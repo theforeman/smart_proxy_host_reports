@@ -57,7 +57,7 @@ class AnsibleProcessor < Processor
       version: 1,
       host: @body["host"],
       reported_at: @body["reported_at"],
-      status: 0,
+      statuses: process_statuses,
       proxy: @body["proxy"],
       body: @body,
       keywords: @body["keywords"],
@@ -131,5 +131,17 @@ class AnsibleProcessor < Processor
     logger.debug "Unable to parse result (#{e.message}): #{result.inspect}"
   ensure
     result["friendly_message"] = msg
+  end
+
+  def process_statuses
+    {
+      "applied" => @body["status"]["applied"],
+      "failed" => @body["status"]["failed"],
+      "pending" => @body["status"]["pending"] || 0, # It's only present in check mode
+      "other" => @body["status"]["skipped"],
+    }
+  rescue StandardError => e
+    logger.error "Unable to process statuses", e
+    { "applied" => 0, "failed" => 0, "pending" => 0, "other" => 0 }
   end
 end
