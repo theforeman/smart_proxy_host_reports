@@ -1,0 +1,837 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "deb.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "deb.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 10,
+      "puppet_version": "6.16.0",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              405
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              1
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              0
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "package",
+              "Package",
+              0.10441856899999999
+            ],
+            [
+              "file",
+              "File",
+              0.6205165560000004
+            ],
+            [
+              "anchor",
+              "Anchor",
+              0.0007514900000000001
+            ],
+            [
+              "exec",
+              "Exec",
+              2.5235192609999997
+            ],
+            [
+              "file_line",
+              "File line",
+              0.000395901
+            ],
+            [
+              "mysql_datadir",
+              "Mysql datadir",
+              0.000380248
+            ],
+            [
+              "service",
+              "Service",
+              0.187978321
+            ],
+            [
+              "mysql_user",
+              "Mysql user",
+              0.000324085
+            ],
+            [
+              "mysql_grant",
+              "Mysql grant",
+              0.0005333
+            ],
+            [
+              "group",
+              "Group",
+              0.0016234639999999998
+            ],
+            [
+              "shellvar",
+              "Shellvar",
+              0.095874028
+            ],
+            [
+              "mounttab",
+              "Mounttab",
+              0.008913022
+            ],
+            [
+              "user",
+              "User",
+              0.014042565000000002
+            ],
+            [
+              "ssh_authorized_key",
+              "Ssh authorized key",
+              0.000289458
+            ],
+            [
+              "augeas",
+              "Augeas",
+              0.075545717
+            ],
+            [
+              "gnupg_key",
+              "Gnupg key",
+              0.021904382
+            ],
+            [
+              "mailalias",
+              "Mailalias",
+              0.000313646
+            ],
+            [
+              "sshd_config",
+              "Sshd config",
+              0.034943459
+            ],
+            [
+              "postgresql_conf",
+              "Postgresql conf",
+              0.001839983
+            ],
+            [
+              "concat_file",
+              "Concat file",
+              0.000588799
+            ],
+            [
+              "concat_fragment",
+              "Concat fragment",
+              0.0027495480000000005
+            ],
+            [
+              "rvm_system_ruby",
+              "Rvm system ruby",
+              1.384307727
+            ],
+            [
+              "rvm_alias",
+              "Rvm alias",
+              1.48978911
+            ],
+            [
+              "postgresql_conn_validator",
+              "Postgresql conn validator",
+              0.066834735
+            ],
+            [
+              "postgresql_psql",
+              "Postgresql psql",
+              0.549115666
+            ],
+            [
+              "cron",
+              "Cron",
+              0.006601505
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              0.000183308
+            ],
+            [
+              "startup_time",
+              "Startup time",
+              0.733938909
+            ],
+            [
+              "node_retrieval",
+              "Node retrieval",
+              1.081311710178852
+            ],
+            [
+              "plugin_sync",
+              "Plugin sync",
+              1.6488488875329494
+            ],
+            [
+              "fact_generation",
+              "Fact generation",
+              3.781282566487789
+            ],
+            [
+              "convert_catalog",
+              "Convert catalog",
+              0.9406693913042545
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              6.882053259760141
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              7.9571788385510445
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              8.027862664312124
+            ],
+            [
+              "total",
+              "Total",
+              23.256689724
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "notice",
+          "//deb.example.com/Puppet",
+          "Applied catalog in 8.03 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "Package[git]",
+        "Package[libxml2-dev]",
+        "Package[libxslt1-dev]",
+        "Package[libkrb5-dev]",
+        "Package[libsystemd-dev]",
+        "Package[freeipmi]",
+        "Package[ipmitool]",
+        "Package[firefox-esr]",
+        "Package[libvirt-dev]",
+        "Package[asciidoc]",
+        "Package[bzip2]",
+        "Package[unzip]",
+        "Package[ansible]",
+        "Package[python-virtualenv]",
+        "Package[libcurl4-openssl-dev]",
+        "Package[libsqlite3-dev]",
+        "Package[transifex-client]",
+        "File[/usr/local/bin/JSON.sh]",
+        "Package[java-common]",
+        "Anchor[java::begin:]",
+        "Package[java]",
+        "Exec[update-java-alternatives]",
+        "File_line[java-home-environment]",
+        "Anchor[java::end]",
+        "Anchor[mysql::server::start]",
+        "File[/etc/mysql]",
+        "File[/etc/mysql/conf.d]",
+        "File[mysql-config-file]",
+        "Package[mysql-server]",
+        "File[/var/log/mysql/error.log]",
+        "Mysql_datadir[/var/lib/mysql]",
+        "Service[mysqld]",
+        "Exec[wait_for_mysql_socket_to_open]",
+        "Exec[remove install pass]",
+        "Anchor[mysql::server::end]",
+        "Mysql_user[foreman@localhost]",
+        "Mysql_grant[foreman@localhost/*.*]",
+        "Mysql_grant[foreman@localhost/test%.*]",
+        "Package[mysql-client_dev]",
+        "Package[postgresql-client]",
+        "File[/usr/local/bin/validate_postgresql_connection.sh]",
+        "Package[postgresql-server]",
+        "File[/var/lib/postgresql/11/main]",
+        "Package[postgresql-devel]",
+        "Group[rvm]",
+        "File[/etc/rvmrc]",
+        "Package[curl]",
+        "File[/etc/cron.daily/rvm_log_cleaner]",
+        "Package[gem2deb]",
+        "Shellvar[extend_pbuilder_path]",
+        "Package[docker-ce]",
+        "File[/etc/yum.repos.d/docker.repo]",
+        "Exec[docker-systemd-reload]",
+        "Package[cgroupfs-mount]",
+        "Package[docker]",
+        "File[/etc/systemd/system/docker.service.d]",
+        "File[/etc/systemd/system/docker.service.d/service-overrides.conf]",
+        "Exec[docker-systemd-reload-before-service]",
+        "File[/etc/default/docker-storage]",
+        "File[/etc/default/docker]",
+        "Service[docker]",
+        "Group[docker]",
+        "File[/etc/cron.daily/ruby_cleaner]",
+        "Exec[create-swap]",
+        "Exec[enable-swap]",
+        "Mounttab[swap]",
+        "User[foreman_rex]",
+        "Ssh_authorized_key[foreman-proxy@puppetmaster]",
+        "File[/etc/puppetlabs/puppet]",
+        "Package[puppet-agent]",
+        "Augeas[puppet::set_start]",
+        "File[/var/lib/puppet/state/agent_disabled.lock]",
+        "Anchor[sudo::begin]",
+        "Package[sudo]",
+        "File[/etc/sudoers]",
+        "File[/etc/sudoers.d]",
+        "File[/etc/sudoers.d/foreman_rex]",
+        "Anchor[sudo::end]",
+        "File[/etc/motd]",
+        "File[sources.list]",
+        "File[sources.list.d]",
+        "File[preferences]",
+        "File[preferences.d]",
+        "File[apt.conf.d]",
+        "File[/etc/apt/auth.conf]",
+        "Package[gnupg]",
+        "Gnupg_key[rvm_pkuczynski]",
+        "Gnupg_key[rvm_D39DC0E3]",
+        "Exec[system-rvm]",
+        "Package[unattended-upgrades]",
+        "Package[vim]",
+        "Package[htop]",
+        "Package[iftop]",
+        "Package[screen]",
+        "Package[ruby-shadow]",
+        "Mailalias[sysadmins]",
+        "Mailalias[root]",
+        "Package[ntp]",
+        "File[/etc/ntp.conf]",
+        "Service[ntp]",
+        "File[/root/.ssh/authorized_keys]",
+        "File[/etc/ssh/sshd_config]",
+        "Sshd_config[PermitRootLogin]",
+        "Sshd_config[PasswordAuthentication]",
+        "Sshd_config[StrictModes]",
+        "Sshd_config[LogLevel]",
+        "Service[ssh]",
+        "Package[tzdata]",
+        "File[/etc/localtime]",
+        "File[/etc/timezone]",
+        "User[jenkins]",
+        "File[/home/jenkins]",
+        "File[/home/jenkins/workspace]",
+        "File[/home/jenkins/.gitconfig]",
+        "File[/home/jenkins/.gemrc]",
+        "File[/home/jenkins/.config]",
+        "File[/home/jenkins/.config/hub]",
+        "File[/home/jenkins/.config/copr]",
+        "File[/home/jenkins/.ssh]",
+        "File[/home/jenkins/.ssh/config]",
+        "File[/home/jenkins/.ssh/authorized_keys]",
+        "Postgresql_conf[fsync]",
+        "Postgresql_conf[full_page_writes]",
+        "Postgresql_conf[synchronous_commit]",
+        "Postgresql_conf[autovacuum]",
+        "Postgresql_conf[effective_cache_size]",
+        "Postgresql_conf[shared_buffers]",
+        "Postgresql_conf[checkpoint_completion_target]",
+        "Postgresql_conf[wal_level]",
+        "Postgresql_conf[max_wal_senders]",
+        "Concat_file[/etc/postgresql/11/main/pg_hba.conf]",
+        "File[/etc/postgresql/11/main/pg_hba.conf]",
+        "Concat_fragment[/etc/postgresql/11/main/pg_hba.conf_header]",
+        "Postgresql_conf[port]",
+        "Exec[postgresql_stop_data_directory]",
+        "Postgresql_conf[data_directory]",
+        "Concat_file[/etc/postgresql/11/main/pg_ident.conf]",
+        "File[/etc/postgresql/11/main/pg_ident.conf]",
+        "Concat_fragment[/etc/postgresql/11/main/pg_ident.conf_header]",
+        "File[/home/jenkins/mysql.db.yaml]",
+        "File[/home/jenkins/sqlite3.db.yaml]",
+        "File[/home/jenkins/postgresql.db.yaml]",
+        "Exec[rvm-system-user-jenkins]",
+        "Rvm_system_ruby[ruby-2.4.3]",
+        "Rvm_alias[ruby-2.4]",
+        "Exec[ruby-2.4.3/update_rubygems]",
+        "Rvm_system_ruby[ruby-2.5.1]",
+        "Rvm_alias[ruby-2.5]",
+        "Exec[ruby-2.5.1/update_rubygems]",
+        "Rvm_system_ruby[ruby-2.6.3]",
+        "Rvm_alias[ruby-2.6]",
+        "Exec[ruby-2.6.3/update_rubygems]",
+        "Rvm_system_ruby[ruby-2.7.0]",
+        "Rvm_alias[ruby-2.7]",
+        "Exec[ruby-2.7.0/update_rubygems]",
+        "File[/usr/local/bin/pdebuild-bionic64]",
+        "File[/etc/cron.d/cleanup-bionic64]",
+        "File[/usr/local/bin/pdebuild-buster64]",
+        "File[/etc/cron.d/cleanup-buster64]",
+        "File[/usr/local/bin/pdebuild-focal64]",
+        "File[/etc/cron.d/cleanup-focal64]",
+        "File[/usr/local/bin/pdebuild-stretch64]",
+        "File[/etc/cron.d/cleanup-stretch64]",
+        "File[/usr/local/bin/pdebuild-xenial64]",
+        "File[/etc/cron.d/cleanup-xenial64]",
+        "File[10_foreman-proxy-rex]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_foreman-proxy-rex]",
+        "Concat_file[/etc/puppetlabs/puppet/puppet.conf]",
+        "File[/etc/puppetlabs/puppet/puppet.conf]",
+        "File[/etc/puppetlabs/puppet/auth.conf]",
+        "User[gregsutcliffe]",
+        "File[/home/gregsutcliffe]",
+        "File[/home/gregsutcliffe/.ssh]",
+        "File[/home/gregsutcliffe/.ssh/authorized_keys]",
+        "User[ohadlevy]",
+        "File[/home/ohadlevy]",
+        "File[/home/ohadlevy/.ssh]",
+        "File[/home/ohadlevy/.ssh/authorized_keys]",
+        "User[lzap]",
+        "File[/home/lzap]",
+        "File[/home/lzap/.ssh]",
+        "File[/home/lzap/.ssh/authorized_keys]",
+        "User[ehelms]",
+        "File[/home/ehelms]",
+        "File[/home/ehelms/.ssh]",
+        "File[/home/ehelms/.ssh/authorized_keys]",
+        "User[dlobatog]",
+        "File[/home/dlobatog]",
+        "File[/home/dlobatog/.ssh]",
+        "File[/home/dlobatog/.ssh/authorized_keys]",
+        "User[ekohl]",
+        "File[/home/ekohl]",
+        "File[/home/ekohl/.ssh]",
+        "File[/home/ekohl/.ssh/authorized_keys]",
+        "User[evgeni]",
+        "File[/home/evgeni]",
+        "File[/home/evgeni/.ssh]",
+        "File[/home/evgeni/.ssh/authorized_keys]",
+        "User[oprazak]",
+        "File[/home/oprazak]",
+        "File[/home/oprazak/.ssh]",
+        "File[/home/oprazak/.ssh/authorized_keys]",
+        "User[tbrisker]",
+        "File[/home/tbrisker]",
+        "File[/home/tbrisker/.ssh]",
+        "File[/home/tbrisker/.ssh/authorized_keys]",
+        "User[pcreech]",
+        "File[/home/pcreech]",
+        "File[/home/pcreech/.ssh]",
+        "File[/home/pcreech/.ssh/authorized_keys]",
+        "User[zhunting]",
+        "File[/home/zhunting]",
+        "File[/home/zhunting/.ssh]",
+        "File[/home/zhunting/.ssh/authorized_keys]",
+        "User[wclark]",
+        "File[/home/wclark]",
+        "File[/home/wclark/.ssh]",
+        "File[/home/wclark/.ssh/authorized_keys]",
+        "User[mmoll]",
+        "File[/etc/apt/apt.conf.d/15update-stamp]",
+        "Exec[apt_update]",
+        "File[10_sudo-puppet-jenkins]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-jenkins]",
+        "Concat_fragment[pg_hba_rule_local access as postgres user]",
+        "Concat_fragment[pg_hba_rule_local access to database with same name]",
+        "Concat_fragment[pg_hba_rule_allow localhost TCP access to postgresql user]",
+        "Concat_fragment[pg_hba_rule_deny access to postgresql user]",
+        "Concat_fragment[pg_hba_rule_allow access to all users]",
+        "Concat_fragment[pg_hba_rule_allow access to ipv6 localhost]",
+        "Anchor[postgresql::server::service::begin]",
+        "Service[postgresqld]",
+        "Postgresql_conn_validator[validate_service_is_running]",
+        "Anchor[postgresql::server::service::end]",
+        "Exec[postgresql_reload]",
+        "Postgresql_psql[CREATE ROLE foreman ENCRYPTED PASSWORD ****]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" SUPERUSER]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" NOCREATEDB]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" NOCREATEROLE]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" LOGIN]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" INHERIT]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" NOREPLICATION]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" CONNECTION LIMIT -1]",
+        "Postgresql_psql[ALTER ROLE foreman ENCRYPTED PASSWORD ****]",
+        "Package[pbuilder]",
+        "Group[pbuilder]",
+        "Exec[confdir-bionic64]",
+        "Exec[bindir-bionic64]",
+        "Exec[chrootdir-bionic64]",
+        "Exec[cachedir-bionic64]",
+        "File[/usr/local/bin/pbuilder-bionic64]",
+        "File[/var/cache/pbuilder/bionic64/build]",
+        "File[/var/cache/pbuilder/bionic64/result]",
+        "File[/var/cache/pbuilder/bionic64/aptcache]",
+        "File[/etc/pbuilder/bionic64/apt.config]",
+        "File[/etc/pbuilder/bionic64/apt.config/sources.list.d]",
+        "File[/etc/pbuilder/bionic64/apt.config/sources.list.d/debian.list]",
+        "File[/etc/pbuilder/bionic64/hooks]",
+        "File[/etc/pbuilder/bionic64/hooks/C10foremanlog]",
+        "File[/etc/pbuilder/bionic64/hooks/F60addforemanrepo]",
+        "File[/etc/pbuilder/bionic64/hooks/F99printrepos]",
+        "File[/etc/pbuilder/bionic64/hooks/F70aptupdate]",
+        "File[/etc/pbuilder/bionic64/pbuilderrc]",
+        "Exec[create_pbuilder_bionic64]",
+        "Exec[update_pbuilder_bionic64]",
+        "Exec[confdir-buster64]",
+        "Exec[bindir-buster64]",
+        "Exec[chrootdir-buster64]",
+        "Exec[cachedir-buster64]",
+        "File[/usr/local/bin/pbuilder-buster64]",
+        "File[/var/cache/pbuilder/buster64/build]",
+        "File[/var/cache/pbuilder/buster64/result]",
+        "File[/var/cache/pbuilder/buster64/aptcache]",
+        "File[/etc/pbuilder/buster64/apt.config]",
+        "File[/etc/pbuilder/buster64/apt.config/sources.list.d]",
+        "File[/etc/pbuilder/buster64/apt.config/sources.list.d/debian.list]",
+        "File[/etc/pbuilder/buster64/hooks]",
+        "File[/etc/pbuilder/buster64/hooks/F60addforemanrepo]",
+        "File[/etc/pbuilder/buster64/hooks/F99printrepos]",
+        "File[/etc/pbuilder/buster64/hooks/F70aptupdate]",
+        "File[/etc/pbuilder/buster64/pbuilderrc]",
+        "Exec[create_pbuilder_buster64]",
+        "Exec[update_pbuilder_buster64]",
+        "Exec[confdir-focal64]",
+        "Exec[bindir-focal64]",
+        "Exec[chrootdir-focal64]",
+        "Exec[cachedir-focal64]",
+        "File[/usr/local/bin/pbuilder-focal64]",
+        "File[/var/cache/pbuilder/focal64/build]",
+        "File[/var/cache/pbuilder/focal64/result]",
+        "File[/var/cache/pbuilder/focal64/aptcache]",
+        "File[/etc/pbuilder/focal64/apt.config]",
+        "File[/etc/pbuilder/focal64/apt.config/sources.list.d]",
+        "File[/etc/pbuilder/focal64/apt.config/sources.list.d/debian.list]",
+        "File[/etc/pbuilder/focal64/hooks]",
+        "File[/etc/pbuilder/focal64/hooks/F60addforemanrepo]",
+        "File[/etc/pbuilder/focal64/hooks/F99printrepos]",
+        "File[/etc/pbuilder/focal64/hooks/F70aptupdate]",
+        "File[/etc/pbuilder/focal64/pbuilderrc]",
+        "Exec[create_pbuilder_focal64]",
+        "Exec[update_pbuilder_focal64]",
+        "Exec[confdir-stretch64]",
+        "Exec[bindir-stretch64]",
+        "Exec[chrootdir-stretch64]",
+        "Exec[cachedir-stretch64]",
+        "File[/usr/local/bin/pbuilder-stretch64]",
+        "File[/var/cache/pbuilder/stretch64/build]",
+        "File[/var/cache/pbuilder/stretch64/result]",
+        "File[/var/cache/pbuilder/stretch64/aptcache]",
+        "File[/etc/pbuilder/stretch64/apt.config]",
+        "File[/etc/pbuilder/stretch64/apt.config/sources.list.d]",
+        "File[/etc/pbuilder/stretch64/apt.config/sources.list.d/debian.list]",
+        "File[/etc/pbuilder/stretch64/hooks]",
+        "File[/etc/pbuilder/stretch64/hooks/F60addforemanrepo]",
+        "File[/etc/pbuilder/stretch64/hooks/F99printrepos]",
+        "File[/etc/pbuilder/stretch64/hooks/F70aptupdate]",
+        "File[/etc/pbuilder/stretch64/pbuilderrc]",
+        "Exec[create_pbuilder_stretch64]",
+        "Exec[update_pbuilder_stretch64]",
+        "Exec[confdir-xenial64]",
+        "Exec[bindir-xenial64]",
+        "Exec[chrootdir-xenial64]",
+        "Exec[cachedir-xenial64]",
+        "File[/usr/local/bin/pbuilder-xenial64]",
+        "File[/var/cache/pbuilder/xenial64/build]",
+        "File[/var/cache/pbuilder/xenial64/result]",
+        "File[/var/cache/pbuilder/xenial64/aptcache]",
+        "File[/etc/pbuilder/xenial64/apt.config]",
+        "File[/etc/pbuilder/xenial64/apt.config/sources.list.d]",
+        "File[/etc/pbuilder/xenial64/apt.config/sources.list.d/debian.list]",
+        "File[/etc/pbuilder/xenial64/hooks]",
+        "File[/etc/pbuilder/xenial64/hooks/F60addforemanrepo]",
+        "File[/etc/pbuilder/xenial64/hooks/F99printrepos]",
+        "File[/etc/pbuilder/xenial64/hooks/F70aptupdate]",
+        "File[/etc/pbuilder/xenial64/pbuilderrc]",
+        "Exec[create_pbuilder_xenial64]",
+        "Exec[update_pbuilder_xenial64]",
+        "File[/home/jenkins/workspace/deb_key]",
+        "File[/home/jenkins/workspace/deb_key/rsync_freight_key]",
+        "File[/home/jenkins/workspace/deb_key/rsync_freight_key.pub]",
+        "File[/home/jenkins/workspace/staging_key]",
+        "File[/home/jenkins/workspace/staging_key/rsync_freightstage_key]",
+        "File[/home/jenkins/workspace/staging_key/rsync_freightstage_key.pub]",
+        "File[10_sudo-puppet-gregsutcliffe]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-gregsutcliffe]",
+        "File[10_sudo-puppet-ohadlevy]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ohadlevy]",
+        "File[10_sudo-puppet-lzap]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-lzap]",
+        "File[10_sudo-puppet-ehelms]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ehelms]",
+        "File[10_sudo-puppet-dlobatog]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-dlobatog]",
+        "File[10_sudo-puppet-ekohl]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ekohl]",
+        "File[10_sudo-puppet-evgeni]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-evgeni]",
+        "File[10_sudo-puppet-oprazak]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-oprazak]",
+        "File[10_sudo-puppet-tbrisker]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-tbrisker]",
+        "File[10_sudo-puppet-pcreech]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-pcreech]",
+        "File[10_sudo-puppet-zhunting]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-zhunting]",
+        "File[10_sudo-puppet-wclark]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-wclark]",
+        "File[10_sudo-puppet-mmoll]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-mmoll]",
+        "File[/etc/apt/apt.conf.d/50unattended-upgrades]",
+        "File[/etc/apt/apt.conf.d/10periodic]",
+        "File[/etc/apt/apt.conf.d/20auto-upgrades]",
+        "File[/etc/apt/apt.conf.d/10options]",
+        "Concat_fragment[puppet.conf_main]",
+        "Concat_fragment[puppet.conf_main_vardir]",
+        "Concat_fragment[puppet.conf_main_logdir]",
+        "Concat_fragment[puppet.conf_main_rundir]",
+        "Concat_fragment[puppet.conf_main_ssldir]",
+        "Concat_fragment[puppet.conf_main_privatekeydir]",
+        "Concat_fragment[puppet.conf_main_hostprivkey]",
+        "Concat_fragment[puppet.conf_main_show_diff]",
+        "Concat_fragment[puppet.conf_main_codedir]",
+        "Concat_fragment[puppet.conf_main_server]",
+        "Concat_fragment[puppet.conf_main_pluginsource]",
+        "Concat_fragment[puppet.conf_main_pluginfactsource]",
+        "Concat_fragment[puppet.conf_main_certname]",
+        "Concat_fragment[puppet.conf_agent]",
+        "Concat_fragment[puppet.conf_agent_classfile]",
+        "Concat_fragment[puppet.conf_agent_localconfig]",
+        "Concat_fragment[puppet.conf_agent_default_schedules]",
+        "Concat_fragment[puppet.conf_agent_report]",
+        "Concat_fragment[puppet.conf_agent_masterport]",
+        "Concat_fragment[puppet.conf_agent_environment]",
+        "Concat_fragment[puppet.conf_agent_listen]",
+        "Concat_fragment[puppet.conf_agent_splay]",
+        "Concat_fragment[puppet.conf_agent_splaylimit]",
+        "Concat_fragment[puppet.conf_agent_runinterval]",
+        "Concat_fragment[puppet.conf_agent_noop]",
+        "Concat_fragment[puppet.conf_agent_usecacheonfailure]",
+        "Service[puppet]",
+        "Service[puppet-run.timer]",
+        "File[/etc/systemd/system/puppet-run.timer]",
+        "File[/etc/systemd/system/puppet-run.service]",
+        "Exec[systemctl-daemon-reload-puppet]",
+        "Cron[puppet]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+        "PuppetResourceFailed:Package[bzip2]",
+        "PuppetHasFailure"
+      ],
+      "evaluation_times": [
+        [
+          "Exec[ruby-2.6.3/update_rubygems]",
+          0.662541335
+        ],
+        [
+          "Exec[ruby-2.5.1/update_rubygems]",
+          0.607295328
+        ],
+        [
+          "Exec[ruby-2.7.0/update_rubygems]",
+          0.600359435
+        ],
+        [
+          "Exec[ruby-2.4.3/update_rubygems]",
+          0.589679639
+        ],
+        [
+          "Rvm_alias[ruby-2.4]",
+          0.383323922
+        ],
+        [
+          "Rvm_alias[ruby-2.7]",
+          0.378979736
+        ],
+        [
+          "Rvm_alias[ruby-2.6]",
+          0.37602251
+        ],
+        [
+          "Rvm_system_ruby[ruby-2.4.3]",
+          0.356350945
+        ],
+        [
+          "Rvm_system_ruby[ruby-2.7.0]",
+          0.354926705
+        ],
+        [
+          "Rvm_alias[ruby-2.5]",
+          0.351462942
+        ],
+        [
+          "Rvm_system_ruby[ruby-2.5.1]",
+          0.342734276
+        ],
+        [
+          "Rvm_system_ruby[ruby-2.6.3]",
+          0.330295801
+        ],
+        [
+          "File[/usr/local/bin/JSON.sh]",
+          0.182848948
+        ],
+        [
+          "File[/home/jenkins/.gitconfig]",
+          0.129493598
+        ],
+        [
+          "File[/usr/local/bin/validate_postgresql_connection.sh]",
+          0.122363669
+        ],
+        [
+          "File[/home/jenkins/.gemrc]",
+          0.121584645
+        ],
+        [
+          "Shellvar[extend_pbuilder_path]",
+          0.095874028
+        ],
+        [
+          "Augeas[puppet::set_start]",
+          0.075545717
+        ],
+        [
+          "Package[ansible]",
+          0.068940679
+        ],
+        [
+          "Postgresql_conn_validator[validate_service_is_running]",
+          0.066834735
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"foreman\" NOCREATEDB]",
+          0.06586384
+        ],
+        [
+          "Postgresql_psql[CREATE ROLE foreman ENCRYPTED PASSWORD ****]",
+          0.06580928
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"foreman\" SUPERUSER]",
+          0.062376246
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE foreman ENCRYPTED PASSWORD ****]",
+          0.060313214
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"foreman\" INHERIT]",
+          0.060191581
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"foreman\" NOCREATEROLE]",
+          0.0594455
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"foreman\" LOGIN]",
+          0.059335198
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"foreman\" NOREPLICATION]",
+          0.057955023
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"foreman\" CONNECTION LIMIT -1]",
+          0.057825784
+        ],
+        [
+          "Others",
+          0.447703594
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+      "PuppetResourceFailed:Package[bzip2]",
+      "PuppetHasFailure"
+    ]
+  }
+}

@@ -86,7 +86,7 @@ class Processor
   ensure
     t2 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     @telemetry ||= {}
-    @telemetry[metric] = (t2 - t1) * 1000
+    @telemetry[metric.to_s] = (t2 - t1) * 1000
   end
 
   def telemetry_as_string

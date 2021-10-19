@@ -1,0 +1,776 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "jen.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "jen.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 11,
+      "puppet_version": "6.19.1",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              346
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              0
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              0
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "package",
+              "Package",
+              11.507858131000008
+            ],
+            [
+              "file",
+              "File",
+              2.062791447
+            ],
+            [
+              "yumrepo",
+              "Yumrepo",
+              0.009437141
+            ],
+            [
+              "anchor",
+              "Anchor",
+              0.0015396239999999999
+            ],
+            [
+              "file_line",
+              "File line",
+              0.000383979
+            ],
+            [
+              "mysql_datadir",
+              "Mysql datadir",
+              0.000838808
+            ],
+            [
+              "service",
+              "Service",
+              0.406455119
+            ],
+            [
+              "exec",
+              "Exec",
+              6.607943686
+            ],
+            [
+              "mysql_user",
+              "Mysql user",
+              0.001283363
+            ],
+            [
+              "mysql_grant",
+              "Mysql grant",
+              0.001007366
+            ],
+            [
+              "gnupg_key",
+              "Gnupg key",
+              0.136496861
+            ],
+            [
+              "group",
+              "Group",
+              0.003084341
+            ],
+            [
+              "mounttab",
+              "Mounttab",
+              0.027175743
+            ],
+            [
+              "user",
+              "User",
+              0.031306312999999995
+            ],
+            [
+              "ssh_authorized_key",
+              "Ssh authorized key",
+              0.00077247
+            ],
+            [
+              "yum_cron_config",
+              "Yum cron config",
+              0.00949237
+            ],
+            [
+              "mailalias",
+              "Mailalias",
+              0.0007880509999999999
+            ],
+            [
+              "sshd_config",
+              "Sshd config",
+              0.07230070499999999
+            ],
+            [
+              "postgresql_conf",
+              "Postgresql conf",
+              0.003579379
+            ],
+            [
+              "concat_file",
+              "Concat file",
+              0.000993986
+            ],
+            [
+              "concat_fragment",
+              "Concat fragment",
+              0.004639908
+            ],
+            [
+              "rvm_system_ruby",
+              "Rvm system ruby",
+              2.916922851
+            ],
+            [
+              "rvm_alias",
+              "Rvm alias",
+              2.756717502
+            ],
+            [
+              "postgresql_conn_validator",
+              "Postgresql conn validator",
+              0.464853982
+            ],
+            [
+              "postgresql_psql",
+              "Postgresql psql",
+              0.488834572
+            ],
+            [
+              "cron",
+              "Cron",
+              0.015168831
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              0.000310508
+            ],
+            [
+              "startup_time",
+              "Startup time",
+              1.851674805
+            ],
+            [
+              "node_retrieval",
+              "Node retrieval",
+              1.317503247410059
+            ],
+            [
+              "plugin_sync",
+              "Plugin sync",
+              4.245902080088854
+            ],
+            [
+              "fact_generation",
+              "Fact generation",
+              6.981609173119068
+            ],
+            [
+              "convert_catalog",
+              "Convert catalog",
+              1.7316290810704231
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              6.772978577762842
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              34.30504274368286
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              34.487658981233835
+            ],
+            [
+              "total",
+              "Total",
+              57.790692647
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "notice",
+          "//jen.example.com/Puppet",
+          "Applied catalog in 34.49 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "Package[git]",
+        "Package[libxml2-devel]",
+        "Package[libxslt-devel]",
+        "Package[krb5-devel]",
+        "Package[systemd-devel]",
+        "Package[freeipmi]",
+        "Package[ipmitool]",
+        "Package[firefox]",
+        "Package[libvirt-devel]",
+        "Package[asciidoc]",
+        "Package[bzip2]",
+        "Package[unzip]",
+        "Package[ansible]",
+        "Package[python-virtualenv]",
+        "Package[libcurl-devel]",
+        "Package[sqlite-devel]",
+        "Package[transifex-client]",
+        "File[/usr/local/bin/JSON.sh]",
+        "File[/etc/pki/rpm-gpg/NODESOURCE-GPG-SIGNING-KEY-EL]",
+        "Yumrepo[nodesource]",
+        "Yumrepo[nodesource-source]",
+        "Package[nodejs]",
+        "Package[nodejs-devel]",
+        "Package[nodejs-debuginfo]",
+        "Package[npm]",
+        "File[root_npmrc]",
+        "Package[bower]",
+        "Package[grunt-cli]",
+        "File[/etc/cron.daily/npm_tmp_cleaner]",
+        "File[/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7]",
+        "Package[selinux-policy-devel]",
+        "Package[qpid-cpp-client-devel]",
+        "Package[openscap]",
+        "File[/etc/security/limits.d]",
+        "File[/etc/security/limits.d/90-nproc.conf]",
+        "Anchor[java::begin:]",
+        "Package[java]",
+        "File_line[java-home-environment]",
+        "Anchor[java::end]",
+        "Anchor[mysql::server::start]",
+        "File[/etc/my.cnf.d]",
+        "File[mysql-config-file]",
+        "Package[mysql-server]",
+        "File[/var/log/mariadb/mariadb.log]",
+        "Mysql_datadir[/var/lib/mysql]",
+        "Service[mysqld]",
+        "Exec[wait_for_mysql_socket_to_open]",
+        "Exec[remove install pass]",
+        "Anchor[mysql::server::end]",
+        "Mysql_user[foreman@localhost]",
+        "Mysql_grant[foreman@localhost/*.*]",
+        "Mysql_grant[foreman@localhost/test%.*]",
+        "Package[postgresql-server-nonscl]",
+        "Package[postgresql-devel-nonscl]",
+        "Package[postgresql-client-nonscl]",
+        "Package[postgresql-nonscl]",
+        "Package[centos-release-scl-rh]",
+        "Yumrepo[foreman-infra-el7]",
+        "File[/etc/profile.d/enable_postgresql12_scl.sh]",
+        "File[/usr/bin/pg_config]",
+        "Package[postgresql-client]",
+        "File[/usr/local/bin/validate_postgresql_connection.sh]",
+        "Package[postgresql-server]",
+        "Package[rh-postgresql12-postgresql-debversion]",
+        "Package[rh-postgresql12-postgresql-evr]",
+        "File[/var/opt/rh/rh-postgresql12/lib/pgsql/data]",
+        "Exec[postgresql_initdb]",
+        "File[systemd-override]",
+        "Exec[restart-systemd]",
+        "Package[postgresql-devel]",
+        "Gnupg_key[rvm_pkuczynski]",
+        "Group[rvm]",
+        "File[/etc/rvmrc]",
+        "Package[curl]",
+        "Gnupg_key[rvm_D39DC0E3]",
+        "Exec[system-rvm]",
+        "File[/etc/cron.daily/rvm_log_cleaner]",
+        "Package[koji]",
+        "Package[rpm-build]",
+        "Package[git-annex]",
+        "Package[pyliblzma]",
+        "Package[createrepo]",
+        "Package[tito]",
+        "Package[scl-utils-build]",
+        "Package[rpmdevtools]",
+        "Yumrepo[rhel-7-server-rhui-extras-rpms]",
+        "Package[dnf]",
+        "Package[dnf-plugins-core]",
+        "Package[docker-ce]",
+        "File[/etc/yum.repos.d/docker.repo]",
+        "Package[device-mapper]",
+        "Package[docker]",
+        "File[/etc/sysconfig/docker-storage-setup]",
+        "File[/etc/systemd/system/docker.service.d]",
+        "File[/etc/systemd/system/docker.service.d/service-overrides.conf]",
+        "Exec[docker-systemd-reload-before-service]",
+        "File[/etc/sysconfig/docker-storage]",
+        "File[/etc/sysconfig/docker]",
+        "Service[docker]",
+        "Group[docker]",
+        "File[/etc/cron.daily/ruby_cleaner]",
+        "Exec[create-swap]",
+        "Exec[enable-swap]",
+        "Mounttab[swap]",
+        "User[foreman_rex]",
+        "Ssh_authorized_key[foreman-proxy@puppetmaster]",
+        "File[/etc/puppetlabs/puppet]",
+        "Package[puppet-agent]",
+        "Anchor[sudo::begin]",
+        "Package[sudo]",
+        "File[/etc/sudoers]",
+        "File[/etc/sudoers.d]",
+        "File[/etc/sudoers.d/foreman_rex]",
+        "Anchor[sudo::end]",
+        "File[/etc/motd]",
+        "Package[yum-cron]",
+        "Yum_cron_config[commands/update_cmd]",
+        "Yum_cron_config[commands/update_messages]",
+        "Yum_cron_config[commands/download_updates]",
+        "Yum_cron_config[commands/apply_updates]",
+        "Yum_cron_config[commands/random_sleep]",
+        "Yum_cron_config[emitters/system_name]",
+        "Yum_cron_config[email/email_to]",
+        "Yum_cron_config[email/email_host]",
+        "Yum_cron_config[base/debuglevel]",
+        "Yum_cron_config[base/exclude]",
+        "Service[yum-cron]",
+        "Package[vim-enhanced]",
+        "Package[htop]",
+        "Package[iftop]",
+        "Package[screen]",
+        "Package[ruby-shadow]",
+        "Mailalias[sysadmins]",
+        "Mailalias[root]",
+        "Package[ntp]",
+        "File[/etc/ntp.conf]",
+        "File[/etc/ntp/step-tickers]",
+        "Service[ntp]",
+        "File[/root/.ssh/authorized_keys]",
+        "File[/etc/ssh/sshd_config]",
+        "Sshd_config[PermitRootLogin]",
+        "Sshd_config[PasswordAuthentication]",
+        "Sshd_config[StrictModes]",
+        "Sshd_config[LogLevel]",
+        "Service[sshd]",
+        "Package[tzdata]",
+        "File[/etc/localtime]",
+        "File[/etc/sysconfig/clock]",
+        "User[jenkins]",
+        "File[/tmp/tito]",
+        "File[/home/jenkins]",
+        "File[/home/jenkins/workspace]",
+        "File[/home/jenkins/.gitconfig]",
+        "File[/home/jenkins/.gemrc]",
+        "File[/home/jenkins/.config]",
+        "File[/home/jenkins/.config/hub]",
+        "File[/home/jenkins/.config/copr]",
+        "File[/home/jenkins/tmp]",
+        "File[/home/jenkins/bin]",
+        "File[/home/jenkins/bin/kkoji]",
+        "File[/home/jenkins/.koji]",
+        "File[/home/jenkins/.koji/katello-config]",
+        "File[/home/jenkins/.koji/config]",
+        "File[/home/jenkins/.katello.cert]",
+        "File[/home/jenkins/.katello-ca.cert]",
+        "File[/home/jenkins/.titorc]",
+        "File[/home/jenkins/.ssh]",
+        "File[/home/jenkins/.ssh/config]",
+        "File[/home/jenkins/.ssh/authorized_keys]",
+        "Exec[import-EPEL-7]",
+        "Yumrepo[epel-testing]",
+        "Yumrepo[epel-testing-debuginfo]",
+        "Yumrepo[epel-testing-source]",
+        "Yumrepo[epel]",
+        "Yumrepo[epel-debuginfo]",
+        "Yumrepo[epel-source]",
+        "Package[chromium]",
+        "Package[chromedriver]",
+        "Postgresql_conf[fsync]",
+        "Postgresql_conf[full_page_writes]",
+        "Postgresql_conf[synchronous_commit]",
+        "Postgresql_conf[autovacuum]",
+        "Postgresql_conf[effective_cache_size]",
+        "Postgresql_conf[shared_buffers]",
+        "Postgresql_conf[checkpoint_completion_target]",
+        "Postgresql_conf[wal_level]",
+        "Postgresql_conf[max_wal_senders]",
+        "Concat_file[/var/opt/rh/rh-postgresql12/lib/pgsql/data/pg_hba.conf]",
+        "File[/var/opt/rh/rh-postgresql12/lib/pgsql/data/pg_hba.conf]",
+        "Concat_fragment[/var/opt/rh/rh-postgresql12/lib/pgsql/data/pg_hba.conf_header]",
+        "Postgresql_conf[port]",
+        "Postgresql_conf[data_directory]",
+        "Concat_file[/var/opt/rh/rh-postgresql12/lib/pgsql/data/pg_ident.conf]",
+        "File[/var/opt/rh/rh-postgresql12/lib/pgsql/data/pg_ident.conf]",
+        "Concat_fragment[/var/opt/rh/rh-postgresql12/lib/pgsql/data/pg_ident.conf_header]",
+        "File[/home/jenkins/mysql.db.yaml]",
+        "File[/home/jenkins/sqlite3.db.yaml]",
+        "File[/home/jenkins/postgresql.db.yaml]",
+        "Exec[rvm-system-user-jenkins]",
+        "Rvm_system_ruby[ruby-2.4.3]",
+        "Rvm_alias[ruby-2.4]",
+        "Exec[ruby-2.4.3/update_rubygems]",
+        "Rvm_system_ruby[ruby-2.5.1]",
+        "Rvm_alias[ruby-2.5]",
+        "Exec[ruby-2.5.1/update_rubygems]",
+        "Rvm_system_ruby[ruby-2.6.3]",
+        "Rvm_alias[ruby-2.6]",
+        "Exec[ruby-2.6.3/update_rubygems]",
+        "Rvm_system_ruby[ruby-2.7.0]",
+        "Rvm_alias[ruby-2.7]",
+        "Exec[ruby-2.7.0/update_rubygems]",
+        "File[10_foreman-proxy-rex]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_foreman-proxy-rex]",
+        "Concat_file[/etc/puppetlabs/puppet/puppet.conf]",
+        "File[/etc/puppetlabs/puppet/puppet.conf]",
+        "File[/etc/puppetlabs/puppet/auth.conf]",
+        "User[gregsutcliffe]",
+        "File[/home/gregsutcliffe]",
+        "File[/home/gregsutcliffe/.ssh]",
+        "File[/home/gregsutcliffe/.ssh/authorized_keys]",
+        "User[ohadlevy]",
+        "File[/home/ohadlevy]",
+        "File[/home/ohadlevy/.ssh]",
+        "File[/home/ohadlevy/.ssh/authorized_keys]",
+        "User[lzap]",
+        "File[/home/lzap]",
+        "File[/home/lzap/.ssh]",
+        "File[/home/lzap/.ssh/authorized_keys]",
+        "User[ehelms]",
+        "File[/home/ehelms]",
+        "File[/home/ehelms/.ssh]",
+        "File[/home/ehelms/.ssh/authorized_keys]",
+        "User[dlobatog]",
+        "File[/home/dlobatog]",
+        "File[/home/dlobatog/.ssh]",
+        "File[/home/dlobatog/.ssh/authorized_keys]",
+        "User[ekohl]",
+        "File[/home/ekohl]",
+        "File[/home/ekohl/.ssh]",
+        "File[/home/ekohl/.ssh/authorized_keys]",
+        "User[evgeni]",
+        "File[/home/evgeni]",
+        "File[/home/evgeni/.ssh]",
+        "File[/home/evgeni/.ssh/authorized_keys]",
+        "User[oprazak]",
+        "File[/home/oprazak]",
+        "File[/home/oprazak/.ssh]",
+        "File[/home/oprazak/.ssh/authorized_keys]",
+        "User[tbrisker]",
+        "File[/home/tbrisker]",
+        "File[/home/tbrisker/.ssh]",
+        "File[/home/tbrisker/.ssh/authorized_keys]",
+        "User[pcreech]",
+        "File[/home/pcreech]",
+        "File[/home/pcreech/.ssh]",
+        "File[/home/pcreech/.ssh/authorized_keys]",
+        "User[zhunting]",
+        "File[/home/zhunting]",
+        "File[/home/zhunting/.ssh]",
+        "File[/home/zhunting/.ssh/authorized_keys]",
+        "User[wclark]",
+        "File[/home/wclark]",
+        "File[/home/wclark/.ssh]",
+        "File[/home/wclark/.ssh/authorized_keys]",
+        "User[mmoll]",
+        "File[10_sudo-puppet-jenkins]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-jenkins]",
+        "Concat_fragment[pg_hba_rule_local access as postgres user]",
+        "Concat_fragment[pg_hba_rule_local access to database with same name]",
+        "Concat_fragment[pg_hba_rule_allow localhost TCP access to postgresql user]",
+        "Concat_fragment[pg_hba_rule_deny access to postgresql user]",
+        "Concat_fragment[pg_hba_rule_allow access to all users]",
+        "Concat_fragment[pg_hba_rule_allow access to ipv6 localhost]",
+        "Anchor[postgresql::server::service::begin]",
+        "Service[postgresqld]",
+        "Postgresql_conn_validator[validate_service_is_running]",
+        "Anchor[postgresql::server::service::end]",
+        "Exec[postgresql_reload]",
+        "Postgresql_psql[CREATE ROLE foreman ENCRYPTED PASSWORD ****]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" SUPERUSER]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" NOCREATEDB]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" NOCREATEROLE]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" LOGIN]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" INHERIT]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" NOREPLICATION]",
+        "Postgresql_psql[ALTER ROLE \"foreman\" CONNECTION LIMIT -1]",
+        "Postgresql_psql[ALTER ROLE foreman ENCRYPTED PASSWORD ****]",
+        "File[10_sudo-puppet-gregsutcliffe]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-gregsutcliffe]",
+        "File[10_sudo-puppet-ohadlevy]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ohadlevy]",
+        "File[10_sudo-puppet-lzap]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-lzap]",
+        "File[10_sudo-puppet-ehelms]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ehelms]",
+        "File[10_sudo-puppet-dlobatog]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-dlobatog]",
+        "File[10_sudo-puppet-ekohl]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ekohl]",
+        "File[10_sudo-puppet-evgeni]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-evgeni]",
+        "File[10_sudo-puppet-oprazak]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-oprazak]",
+        "File[10_sudo-puppet-tbrisker]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-tbrisker]",
+        "File[10_sudo-puppet-pcreech]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-pcreech]",
+        "File[10_sudo-puppet-zhunting]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-zhunting]",
+        "File[10_sudo-puppet-wclark]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-wclark]",
+        "File[10_sudo-puppet-mmoll]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-mmoll]",
+        "Concat_fragment[puppet.conf_main]",
+        "Concat_fragment[puppet.conf_main_vardir]",
+        "Concat_fragment[puppet.conf_main_logdir]",
+        "Concat_fragment[puppet.conf_main_rundir]",
+        "Concat_fragment[puppet.conf_main_ssldir]",
+        "Concat_fragment[puppet.conf_main_privatekeydir]",
+        "Concat_fragment[puppet.conf_main_hostprivkey]",
+        "Concat_fragment[puppet.conf_main_show_diff]",
+        "Concat_fragment[puppet.conf_main_codedir]",
+        "Concat_fragment[puppet.conf_main_server]",
+        "Concat_fragment[puppet.conf_main_pluginsource]",
+        "Concat_fragment[puppet.conf_main_pluginfactsource]",
+        "Concat_fragment[puppet.conf_main_certname]",
+        "Concat_fragment[puppet.conf_agent]",
+        "Concat_fragment[puppet.conf_agent_classfile]",
+        "Concat_fragment[puppet.conf_agent_localconfig]",
+        "Concat_fragment[puppet.conf_agent_default_schedules]",
+        "Concat_fragment[puppet.conf_agent_report]",
+        "Concat_fragment[puppet.conf_agent_masterport]",
+        "Concat_fragment[puppet.conf_agent_environment]",
+        "Concat_fragment[puppet.conf_agent_listen]",
+        "Concat_fragment[puppet.conf_agent_splay]",
+        "Concat_fragment[puppet.conf_agent_splaylimit]",
+        "Concat_fragment[puppet.conf_agent_runinterval]",
+        "Concat_fragment[puppet.conf_agent_noop]",
+        "Concat_fragment[puppet.conf_agent_usecacheonfailure]",
+        "Service[puppet]",
+        "Service[puppet-run.timer]",
+        "File[/etc/systemd/system/puppet-run.timer]",
+        "File[/etc/systemd/system/puppet-run.service]",
+        "Exec[systemctl-daemon-reload-puppet]",
+        "Cron[puppet]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+
+      ],
+      "evaluation_times": [
+        [
+          "Package[ansible]",
+          8.662653919
+        ],
+        [
+          "Exec[ruby-2.6.3/update_rubygems]",
+          1.849811894
+        ],
+        [
+          "Exec[ruby-2.7.0/update_rubygems]",
+          1.600059455
+        ],
+        [
+          "Exec[ruby-2.5.1/update_rubygems]",
+          1.466359633
+        ],
+        [
+          "Exec[ruby-2.4.3/update_rubygems]",
+          1.417617696
+        ],
+        [
+          "Package[nodejs-devel]",
+          1.320711991
+        ],
+        [
+          "Rvm_system_ruby[ruby-2.7.0]",
+          0.780993287
+        ],
+        [
+          "Rvm_system_ruby[ruby-2.4.3]",
+          0.769543373
+        ],
+        [
+          "Rvm_alias[ruby-2.7]",
+          0.705133783
+        ],
+        [
+          "Rvm_system_ruby[ruby-2.6.3]",
+          0.696318915
+        ],
+        [
+          "Rvm_alias[ruby-2.5]",
+          0.695703621
+        ],
+        [
+          "Rvm_alias[ruby-2.6]",
+          0.685728509
+        ],
+        [
+          "Rvm_alias[ruby-2.4]",
+          0.670151589
+        ],
+        [
+          "Rvm_system_ruby[ruby-2.5.1]",
+          0.670067276
+        ],
+        [
+          "Postgresql_conn_validator[validate_service_is_running]",
+          0.464853982
+        ],
+        [
+          "File[/usr/local/bin/JSON.sh]",
+          0.462825956
+        ],
+        [
+          "File[/usr/local/bin/validate_postgresql_connection.sh]",
+          0.455765159
+        ],
+        [
+          "Package[postgresql-client-nonscl]",
+          0.232963027
+        ],
+        [
+          "Package[docker-ce]",
+          0.226150775
+        ],
+        [
+          "Package[postgresql-devel-nonscl]",
+          0.225725984
+        ],
+        [
+          "Package[nodejs-debuginfo]",
+          0.216857135
+        ],
+        [
+          "Package[postgresql-nonscl]",
+          0.200826935
+        ],
+        [
+          "Package[postgresql-server-nonscl]",
+          0.196469795
+        ],
+        [
+          "Package[npm]",
+          0.192984765
+        ],
+        [
+          "Exec[import-EPEL-7]",
+          0.145440391
+        ],
+        [
+          "File[/home/jenkins/.koji/config]",
+          0.138495252
+        ],
+        [
+          "File[/home/jenkins/.gemrc]",
+          0.136058098
+        ],
+        [
+          "File[/home/jenkins/.katello-ca.cert]",
+          0.135848266
+        ],
+        [
+          "File[/home/jenkins/.gitconfig]",
+          0.133373415
+        ],
+        [
+          "Others",
+          1.977483161
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+
+    ]
+  }
+}

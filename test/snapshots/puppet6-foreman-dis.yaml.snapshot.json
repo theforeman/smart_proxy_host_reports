@@ -1,0 +1,538 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "dis.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "dis.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 10,
+      "puppet_version": "6.15.0",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              168
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              0
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              0
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "user",
+              "User",
+              0.027407397
+            ],
+            [
+              "ssh_authorized_key",
+              "Ssh authorized key",
+              0.001241409
+            ],
+            [
+              "file",
+              "File",
+              0.4687960659999998
+            ],
+            [
+              "package",
+              "Package",
+              0.003484742
+            ],
+            [
+              "augeas",
+              "Augeas",
+              0.21258698
+            ],
+            [
+              "anchor",
+              "Anchor",
+              0.00040659499999999994
+            ],
+            [
+              "mailalias",
+              "Mailalias",
+              0.000568941
+            ],
+            [
+              "service",
+              "Service",
+              0.39846323100000003
+            ],
+            [
+              "file_line",
+              "File line",
+              0.001298746
+            ],
+            [
+              "sshd_config",
+              "Sshd config",
+              0.11637576200000001
+            ],
+            [
+              "exec",
+              "Exec",
+              0.005762384000000001
+            ],
+            [
+              "concat_file",
+              "Concat file",
+              0.000299103
+            ],
+            [
+              "cron",
+              "Cron",
+              0.049443492
+            ],
+            [
+              "concat_fragment",
+              "Concat fragment",
+              0.0031844620000000003
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              0.000248378
+            ],
+            [
+              "startup_time",
+              "Startup time",
+              1.772872907
+            ],
+            [
+              "node_retrieval",
+              "Node retrieval",
+              1.365152295678854
+            ],
+            [
+              "plugin_sync",
+              "Plugin sync",
+              3.1558513902127743
+            ],
+            [
+              "fact_generation",
+              "Fact generation",
+              10.662513446062803
+            ],
+            [
+              "convert_catalog",
+              "Convert catalog",
+              1.3233906924724579
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              5.042090158909559
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              1.9755116924643517
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              2.075961295515299
+            ],
+            [
+              "total",
+              "Total",
+              25.531861094
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "notice",
+          "//dis.example.com/Puppet",
+          "Applied catalog in 2.08 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "User[foreman_rex]",
+        "Ssh_authorized_key[foreman-proxy@puppetmaster]",
+        "File[/etc/puppetlabs/puppet]",
+        "Package[puppet-agent]",
+        "Augeas[puppet::set_start]",
+        "File[/var/lib/puppet/state/agent_disabled.lock]",
+        "File[/etc/example]",
+        "File[/usr/bin/example-snapshot]",
+        "Anchor[sudo::begin]",
+        "Package[sudo]",
+        "File[/etc/sudoers]",
+        "File[/etc/sudoers.d]",
+        "File[/etc/sudoers.d/foreman_rex]",
+        "Anchor[sudo::end]",
+        "File[/etc/motd]",
+        "File[sources.list]",
+        "File[sources.list.d]",
+        "File[preferences]",
+        "File[preferences.d]",
+        "File[apt.conf.d]",
+        "File[/etc/apt/auth.conf]",
+        "Package[gnupg]",
+        "Package[unattended-upgrades]",
+        "Package[vim]",
+        "Package[htop]",
+        "Package[iftop]",
+        "Package[screen]",
+        "Package[ruby-shadow]",
+        "Mailalias[sysadmins]",
+        "Mailalias[root]",
+        "File[/etc/dirvish]",
+        "File[/etc/dirvish/pre_client]",
+        "Package[rsync]",
+        "Package[ntp]",
+        "File[/etc/ntp.conf]",
+        "Service[ntp]",
+        "File[/root/.ssh/authorized_keys]",
+        "File_line[dirvish_ssh_pubkey]",
+        "File[/etc/ssh/sshd_config]",
+        "Sshd_config[PermitRootLogin]",
+        "Sshd_config[PasswordAuthentication]",
+        "Sshd_config[StrictModes]",
+        "Sshd_config[LogLevel]",
+        "Service[ssh]",
+        "Package[tzdata]",
+        "File[/etc/localtime]",
+        "File[/etc/timezone]",
+        "File[10_foreman-proxy-rex]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_foreman-proxy-rex]",
+        "Concat_file[/etc/puppetlabs/puppet/puppet.conf]",
+        "File[/etc/puppetlabs/puppet/puppet.conf]",
+        "File[/etc/puppetlabs/puppet/auth.conf]",
+        "File[/etc/example/dis.example.com.yaml]",
+        "Cron[example-snapshot-dis.example.com]",
+        "User[gregsutcliffe]",
+        "File[/home/gregsutcliffe]",
+        "File[/home/gregsutcliffe/.ssh]",
+        "File[/home/gregsutcliffe/.ssh/authorized_keys]",
+        "User[ohadlevy]",
+        "File[/home/ohadlevy]",
+        "File[/home/ohadlevy/.ssh]",
+        "File[/home/ohadlevy/.ssh/authorized_keys]",
+        "User[lzap]",
+        "File[/home/lzap]",
+        "File[/home/lzap/.ssh]",
+        "File[/home/lzap/.ssh/authorized_keys]",
+        "User[ehelms]",
+        "File[/home/ehelms]",
+        "File[/home/ehelms/.ssh]",
+        "File[/home/ehelms/.ssh/authorized_keys]",
+        "User[dlobatog]",
+        "File[/home/dlobatog]",
+        "File[/home/dlobatog/.ssh]",
+        "File[/home/dlobatog/.ssh/authorized_keys]",
+        "User[ekohl]",
+        "File[/home/ekohl]",
+        "File[/home/ekohl/.ssh]",
+        "File[/home/ekohl/.ssh/authorized_keys]",
+        "User[evgeni]",
+        "File[/home/evgeni]",
+        "File[/home/evgeni/.ssh]",
+        "File[/home/evgeni/.ssh/authorized_keys]",
+        "User[oprazak]",
+        "File[/home/oprazak]",
+        "File[/home/oprazak/.ssh]",
+        "File[/home/oprazak/.ssh/authorized_keys]",
+        "User[tbrisker]",
+        "File[/home/tbrisker]",
+        "File[/home/tbrisker/.ssh]",
+        "File[/home/tbrisker/.ssh/authorized_keys]",
+        "User[pcreech]",
+        "File[/home/pcreech]",
+        "File[/home/pcreech/.ssh]",
+        "File[/home/pcreech/.ssh/authorized_keys]",
+        "User[zhunting]",
+        "File[/home/zhunting]",
+        "File[/home/zhunting/.ssh]",
+        "File[/home/zhunting/.ssh/authorized_keys]",
+        "User[wclark]",
+        "File[/home/wclark]",
+        "File[/home/wclark/.ssh]",
+        "File[/home/wclark/.ssh/authorized_keys]",
+        "User[mmoll]",
+        "File[/etc/apt/apt.conf.d/15update-stamp]",
+        "Exec[apt_update]",
+        "File[10_sudo-puppet-gregsutcliffe]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-gregsutcliffe]",
+        "File[10_sudo-puppet-ohadlevy]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ohadlevy]",
+        "File[10_sudo-puppet-lzap]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-lzap]",
+        "File[10_sudo-puppet-ehelms]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ehelms]",
+        "File[10_sudo-puppet-dlobatog]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-dlobatog]",
+        "File[10_sudo-puppet-ekohl]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ekohl]",
+        "File[10_sudo-puppet-evgeni]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-evgeni]",
+        "File[10_sudo-puppet-oprazak]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-oprazak]",
+        "File[10_sudo-puppet-tbrisker]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-tbrisker]",
+        "File[10_sudo-puppet-pcreech]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-pcreech]",
+        "File[10_sudo-puppet-zhunting]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-zhunting]",
+        "File[10_sudo-puppet-wclark]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-wclark]",
+        "File[10_sudo-puppet-mmoll]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-mmoll]",
+        "File[/etc/apt/apt.conf.d/50unattended-upgrades]",
+        "File[/etc/apt/apt.conf.d/10periodic]",
+        "File[/etc/apt/apt.conf.d/20auto-upgrades]",
+        "File[/etc/apt/apt.conf.d/10options]",
+        "Concat_fragment[puppet.conf_main]",
+        "Concat_fragment[puppet.conf_main_vardir]",
+        "Concat_fragment[puppet.conf_main_logdir]",
+        "Concat_fragment[puppet.conf_main_rundir]",
+        "Concat_fragment[puppet.conf_main_ssldir]",
+        "Concat_fragment[puppet.conf_main_privatekeydir]",
+        "Concat_fragment[puppet.conf_main_hostprivkey]",
+        "Concat_fragment[puppet.conf_main_show_diff]",
+        "Concat_fragment[puppet.conf_main_codedir]",
+        "Concat_fragment[puppet.conf_main_server]",
+        "Concat_fragment[puppet.conf_main_pluginsource]",
+        "Concat_fragment[puppet.conf_main_pluginfactsource]",
+        "Concat_fragment[puppet.conf_main_certname]",
+        "Concat_fragment[puppet.conf_agent]",
+        "Concat_fragment[puppet.conf_agent_classfile]",
+        "Concat_fragment[puppet.conf_agent_localconfig]",
+        "Concat_fragment[puppet.conf_agent_default_schedules]",
+        "Concat_fragment[puppet.conf_agent_report]",
+        "Concat_fragment[puppet.conf_agent_masterport]",
+        "Concat_fragment[puppet.conf_agent_environment]",
+        "Concat_fragment[puppet.conf_agent_listen]",
+        "Concat_fragment[puppet.conf_agent_splay]",
+        "Concat_fragment[puppet.conf_agent_splaylimit]",
+        "Concat_fragment[puppet.conf_agent_runinterval]",
+        "Concat_fragment[puppet.conf_agent_noop]",
+        "Concat_fragment[puppet.conf_agent_usecacheonfailure]",
+        "Service[puppet]",
+        "Service[puppet-run.timer]",
+        "File[/etc/systemd/system/puppet-run.timer]",
+        "File[/etc/systemd/system/puppet-run.service]",
+        "Exec[systemctl-daemon-reload-puppet]",
+        "Cron[puppet]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+
+      ],
+      "evaluation_times": [
+        [
+          "File[/usr/bin/example-snapshot]",
+          0.25101413
+        ],
+        [
+          "Augeas[puppet::set_start]",
+          0.21258698
+        ],
+        [
+          "Service[ntp]",
+          0.14506023
+        ],
+        [
+          "Sshd_config[PermitRootLogin]",
+          0.109033
+        ],
+        [
+          "Service[puppet-run.timer]",
+          0.102520432
+        ],
+        [
+          "Service[puppet]",
+          0.079028368
+        ],
+        [
+          "Service[ssh]",
+          0.071854201
+        ],
+        [
+          "Cron[example-snapshot-dis.example.com]",
+          0.038420787
+        ],
+        [
+          "Cron[puppet]",
+          0.011022705
+        ],
+        [
+          "File[10_sudo-puppet-ehelms]",
+          0.008444447
+        ],
+        [
+          "File[10_sudo-puppet-evgeni]",
+          0.008423529
+        ],
+        [
+          "File[/etc/example/dis.example.com.yaml]",
+          0.006133926
+        ],
+        [
+          "User[gregsutcliffe]",
+          0.00599854
+        ],
+        [
+          "File[/home/ohadlevy/.ssh]",
+          0.00562161
+        ],
+        [
+          "File[/home/dlobatog/.ssh/authorized_keys]",
+          0.005397978
+        ],
+        [
+          "File[10_sudo-puppet-dlobatog]",
+          0.005379826
+        ],
+        [
+          "File[/home/ekohl/.ssh/authorized_keys]",
+          0.005317598
+        ],
+        [
+          "File[/home/ehelms/.ssh/authorized_keys]",
+          0.004918265
+        ],
+        [
+          "File[/home/ohadlevy/.ssh/authorized_keys]",
+          0.004837903
+        ],
+        [
+          "File[10_sudo-puppet-ohadlevy]",
+          0.004748306
+        ],
+        [
+          "Sshd_config[PasswordAuthentication]",
+          0.004471743
+        ],
+        [
+          "File[/var/lib/puppet/state/agent_disabled.lock]",
+          0.004329757
+        ],
+        [
+          "File[10_sudo-puppet-tbrisker]",
+          0.004138726
+        ],
+        [
+          "File[/etc/dirvish/pre_client]",
+          0.004056042
+        ],
+        [
+          "File[10_foreman-proxy-rex]",
+          0.003910997
+        ],
+        [
+          "File[/etc/apt/apt.conf.d/15update-stamp]",
+          0.003905478
+        ],
+        [
+          "File[/home/lzap/.ssh/authorized_keys]",
+          0.00379532
+        ],
+        [
+          "User[foreman_rex]",
+          0.003754502
+        ],
+        [
+          "File[/home/zhunting/.ssh]",
+          0.003737911
+        ],
+        [
+          "Others",
+          0.167704451
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+
+    ]
+  }
+}

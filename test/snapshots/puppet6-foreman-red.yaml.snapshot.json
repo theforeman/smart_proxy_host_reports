@@ -1,0 +1,805 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "red.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "red.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 11,
+      "puppet_version": "6.19.1",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              400
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              0
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              2
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "package",
+              "Package",
+              0.07833315300000002
+            ],
+            [
+              "file",
+              "File",
+              9.533167981
+            ],
+            [
+              "service",
+              "Service",
+              0.294139215
+            ],
+            [
+              "user",
+              "User",
+              0.027380214000000003
+            ],
+            [
+              "ssh_authorized_key",
+              "Ssh authorized key",
+              0.000608339
+            ],
+            [
+              "vcsrepo",
+              "Vcsrepo",
+              0.06176922
+            ],
+            [
+              "exec",
+              "Exec",
+              1.1444457270000001
+            ],
+            [
+              "mailalias",
+              "Mailalias",
+              0.001297849
+            ],
+            [
+              "cron",
+              "Cron",
+              0.029331518
+            ],
+            [
+              "ini_setting",
+              "Ini setting",
+              0.001806158
+            ],
+            [
+              "group",
+              "Group",
+              0.000696665
+            ],
+            [
+              "anchor",
+              "Anchor",
+              0.0009416780000000002
+            ],
+            [
+              "yum_cron_config",
+              "Yum cron config",
+              0.011007246
+            ],
+            [
+              "file_line",
+              "File line",
+              0.001334286
+            ],
+            [
+              "sshd_config",
+              "Sshd config",
+              0.070727211
+            ],
+            [
+              "concat_file",
+              "Concat file",
+              0.0037476500000000004
+            ],
+            [
+              "concat_fragment",
+              "Concat fragment",
+              0.016422480999999996
+            ],
+            [
+              "yumrepo",
+              "Yumrepo",
+              0.000710872
+            ],
+            [
+              "postgresql_conf",
+              "Postgresql conf",
+              0.0025468269999999998
+            ],
+            [
+              "postgresql_conn_validator",
+              "Postgresql conn validator",
+              0.032358722
+            ],
+            [
+              "postgresql_psql",
+              "Postgresql psql",
+              0.6015170489999999
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              0.000179229
+            ],
+            [
+              "startup_time",
+              "Startup time",
+              1.720986766
+            ],
+            [
+              "node_retrieval",
+              "Node retrieval",
+              2.6903914771974087
+            ],
+            [
+              "plugin_sync",
+              "Plugin sync",
+              3.852561704814434
+            ],
+            [
+              "fact_generation",
+              "Fact generation",
+              3.6348193287849426
+            ],
+            [
+              "convert_catalog",
+              "Convert catalog",
+              2.2679108530282974
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              30.74944769218564
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              14.080497976392508
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              14.330076571553946
+            ],
+            [
+              "total",
+              "Total",
+              59.730137283
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "notice",
+          "//red.example.com/Puppet",
+          "Applied catalog in 14.33 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "Package[exim]",
+        "File[/etc/exim/exim.conf]",
+        "Service[exim]",
+        "User[foreman_rex]",
+        "Ssh_authorized_key[foreman-proxy@puppetmaster]",
+        "User[prprocessor]",
+        "File[/usr/share/prprocessor]",
+        "Package[gcc]",
+        "Package[make]",
+        "Package[ruby-devel]",
+        "Package[rubygem-bundler]",
+        "Vcsrepo[/usr/share/prprocessor]",
+        "Exec[install prprocessor]",
+        "Mailalias[prprocessor]",
+        "Cron[close inactive]",
+        "Package[letsencrypt]",
+        "File[/etc/letsencrypt]",
+        "File[/opt/puppetlabs/puppet/cache/letsencrypt]",
+        "Ini_setting[/etc/letsencrypt/cli.ini server https://acme-v02.api.letsencrypt.org/directory]",
+        "Ini_setting[/etc/letsencrypt/cli.ini email foreman-infra-notifications@googlegroups.com]",
+        "File[letsencrypt-renewal-hooks-puppet]",
+        "Cron[letsencrypt-renew]",
+        "Exec[initialize letsencrypt]",
+        "File[/usr/local/sbin/letsencrypt-domain-validation]",
+        "Cron[letsencrypt_renew]",
+        "Package[httpd]",
+        "Group[apache]",
+        "User[apache]",
+        "Exec[mkdir /etc/httpd/conf.d]",
+        "Exec[mkdir /etc/httpd/conf.modules.d]",
+        "Package[mailcap]",
+        "File[mime.conf]",
+        "File[mime_magic.conf]",
+        "File[alias.conf]",
+        "File[autoindex.conf]",
+        "File[deflate.conf]",
+        "File[dir.conf]",
+        "File[negotiation.conf]",
+        "File[setenvif.conf]",
+        "File[/etc/httpd/conf.modules.d/prefork.conf]",
+        "File[/var/www/vhosts]",
+        "File[/etc/puppetlabs/puppet]",
+        "Package[puppet-agent]",
+        "Package[rubygem-bundler.noarch]",
+        "Package[gcc-c++]",
+        "Package[libxml2-devel]",
+        "Package[ImageMagick-devel]",
+        "Package[postgresql-devel]",
+        "Package[sqlite-devel]",
+        "Package[postgresql-client]",
+        "File[/usr/local/bin/validate_postgresql_connection.sh]",
+        "Package[postgresql-server]",
+        "File[/var/lib/pgsql/data]",
+        "Exec[postgresql_initdb]",
+        "File[systemd-override]",
+        "Exec[restart-systemd]",
+        "User[adminpz8bn8d]",
+        "File[/etc/redmine]",
+        "File[/etc/redmine/secure_config.yaml]",
+        "Vcsrepo[/usr/share/redmine]",
+        "Exec[install redmine]",
+        "File[/usr/share/redmine/config/database.yml]",
+        "File[/var/lib/redmine]",
+        "File[/usr/share/redmine/config.ru]",
+        "File[/usr/share/redmine/config/environment.rb]",
+        "Mailalias[adminpz8bn8d]",
+        "File[/etc/cron.d/redmine]",
+        "File[/usr/local/bin/redmine_repos.sh]",
+        "File[/etc/logrotate.d/redmine]",
+        "Anchor[sudo::begin]",
+        "Package[sudo]",
+        "File[/etc/sudoers]",
+        "File[/etc/sudoers.d]",
+        "File[/etc/sudoers.d/foreman_rex]",
+        "Anchor[sudo::end]",
+        "File[/etc/motd]",
+        "Package[yum-cron]",
+        "Yum_cron_config[commands/update_cmd]",
+        "Yum_cron_config[commands/update_messages]",
+        "Yum_cron_config[commands/download_updates]",
+        "Yum_cron_config[commands/apply_updates]",
+        "Yum_cron_config[commands/random_sleep]",
+        "Yum_cron_config[emitters/system_name]",
+        "Yum_cron_config[email/email_to]",
+        "Yum_cron_config[email/email_host]",
+        "Yum_cron_config[base/debuglevel]",
+        "Yum_cron_config[base/exclude]",
+        "Service[yum-cron]",
+        "Package[vim-enhanced]",
+        "Package[htop]",
+        "Package[iftop]",
+        "Package[screen]",
+        "Package[ruby-shadow]",
+        "Mailalias[sysadmins]",
+        "Mailalias[root]",
+        "File[/etc/dirvish]",
+        "File[/etc/dirvish/pre_client]",
+        "Package[rsync]",
+        "Package[ntp]",
+        "File[/etc/ntp.conf]",
+        "File[/etc/ntp/step-tickers]",
+        "Service[ntp]",
+        "File[/root/.ssh/authorized_keys]",
+        "File_line[dirvish_ssh_pubkey]",
+        "File[/etc/ssh/sshd_config]",
+        "Sshd_config[PermitRootLogin]",
+        "Sshd_config[PasswordAuthentication]",
+        "Sshd_config[StrictModes]",
+        "Sshd_config[LogLevel]",
+        "Service[sshd]",
+        "Package[tzdata]",
+        "File[/etc/localtime]",
+        "File[/etc/sysconfig/clock]",
+        "File[10_foreman-proxy-rex]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_foreman-proxy-rex]",
+        "Concat_file[/etc/httpd/conf/ports.conf]",
+        "File[/etc/httpd/conf/ports.conf]",
+        "File[/etc/httpd/conf/httpd.conf]",
+        "Concat_fragment[Apache ports header]",
+        "File[log_config.load]",
+        "File[systemd.load]",
+        "File[unixd.load]",
+        "File[authz_host.load]",
+        "File[actions.load]",
+        "File[authn_core.load]",
+        "File[cache.load]",
+        "File[ext_filter.load]",
+        "File[mime.load]",
+        "File[mime_magic.load]",
+        "File[rewrite.load]",
+        "File[speling.load]",
+        "File[suexec.load]",
+        "File[version.load]",
+        "File[vhost_alias.load]",
+        "File[auth_digest.load]",
+        "File[authn_anon.load]",
+        "File[authn_dbm.load]",
+        "File[authz_dbm.load]",
+        "File[authz_owner.load]",
+        "File[expires.load]",
+        "File[include.load]",
+        "File[logio.load]",
+        "File[substitute.load]",
+        "File[usertrack.load]",
+        "File[alias.load]",
+        "File[authn_file.load]",
+        "File[autoindex.load]",
+        "File[dav.load]",
+        "File[dav_fs.conf]",
+        "File[dav_fs.load]",
+        "File[deflate.load]",
+        "File[dir.load]",
+        "File[negotiation.load]",
+        "File[setenvif.load]",
+        "File[auth_basic.load]",
+        "File[filter.load]",
+        "File[authz_core.load]",
+        "File[access_compat.load]",
+        "File[authz_user.load]",
+        "File[authz_groupfile.load]",
+        "File[env.load]",
+        "File[/etc/httpd/conf.modules.d/prefork.load]",
+        "File[cgi.load]",
+        "File[/var/log/httpd]",
+        "Yumrepo[passenger]",
+        "Concat_file[/etc/puppetlabs/puppet/puppet.conf]",
+        "File[/etc/puppetlabs/puppet/puppet.conf]",
+        "File[/etc/puppetlabs/puppet/auth.conf]",
+        "Concat_file[/var/lib/pgsql/data/pg_hba.conf]",
+        "File[/var/lib/pgsql/data/pg_hba.conf]",
+        "Concat_fragment[/var/lib/pgsql/data/pg_hba.conf_header]",
+        "Postgresql_conf[port]",
+        "Postgresql_conf[data_directory]",
+        "Concat_file[/var/lib/pgsql/data/pg_ident.conf]",
+        "File[/var/lib/pgsql/data/pg_ident.conf]",
+        "Concat_fragment[/var/lib/pgsql/data/pg_ident.conf_header]",
+        "Postgresql_conf[checkpoint_completion_target]",
+        "Postgresql_conf[checkpoint_segments]",
+        "Postgresql_conf[effective_cache_size]",
+        "Postgresql_conf[shared_buffers]",
+        "Postgresql_conf[work_mem]",
+        "Exec[letsencrypt certonly projects.example.com]",
+        "User[gregsutcliffe]",
+        "File[/home/gregsutcliffe]",
+        "File[/home/gregsutcliffe/.ssh]",
+        "File[/home/gregsutcliffe/.ssh/authorized_keys]",
+        "User[ohadlevy]",
+        "File[/home/ohadlevy]",
+        "File[/home/ohadlevy/.ssh]",
+        "File[/home/ohadlevy/.ssh/authorized_keys]",
+        "User[lzap]",
+        "File[/home/lzap]",
+        "File[/home/lzap/.ssh]",
+        "File[/home/lzap/.ssh/authorized_keys]",
+        "User[ehelms]",
+        "File[/home/ehelms]",
+        "File[/home/ehelms/.ssh]",
+        "File[/home/ehelms/.ssh/authorized_keys]",
+        "User[dlobatog]",
+        "File[/home/dlobatog]",
+        "File[/home/dlobatog/.ssh]",
+        "File[/home/dlobatog/.ssh/authorized_keys]",
+        "User[ekohl]",
+        "File[/home/ekohl]",
+        "File[/home/ekohl/.ssh]",
+        "File[/home/ekohl/.ssh/authorized_keys]",
+        "User[evgeni]",
+        "File[/home/evgeni]",
+        "File[/home/evgeni/.ssh]",
+        "File[/home/evgeni/.ssh/authorized_keys]",
+        "User[oprazak]",
+        "File[/home/oprazak]",
+        "File[/home/oprazak/.ssh]",
+        "File[/home/oprazak/.ssh/authorized_keys]",
+        "User[tbrisker]",
+        "File[/home/tbrisker]",
+        "File[/home/tbrisker/.ssh]",
+        "File[/home/tbrisker/.ssh/authorized_keys]",
+        "User[pcreech]",
+        "File[/home/pcreech]",
+        "File[/home/pcreech/.ssh]",
+        "File[/home/pcreech/.ssh/authorized_keys]",
+        "User[zhunting]",
+        "File[/home/zhunting]",
+        "File[/home/zhunting/.ssh]",
+        "File[/home/zhunting/.ssh/authorized_keys]",
+        "User[wclark]",
+        "File[/home/wclark]",
+        "File[/home/wclark/.ssh]",
+        "File[/home/wclark/.ssh/authorized_keys]",
+        "User[mmoll]",
+        "Concat_file[15-default.conf]",
+        "Concat_fragment[default-apache-header]",
+        "Concat_fragment[default-docroot]",
+        "Concat_fragment[default-directories]",
+        "Concat_fragment[default-logging]",
+        "Concat_fragment[default-serversignature]",
+        "Concat_fragment[default-access_log]",
+        "Concat_fragment[default-scriptalias]",
+        "Concat_fragment[default-file_footer]",
+        "Concat_file[15-default-ssl.conf]",
+        "Concat_fragment[default-ssl-apache-header]",
+        "Concat_fragment[default-ssl-docroot]",
+        "Concat_fragment[default-ssl-directories]",
+        "Concat_fragment[default-ssl-logging]",
+        "Concat_fragment[default-ssl-serversignature]",
+        "Concat_fragment[default-ssl-access_log]",
+        "Concat_fragment[default-ssl-scriptalias]",
+        "Concat_fragment[default-ssl-ssl]",
+        "Concat_fragment[default-ssl-file_footer]",
+        "Package[mod_passenger]",
+        "File[passenger.conf]",
+        "File[zpassenger.load]",
+        "Concat_file[25-prprocessor.example.com.conf]",
+        "Concat_fragment[prprocessor.example.com-apache-header]",
+        "Concat_fragment[prprocessor.example.com-docroot]",
+        "Concat_fragment[prprocessor.example.com-directories]",
+        "Concat_fragment[prprocessor.example.com-logging]",
+        "Concat_fragment[prprocessor.example.com-serversignature]",
+        "Concat_fragment[prprocessor.example.com-access_log]",
+        "Concat_fragment[prprocessor.example.com-setenv]",
+        "Concat_fragment[prprocessor.example.com-passenger]",
+        "Concat_fragment[prprocessor.example.com-charsets]",
+        "Concat_fragment[prprocessor.example.com-file_footer]",
+        "Package[mod_ssl]",
+        "File[/etc/httpd/conf.d]",
+        "File[passenger_package.conf]",
+        "File[ssl.conf]",
+        "File[/etc/httpd/conf.d/15-default.conf]",
+        "File[/etc/httpd/conf.d/15-default-ssl.conf]",
+        "File[/etc/httpd/conf.d/25-prprocessor.example.com.conf]",
+        "File[ssl.load]",
+        "File[socache_shmcb.load]",
+        "Concat_fragment[pg_hba_rule_local access as postgres user]",
+        "Concat_fragment[pg_hba_rule_local access to database with same name]",
+        "Concat_fragment[pg_hba_rule_allow localhost TCP access to postgresql user]",
+        "Concat_fragment[pg_hba_rule_deny access to postgresql user]",
+        "Concat_fragment[pg_hba_rule_allow access to all users]",
+        "Concat_fragment[pg_hba_rule_allow access to ipv6 localhost]",
+        "Anchor[postgresql::server::service::begin]",
+        "Service[postgresqld]",
+        "Postgresql_conn_validator[validate_service_is_running]",
+        "Anchor[postgresql::server::service::end]",
+        "Exec[postgresql_reload]",
+        "Postgresql_psql[CREATE ROLE adminpz8bn8d ENCRYPTED PASSWORD ****]",
+        "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" NOSUPERUSER]",
+        "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" NOCREATEDB]",
+        "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" NOCREATEROLE]",
+        "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" LOGIN]",
+        "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" INHERIT]",
+        "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" NOREPLICATION]",
+        "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" CONNECTION LIMIT -1]",
+        "Postgresql_psql[ALTER ROLE adminpz8bn8d ENCRYPTED PASSWORD ****]",
+        "Postgresql_psql[CREATE DATABASE \"redmine4\"]",
+        "Postgresql_psql[REVOKE CONNECT ON DATABASE \"redmine4\" FROM public]",
+        "Postgresql_psql[UPDATE pg_database SET datistemplate = false WHERE datname = 'redmine4']",
+        "Postgresql_psql[ALTER DATABASE \"redmine4\" OWNER TO \"adminpz8bn8d\"]",
+        "Concat_file[05-projects.example.com.conf]",
+        "File[/etc/httpd/conf.d/05-projects.example.com.conf]",
+        "Concat_fragment[projects.example.com-apache-header]",
+        "Concat_fragment[projects.example.com-docroot]",
+        "Concat_fragment[projects.example.com-directories]",
+        "Concat_fragment[projects.example.com-logging]",
+        "Concat_fragment[projects.example.com-serversignature]",
+        "Concat_fragment[projects.example.com-access_log]",
+        "Concat_fragment[projects.example.com-redirect]",
+        "Concat_fragment[projects.example.com-file_footer]",
+        "File[headers.load]",
+        "File[/etc/httpd/conf.modules.d]",
+        "Anchor[::apache::modules_set_up]",
+        "Concat_file[05-projects.example.com-https.conf]",
+        "File[/etc/httpd/conf.d/05-projects.example.com-https.conf]",
+        "Concat_fragment[projects.example.com-https-apache-header]",
+        "Concat_fragment[projects.example.com-https-docroot]",
+        "Concat_fragment[projects.example.com-https-directories]",
+        "Concat_fragment[projects.example.com-https-logging]",
+        "Concat_fragment[projects.example.com-https-serversignature]",
+        "Concat_fragment[projects.example.com-https-access_log]",
+        "Concat_fragment[projects.example.com-https-header]",
+        "Concat_fragment[projects.example.com-https-ssl]",
+        "Concat_fragment[projects.example.com-https-passenger]",
+        "Concat_fragment[projects.example.com-https-charsets]",
+        "Concat_fragment[projects.example.com-https-file_footer]",
+        "File[10_sudo-puppet-gregsutcliffe]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-gregsutcliffe]",
+        "File[10_sudo-puppet-ohadlevy]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ohadlevy]",
+        "File[10_sudo-puppet-lzap]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-lzap]",
+        "File[10_sudo-puppet-ehelms]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ehelms]",
+        "File[10_sudo-puppet-dlobatog]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-dlobatog]",
+        "File[10_sudo-puppet-ekohl]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-ekohl]",
+        "File[10_sudo-puppet-evgeni]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-evgeni]",
+        "File[10_sudo-puppet-oprazak]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-oprazak]",
+        "File[10_sudo-puppet-tbrisker]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-tbrisker]",
+        "File[10_sudo-puppet-pcreech]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-pcreech]",
+        "File[10_sudo-puppet-zhunting]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-zhunting]",
+        "File[10_sudo-puppet-wclark]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-wclark]",
+        "File[10_sudo-puppet-mmoll]",
+        "Exec[sudo-syntax-check for file /etc/sudoers.d/10_sudo-puppet-mmoll]",
+        "Concat_fragment[Listen 80]",
+        "Exec[letsencrypt certonly prprocessor.example.com]",
+        "Concat_file[25-prprocessor.example.com-https.conf]",
+        "File[/etc/httpd/conf.d/25-prprocessor.example.com-https.conf]",
+        "Service[httpd]",
+        "Concat_fragment[prprocessor.example.com-https-apache-header]",
+        "Concat_fragment[prprocessor.example.com-https-docroot]",
+        "Concat_fragment[prprocessor.example.com-https-directories]",
+        "Concat_fragment[prprocessor.example.com-https-logging]",
+        "Concat_fragment[prprocessor.example.com-https-serversignature]",
+        "Concat_fragment[prprocessor.example.com-https-access_log]",
+        "Concat_fragment[prprocessor.example.com-https-setenv]",
+        "Concat_fragment[prprocessor.example.com-https-ssl]",
+        "Concat_fragment[prprocessor.example.com-https-passenger]",
+        "Concat_fragment[prprocessor.example.com-https-charsets]",
+        "Concat_fragment[prprocessor.example.com-https-file_footer]",
+        "Concat_fragment[Listen 443]",
+        "Concat_fragment[puppet.conf_main]",
+        "Concat_fragment[puppet.conf_main_vardir]",
+        "Concat_fragment[puppet.conf_main_logdir]",
+        "Concat_fragment[puppet.conf_main_rundir]",
+        "Concat_fragment[puppet.conf_main_ssldir]",
+        "Concat_fragment[puppet.conf_main_privatekeydir]",
+        "Concat_fragment[puppet.conf_main_hostprivkey]",
+        "Concat_fragment[puppet.conf_main_show_diff]",
+        "Concat_fragment[puppet.conf_main_codedir]",
+        "Concat_fragment[puppet.conf_main_server]",
+        "Concat_fragment[puppet.conf_main_pluginsource]",
+        "Concat_fragment[puppet.conf_main_pluginfactsource]",
+        "Concat_fragment[puppet.conf_main_certname]",
+        "Concat_fragment[puppet.conf_agent]",
+        "Concat_fragment[puppet.conf_agent_classfile]",
+        "Concat_fragment[puppet.conf_agent_localconfig]",
+        "Concat_fragment[puppet.conf_agent_default_schedules]",
+        "Concat_fragment[puppet.conf_agent_report]",
+        "Concat_fragment[puppet.conf_agent_masterport]",
+        "Concat_fragment[puppet.conf_agent_environment]",
+        "Concat_fragment[puppet.conf_agent_listen]",
+        "Concat_fragment[puppet.conf_agent_splay]",
+        "Concat_fragment[puppet.conf_agent_splaylimit]",
+        "Concat_fragment[puppet.conf_agent_runinterval]",
+        "Concat_fragment[puppet.conf_agent_noop]",
+        "Concat_fragment[puppet.conf_agent_usecacheonfailure]",
+        "Service[puppet]",
+        "Service[puppet-run.timer]",
+        "File[/etc/systemd/system/puppet-run.timer]",
+        "File[/etc/systemd/system/puppet-run.service]",
+        "Exec[systemctl-daemon-reload-puppet]",
+        "Cron[puppet]",
+        "Postgresql_psql[grant:database:GRANT adminpz8bn8d - ALL - redmine4]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+        "PuppetIsOutOfSync"
+      ],
+      "evaluation_times": [
+        [
+          "File[/usr/local/sbin/letsencrypt-domain-validation]",
+          9.199727017
+        ],
+        [
+          "Exec[install redmine]",
+          0.64168833
+        ],
+        [
+          "Exec[install prprocessor]",
+          0.37472402
+        ],
+        [
+          "File[/usr/local/bin/validate_postgresql_connection.sh]",
+          0.160345247
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" CONNECTION LIMIT -1]",
+          0.072081304
+        ],
+        [
+          "Package[rubygem-bundler.noarch]",
+          0.066968688
+        ],
+        [
+          "Sshd_config[PermitRootLogin]",
+          0.065567025
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" NOREPLICATION]",
+          0.064814263
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" NOSUPERUSER]",
+          0.062528931
+        ],
+        [
+          "Exec[letsencrypt certonly projects.example.com]",
+          0.062024549
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" NOCREATEROLE]",
+          0.059732415
+        ],
+        [
+          "Service[ntp]",
+          0.059333933
+        ],
+        [
+          "Exec[letsencrypt certonly prprocessor.example.com]",
+          0.057567951
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" NOCREATEDB]",
+          0.052649211
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" INHERIT]",
+          0.050409925
+        ],
+        [
+          "Postgresql_psql[CREATE ROLE adminpz8bn8d ENCRYPTED PASSWORD ****]",
+          0.043785448
+        ],
+        [
+          "Service[postgresqld]",
+          0.040145
+        ],
+        [
+          "Postgresql_psql[UPDATE pg_database SET datistemplate = false WHERE datname = 'redmine4']",
+          0.0400657
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE \"adminpz8bn8d\" LOGIN]",
+          0.038489567
+        ],
+        [
+          "Service[sshd]",
+          0.036963468
+        ],
+        [
+          "Postgresql_psql[ALTER ROLE adminpz8bn8d ENCRYPTED PASSWORD ****]",
+          0.03560259
+        ],
+        [
+          "Service[puppet]",
+          0.034104154
+        ],
+        [
+          "Service[exim]",
+          0.03346133
+        ],
+        [
+          "Service[yum-cron]",
+          0.033099118
+        ],
+        [
+          "Vcsrepo[/usr/share/redmine]",
+          0.032539853
+        ],
+        [
+          "Postgresql_conn_validator[validate_service_is_running]",
+          0.032358722
+        ],
+        [
+          "Postgresql_psql[ALTER DATABASE \"redmine4\" OWNER TO \"adminpz8bn8d\"]",
+          0.032264062
+        ],
+        [
+          "Vcsrepo[/usr/share/prprocessor]",
+          0.029229367
+        ],
+        [
+          "Service[puppet-run.timer]",
+          0.028880218
+        ],
+        [
+          "Others",
+          0.373317884
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+      "PuppetIsOutOfSync"
+    ]
+  }
+}

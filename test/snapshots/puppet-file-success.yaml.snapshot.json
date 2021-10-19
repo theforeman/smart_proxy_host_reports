@@ -1,0 +1,212 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "report.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "report.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 12,
+      "puppet_version": "7.7.0",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              8
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              0
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              1
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              1
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "file",
+              "File",
+              0.006283617
+            ],
+            [
+              "schedule",
+              "Schedule",
+              0.000284399
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              6.0772e-05
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              0.039295677
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              0.009470861001318553
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              0.014322233000712004
+            ],
+            [
+              "total",
+              "Total",
+              0.015884007
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              1
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              1
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              1
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "notice",
+          "/Stage[main]/Main/File[/tmp/xyz.txt]/ensure",
+          "defined content as '{sha256}62e74df14037fe89204fd5cc0713034a32fc5baf12add04d44dd118463dbd9a4'"
+        ],
+        [
+          "notice",
+          "Puppet",
+          "Applied catalog in 0.01 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "File[/tmp/xyz.txt]",
+        "Schedule[puppet]",
+        "Schedule[hourly]",
+        "Schedule[daily]",
+        "Schedule[weekly]",
+        "Schedule[monthly]",
+        "Schedule[never]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+        "PuppetHasChange",
+        "PuppetIsOutOfSync"
+      ],
+      "evaluation_times": [
+        [
+          "File[/tmp/xyz.txt]",
+          0.006283617
+        ],
+        [
+          "Schedule[weekly]",
+          8.2037e-05
+        ],
+        [
+          "Filebucket[puppet]",
+          6.0772e-05
+        ],
+        [
+          "Schedule[monthly]",
+          5.83e-05
+        ],
+        [
+          "Schedule[puppet]",
+          4.709e-05
+        ],
+        [
+          "Schedule[never]",
+          3.7672e-05
+        ],
+        [
+          "Schedule[hourly]",
+          3.0873e-05
+        ],
+        [
+          "Schedule[daily]",
+          2.8427e-05
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+      "PuppetHasChange",
+      "PuppetIsOutOfSync"
+    ]
+  }
+}

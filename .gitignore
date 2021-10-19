@@ -1,4 +1,4 @@
 smart_proxy_host_reports-*.gem
 /contrib/upload-fixture.conf
-/contrib/fixtures/ansible-163*.json
-/contrib/fixtures/puppet-163*.yaml
+/test/fixtures/ansible-163*.json
+/test/fixtures/puppet-163*.yaml

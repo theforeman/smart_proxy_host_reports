@@ -1,0 +1,245 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "report.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "report.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 12,
+      "puppet_version": "7.7.0",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              7
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              0
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              0
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "schedule",
+              "Schedule",
+              0.00023346199999999998
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              3.675e-05
+            ],
+            [
+              "startup_time",
+              "Startup time",
+              0.270915373
+            ],
+            [
+              "node_retrieval",
+              "Node retrieval",
+              0.11868724200030556
+            ],
+            [
+              "plugin_sync",
+              "Plugin sync",
+              0.090303575998405
+            ],
+            [
+              "fact_generation",
+              "Fact generation",
+              1.3825260930025252
+            ],
+            [
+              "convert_catalog",
+              "Convert catalog",
+              0.024234983000496868
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              0.12022392099970602
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              0.006277247000980424
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              0.010533232998568565
+            ],
+            [
+              "total",
+              "Total",
+              2.02627575
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "info",
+          "Puppet",
+          "Using configured environment 'production'"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Retrieving pluginfacts"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Retrieving plugin"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Caching catalog for report.example.com"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Applying configuration version '1633701056'"
+        ],
+        [
+          "notice",
+          "Puppet",
+          "Applied catalog in 0.01 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "Schedule[puppet]",
+        "Schedule[hourly]",
+        "Schedule[daily]",
+        "Schedule[weekly]",
+        "Schedule[monthly]",
+        "Schedule[never]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+
+      ],
+      "evaluation_times": [
+        [
+          "Schedule[daily]",
+          6.1898e-05
+        ],
+        [
+          "Schedule[never]",
+          4.497e-05
+        ],
+        [
+          "Schedule[puppet]",
+          3.9592e-05
+        ],
+        [
+          "Filebucket[puppet]",
+          3.675e-05
+        ],
+        [
+          "Schedule[hourly]",
+          3.1207e-05
+        ],
+        [
+          "Schedule[weekly]",
+          2.8453e-05
+        ],
+        [
+          "Schedule[monthly]",
+          2.7342e-05
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+
+    ]
+  }
+}

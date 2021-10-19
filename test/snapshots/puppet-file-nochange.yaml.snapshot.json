@@ -1,0 +1,205 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "report.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "report.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 12,
+      "puppet_version": "7.7.0",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              8
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              0
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              0
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "file",
+              "File",
+              0.000389185
+            ],
+            [
+              "schedule",
+              "Schedule",
+              0.00021687899999999998
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              5.8008e-05
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              0.04824178
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              0.003077048997511156
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              0.008010462999664014
+            ],
+            [
+              "total",
+              "Total",
+              0.009510718
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "notice",
+          "Puppet",
+          "Applied catalog in 0.01 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "File[/tmp/xyz.txt]",
+        "Schedule[puppet]",
+        "Schedule[hourly]",
+        "Schedule[daily]",
+        "Schedule[weekly]",
+        "Schedule[monthly]",
+        "Schedule[never]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+
+      ],
+      "evaluation_times": [
+        [
+          "File[/tmp/xyz.txt]",
+          0.000389185
+        ],
+        [
+          "Schedule[weekly]",
+          5.9699e-05
+        ],
+        [
+          "Filebucket[puppet]",
+          5.8008e-05
+        ],
+        [
+          "Schedule[puppet]",
+          4.0391e-05
+        ],
+        [
+          "Schedule[hourly]",
+          3.1661e-05
+        ],
+        [
+          "Schedule[monthly]",
+          2.9346e-05
+        ],
+        [
+          "Schedule[daily]",
+          2.8514e-05
+        ],
+        [
+          "Schedule[never]",
+          2.7268e-05
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+
+    ]
+  }
+}

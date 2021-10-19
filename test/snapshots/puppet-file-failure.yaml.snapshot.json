@@ -1,0 +1,219 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "report.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "report.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 12,
+      "puppet_version": "7.7.0",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              8
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              1
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              1
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "file",
+              "File",
+              0.007423992
+            ],
+            [
+              "schedule",
+              "Schedule",
+              0.000250551
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              3.6674e-05
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              0.039217036
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              0.010214884001470637
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              0.015272248998371651
+            ],
+            [
+              "total",
+              "Total",
+              0.016838547
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              1
+            ],
+            [
+              "failure",
+              "Failure",
+              1
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "err",
+          "Puppet",
+          "Operation not permitted @ rb_file_s_rename - (/tmp/xyz.txt20211008-14688-1xzmbvo, /tmp/xyz.txt)"
+        ],
+        [
+          "err",
+          "/Stage[main]/Main/File[/tmp/xyz.txt]/content",
+          "change from '{sha256}62e74df14037fe89204fd5cc0713034a32fc5baf12add04d44dd118463dbd9a4' to '{sha256}d9ce072ae0214eca657c80daa0b8bb214f71880933bb5a6302c1ed9912e17192' failed: Operation not permitted @ rb_file_s_rename - (/tmp/xyz.txt20211008-14688-1xzmbvo, /tmp/xyz.txt)"
+        ],
+        [
+          "notice",
+          "Puppet",
+          "Applied catalog in 0.02 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "File[/tmp/xyz.txt]",
+        "Schedule[puppet]",
+        "Schedule[hourly]",
+        "Schedule[daily]",
+        "Schedule[weekly]",
+        "Schedule[monthly]",
+        "Schedule[never]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+        "PuppetResourceFailed:File[/tmp/xyz.txt]",
+        "PuppetHasFailure",
+        "PuppetIsOutOfSync"
+      ],
+      "evaluation_times": [
+        [
+          "File[/tmp/xyz.txt]",
+          0.007423992
+        ],
+        [
+          "Schedule[puppet]",
+          7.1427e-05
+        ],
+        [
+          "Schedule[daily]",
+          5.7739e-05
+        ],
+        [
+          "Filebucket[puppet]",
+          3.6674e-05
+        ],
+        [
+          "Schedule[hourly]",
+          3.2666e-05
+        ],
+        [
+          "Schedule[never]",
+          3.0916e-05
+        ],
+        [
+          "Schedule[monthly]",
+          2.9557e-05
+        ],
+        [
+          "Schedule[weekly]",
+          2.8246e-05
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+      "PuppetResourceFailed:File[/tmp/xyz.txt]",
+      "PuppetHasFailure",
+      "PuppetIsOutOfSync"
+    ]
+  }
+}

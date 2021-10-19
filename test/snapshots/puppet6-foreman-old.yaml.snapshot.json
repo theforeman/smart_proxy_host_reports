@@ -1,0 +1,185 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "old.example.com",
+    "reported_at": "",
+    "status": 0,
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "old.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "report_format": 6,
+      "puppet_version": "4.10.12",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              7
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              0
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              0
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "schedule",
+              "Schedule",
+              0.000584698
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              0.000135334
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              0.194704594
+            ],
+            [
+              "total",
+              "Total",
+              0.19542462600000002
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "notice",
+          "Puppet",
+          "Applied catalog in 0.06 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "Schedule[puppet]",
+        "Schedule[hourly]",
+        "Schedule[daily]",
+        "Schedule[weekly]",
+        "Schedule[monthly]",
+        "Schedule[never]",
+        "Filebucket[puppet]"
+      ],
+      "keywords": [
+
+      ],
+      "evaluation_times": [
+        [
+          "Filebucket[puppet]",
+          0.000135334
+        ],
+        [
+          "Schedule[puppet]",
+          0.000130184
+        ],
+        [
+          "Schedule[daily]",
+          0.000100645
+        ],
+        [
+          "Schedule[never]",
+          9.515e-05
+        ],
+        [
+          "Schedule[monthly]",
+          9.1987e-05
+        ],
+        [
+          "Schedule[weekly]",
+          8.733e-05
+        ],
+        [
+          "Schedule[hourly]",
+          7.9402e-05
+        ]
+      ],
+      "telemetry": {
+      }
+    },
+    "keywords": [
+
+    ]
+  }
+}

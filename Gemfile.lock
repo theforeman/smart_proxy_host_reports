@@ -13,7 +13,7 @@ GIT
 PATH
   remote: .
   specs:
-    smart_proxy_host_reports (0.0.1)
+    smart_proxy_host_reports (0.0.3)
       json (>= 2.3.0)
       rack (>= 2.1.0)
 

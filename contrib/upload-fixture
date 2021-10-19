@@ -55,10 +55,10 @@ if [[ -f "$FILE" ]]; then
     echo "Not recognized: $FILE"
   fi
 elif [[ $ALL -eq 1 ]]; then
-  for FILE in $BASEDIR/fixtures/ansible-*.json; do
+  for FILE in $BASEDIR/../test/fixtures/ansible-*.json; do
     do_curl "application/json" ansible "$FILE"
   done
-  for FILE in $BASEDIR/fixtures/puppet-*.yaml; do
+  for FILE in $BASEDIR/../test/fixtures/puppet-*.yaml; do
     do_curl "application/x-yaml" puppet "$FILE"
   done
 else
