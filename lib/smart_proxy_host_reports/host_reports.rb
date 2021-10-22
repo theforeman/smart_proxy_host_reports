@@ -12,7 +12,7 @@ module Proxy::HostReports
   end
 
   class Plugin < ::Proxy::Plugin
-    plugin :host_reports, Proxy::HostReports::VERSION
+    plugin :reports, Proxy::HostReports::VERSION
 
     default_settings reported_proxy_hostname: "localhost",
       debug_payload: false,
