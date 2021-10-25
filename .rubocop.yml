@@ -25,4 +25,4 @@ Bundler:
 
 Security/YAMLLoad:
   Exclude:
-    - lib/smart_proxy_host_reports/puppet_processor.rb
+    - lib/smart_proxy_reports/puppet_processor.rb
