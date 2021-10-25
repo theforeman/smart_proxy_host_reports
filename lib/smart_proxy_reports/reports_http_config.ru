@@ -4,7 +4,7 @@ map "/reports" do
   run Proxy::Reports::Api
 end
 
-# TODO: Deprecated, remove in 2.0
+# TODO: Deprecated, remove in 1.0
 map "/host_reports" do
   run Proxy::Reports::Api
 end
