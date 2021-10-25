@@ -1,5 +1,6 @@
 /Gemfile.lock
-smart_proxy_host_reports-*.gem
+/.idea
+smart_proxy_reports-*.gem
 /contrib/upload-fixture.conf
 /test/fixtures/ansible-163*.json
 /test/fixtures/puppet-163*.yaml

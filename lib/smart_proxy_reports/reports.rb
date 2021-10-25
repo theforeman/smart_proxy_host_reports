@@ -1,3 +1,5 @@
+require "socket"
+
 module Proxy::Reports
   class PluginConfiguration
     def load_classes
@@ -14,13 +16,12 @@ module Proxy::Reports
   class Plugin < ::Proxy::Plugin
     plugin :reports, Proxy::Reports::VERSION
 
-    default_settings reported_proxy_hostname: "localhost",
+    default_settings reported_proxy_hostname: Socket.gethostname(),
       debug_payload: false,
       spool_dir: "/var/lib/foreman-proxy/reports",
       keep_reports: false
 
-    http_rackup_path File.expand_path("reports_http_config.ru", File.expand_path("../", __FILE__))
-    https_rackup_path File.expand_path("reports_http_config.ru", File.expand_path("../", __FILE__))
+    rackup_path File.expand_path("reports_http_config.ru", __dir__)
 
     load_classes PluginConfiguration
     load_dependency_injection_wirings PluginConfiguration
