@@ -10,6 +10,8 @@ module Proxy::Reports
     include ::Proxy::Log
     include ::Proxy::Util
     helpers ::Proxy::Helpers
+    authorize_with_trusted_hosts
+    authorize_with_ssl_client
 
     before do
       content_type "application/json"
