@@ -32,7 +32,7 @@ module Proxy::HostReports
     }.freeze
 
     def save_payload(input, format)
-      filename = File.join(Proxy::HostReports::Plugin.settings.incoming_save_dir, "#{format}-#{Time.now.to_i}.#{EXTS[format.to_sym]}")
+      filename = File.join(Proxy::HostReports::Plugin.settings.incoming_save_dir, "#{format}-#{Time.now.to_f}.#{EXTS[format.to_sym]}")
       File.open(filename, "w") { |f| f.write(input) }
     end
 
