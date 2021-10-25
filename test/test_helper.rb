@@ -32,7 +32,7 @@ end
 
 def setup_processor(type, filename)
   input = File.read(File.join(File.dirname(__FILE__), "fixtures/#{filename}"))
-  Processor.new_processor(type, input, json_body: false)
+  ::Proxy::Reports::Processor.new_processor(type, input, json_body: false)
 end
 
 def assert_snapshot(result, snapshot_filename)
