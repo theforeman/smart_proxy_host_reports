@@ -1,11 +1,11 @@
 require "sinatra"
 require "yaml"
-require "smart_proxy_host_reports/host_reports"
-require "smart_proxy_host_reports/processor"
-require "smart_proxy_host_reports/puppet_processor"
-require "smart_proxy_host_reports/ansible_processor"
+require "smart_proxy_reports/reports"
+require "smart_proxy_reports/processor"
+require "smart_proxy_reports/puppet_processor"
+require "smart_proxy_reports/ansible_processor"
 
-module Proxy::HostReports
+module Proxy::Reports
   class Api < ::Sinatra::Base
     include ::Proxy::Log
     include ::Proxy::Util
@@ -32,7 +32,7 @@ module Proxy::HostReports
     }.freeze
 
     def save_payload(input, format)
-      filename = File.join(Proxy::HostReports::Plugin.settings.incoming_save_dir, "#{format}-#{Time.now.to_f}.#{EXTS[format.to_sym]}")
+      filename = File.join(Proxy::Reports::Plugin.settings.incoming_save_dir, "#{format}-#{Time.now.to_f}.#{EXTS[format.to_sym]}")
       File.open(filename, "w") { |f| f.write(input) }
     end
 
@@ -41,7 +41,7 @@ module Proxy::HostReports
       log_halt(404, "Format argument not specified") unless format
       check_content_type(format)
       input = request.body.read
-      save_payload(input, format) if Proxy::HostReports::Plugin.settings.incoming_save_dir
+      save_payload(input, format) if Proxy::Reports::Plugin.settings.incoming_save_dir
       log_halt(415, "Missing body") if input.empty?
       json_body = to_bool(params[:json_body], true)
       processor = Processor.new_processor(format, input, json_body: json_body)

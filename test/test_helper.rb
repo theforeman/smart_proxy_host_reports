@@ -4,12 +4,12 @@ require "mocha/test_unit"
 require "json-diff"
 require "webmock/test_unit"
 require "smart_proxy_for_testing"
-require "smart_proxy_host_reports"
-require "smart_proxy_host_reports/host_reports"
-require "smart_proxy_host_reports/host_reports_api"
-require "smart_proxy_host_reports/processor"
-require "smart_proxy_host_reports/puppet_processor"
-require "smart_proxy_host_reports/spooled_http_client"
+require "smart_proxy_reports"
+require "smart_proxy_reports/reports"
+require "smart_proxy_reports/reports_api"
+require "smart_proxy_reports/processor"
+require "smart_proxy_reports/puppet_processor"
+require "smart_proxy_reports/spooled_http_client"
 
 LOG = "/tmp/proxy-test.log"
 FileUtils.rm_f(LOG) if File.exist?(LOG)
@@ -32,7 +32,7 @@ end
 
 def setup_processor(type, filename)
   input = File.read(File.join(File.dirname(__FILE__), "fixtures/#{filename}"))
-  Processor.new_processor(type, input, json_body: false)
+  ::Proxy::Reports::Processor.new_processor(type, input, json_body: false)
 end
 
 def assert_snapshot(result, snapshot_filename)

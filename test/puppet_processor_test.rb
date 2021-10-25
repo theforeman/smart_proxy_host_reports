@@ -2,7 +2,7 @@ require "test_helper"
 
 class PuppetProcessorTest < Test::Unit::TestCase
   def setup
-    Proxy::HostReports::Plugin.settings.stubs(:reported_proxy_hostname).returns("localhost")
+    Proxy::Reports::Plugin.settings.stubs(:reported_proxy_hostname).returns("localhost")
   end
 
   def test_keys_are_strings

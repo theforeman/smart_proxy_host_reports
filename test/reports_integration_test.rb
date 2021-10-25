@@ -1,10 +1,10 @@
 require "test_helper"
 
-class HostReportsIntegrationTest < Test::Unit::TestCase
+class ReportsIntegrationTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    Proxy::HostReports::Api.new
+    Proxy::Reports::Api.new
   end
 
   def test_without_content_type_and_format
@@ -33,7 +33,7 @@ class HostReportsIntegrationTest < Test::Unit::TestCase
   end
 
   def test_valid_puppet
-    SpooledHttpClient.instance.expects(:spool)
+    ::Proxy::Reports::SpooledHttpClient.instance.expects(:spool)
     yaml = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-old.yaml"))
     post "/puppet", yaml, { "CONTENT_TYPE" => "application/x-yaml" }
     assert_equal "", last_response.body

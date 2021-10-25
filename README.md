@@ -1,4 +1,5 @@
- Smart Proxy Host Reports
+Smart Proxy Reports
+===================
 
 Transforms configuration and security management reports into Foreman-friendly
 JSON and sends them to a Foreman instance. For more information about Foreman
@@ -7,7 +8,7 @@ JSON report format, visit
 
 ## Usage
 
-Send a POST HTTP call to `/host_reports/FORMAT` where FORMAT is one of the following formats.
+Send a POST HTTP call to `/reports/FORMAT` where FORMAT is one of the following formats.
 
 ### Puppet
 
@@ -30,7 +31,7 @@ Ansible collection path to the build directory:
     callback_whitelist = foreman
     [callback_foreman]
     report_type = proxy
-    proxy_url = http://localhost:8000/host_reports
+    proxy_url = http://localhost:8000/reports
     verify_certs = 0
     client_cert = /home/lzap/DummyX509/client-one.crt
     client_key = /home/lzap/DummyX509/client-one.key
@@ -83,7 +84,7 @@ yum -y install puppetserver
 source /etc/profile.d/puppet-agent.sh
 # Configure the HTTP report processor
 puppet config set reports store,http
-puppet config set reporturl http://$HOSTNAME:8000/host_reports/puppet
+puppet config set reporturl http://$HOSTNAME:8000/reports/puppet
 # Enable & start the service
 systemctl enable --now puppetserver
 ```
@@ -91,7 +92,7 @@ systemctl enable --now puppetserver
 If you prefer to use HTTPS, set the different reporturl and configure the CA certificates according to the example below
 ```
 # use HTTPS, without Katello the port is 8443, with Katello it's 9090
-puppet config set reporturl https://$HOSTNAME:8443/host_reports/puppet
+puppet config set reporturl https://$HOSTNAME:8443/reports/puppet
 # install the Smart Proxy CA certificate to the Puppet's localcacert store
 ## first find the correct pem file
 grep :ssl_ca_file /etc/foreman-proxy/settings.yml

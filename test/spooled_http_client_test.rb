@@ -3,10 +3,10 @@ require "test_helper"
 class SpooledHttpClientTest < Test::Unit::TestCase
   def setup
     @foreman_url = "http://foreman.example.com"
-    Proxy::SETTINGS.stubs(:foreman_url).returns(@foreman_url)
-    Proxy::HostReports::Plugin.settings.stubs(:keep_reports).returns(true)
+    ::Proxy::SETTINGS.stubs(:foreman_url).returns(@foreman_url)
+    ::Proxy::Reports::Plugin.settings.stubs(:keep_reports).returns(true)
     @tmpdir = Dir.mktmpdir("spool-http-client-test")
-    @client = SpooledHttpClient.instance.initialize_directory(@tmpdir)
+    @client = ::Proxy::Reports::SpooledHttpClient.instance.initialize_directory(@tmpdir)
   end
 
   def teardown
