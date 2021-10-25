@@ -1,5 +1,10 @@
-require "smart_proxy_host_reports/host_reports_api"
+require "smart_proxy_reports/reports_api"
 
+map "/reports" do
+  run Proxy::Reports::Api
+end
+
+# TODO: Deprecated, remove in 2.0
 map "/host_reports" do
-  run Proxy::HostReports::Api
+  run Proxy::Reports::Api
 end

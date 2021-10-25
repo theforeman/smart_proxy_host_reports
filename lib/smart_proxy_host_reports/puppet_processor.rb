@@ -83,7 +83,7 @@ class PuppetProcessor < Processor
       @body["format"] = "puppet"
       @body["id"] = report_id
       @body["host"] = hostname_from_config || @data["host"]
-      @body["proxy"] = Proxy::HostReports::Plugin.settings.reported_proxy_hostname
+      @body["proxy"] = Proxy::Reports::Plugin.settings.reported_proxy_hostname
       @body["reported_at"] = @data["time"]
       KEYS_TO_COPY.each do |key|
         @body[key] = @data[key]

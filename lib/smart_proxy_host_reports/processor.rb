@@ -29,7 +29,7 @@ class Processor
   end
 
   def hostname_from_config
-    @hostname_from_config ||= Proxy::HostReports::Plugin.settings.override_hostname
+    @hostname_from_config ||= Proxy::Reports::Plugin.settings.override_hostname
   end
 
   def build_report_root(format:, version:, host:, reported_at:, statuses:, proxy:, body:, keywords:)
@@ -48,7 +48,7 @@ class Processor
   end
 
   def debug_payload?
-    Proxy::HostReports::Plugin.settings.debug_payload
+    Proxy::Reports::Plugin.settings.debug_payload
   end
 
   def debug_payload(prefix, data)

@@ -1,10 +1,10 @@
 require "test_helper"
 
-class HostReportsIntegrationTest < Test::Unit::TestCase
+class ReportsIntegrationTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    Proxy::HostReports::Api.new
+    Proxy::Reports::Api.new
   end
 
   def test_without_content_type_and_format

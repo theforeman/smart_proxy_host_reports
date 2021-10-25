@@ -35,7 +35,7 @@ class AnsibleProcessor < Processor
       @body["format"] = "ansible"
       @body["id"] = report_id
       @body["host"] = hostname_from_config || @data["host"]
-      @body["proxy"] = Proxy::HostReports::Plugin.settings.reported_proxy_hostname
+      @body["proxy"] = Proxy::Reports::Plugin.settings.reported_proxy_hostname
       @body["reported_at"] = @data["reported_at"]
       @body["results"] = process_results
       @body["keywords"] = keywords

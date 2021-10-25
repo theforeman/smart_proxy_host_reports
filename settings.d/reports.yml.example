@@ -8,7 +8,7 @@
 :debug_payload: false
 
 # Spool directory with processed reports
-:spool_dir: /var/lib/foreman-proxy/host_reports
+:spool_dir: /var/lib/foreman-proxy/reports
 
 # Keep sent reports in spool_dir/done directory
 # - when enabled, move files from the place on
@@ -19,4 +19,4 @@
 # Override hostnames of incoming reports
 #:override_hostname: report.example.com
 # Store input payloads in a directory
-#:incoming_save_dir: /var/lib/foreman-proxy/host_reports/incoming
+#:incoming_save_dir: /var/lib/foreman-proxy/reports/incoming

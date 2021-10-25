@@ -19,7 +19,7 @@ class SpooledHttpClient
     @worker = nil
   end
 
-  def initialize_directory(spool_dir = Proxy::HostReports::Plugin.settings.spool_dir)
+  def initialize_directory(spool_dir = Proxy::Reports::Plugin.settings.spool_dir)
     raise("Setting spool_dir uninitialized") unless spool_dir
     @spool_dir = spool_dir
     ["temp", "todo", "done", "fail"].each do |state|
@@ -67,7 +67,7 @@ class SpooledHttpClient
           logger.info "Report #{basename} sent with HTTP response #{response.code}"
           logger.debug { "Response body: #{response.body}" }
           if response.code.start_with?("2")
-            if Proxy::HostReports::Plugin.settings.keep_reports
+            if Proxy::Reports::Plugin.settings.keep_reports
               spool_move("todo", "done", basename)
             else
               FileUtils.rm_f spool_path("todo", basename)
