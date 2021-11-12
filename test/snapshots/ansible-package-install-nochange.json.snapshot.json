@@ -64,7 +64,7 @@
             "uuid": "1c697a0b-ae03-f522-0c2f-000000000009"
           },
           "level": "info",
-          "friendly_message": "Package(s) neovim are present: Nothing to do"
+          "friendly_message": "Package(s) neovim are present"
         }
       ],
       "keywords": [

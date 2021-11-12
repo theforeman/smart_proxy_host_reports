@@ -76,7 +76,7 @@
             "uuid": "1c697a0b-ae03-3543-5110-000000000009"
           },
           "level": "notice",
-          "friendly_message": "Package(s) neovim are present: [\"Installed: libtree-sitter-0.20.0-2.fc34.x86_64\", \"Installed: luajit2.1-luv-1.41.1.0-2.fc34.x86_64\", \"Installed: unibilium-2.0.0-8.fc34.x86_64\", \"Installed: libvterm-0.1.4-1.fc34.x86_64\", \"Installed: luajit-2.1.0-0.19beta3.fc34.x86_64\", \"Installed: xsel-1.2.0-28.fc34.x86_64\", \"Installed: neovim-0.5.1-1.fc34.x86_64\", \"Installed: compat-lua-libs-5.1.5-18.fc34.x86_64\", \"Installed: msgpack-3.1.0-7.fc34.x86_64\", \"Installed: libtermkey-0.20-10.fc34.x86_64\"]"
+          "friendly_message": "Package(s) neovim are present"
         }
       ],
       "keywords": [

@@ -17,4 +17,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency "json", ">= 2.3.0"
   s.add_dependency "rack", ">= 2.1.0"
+  s.metadata = { "rubygems_mfa_required" => "true" }
 end

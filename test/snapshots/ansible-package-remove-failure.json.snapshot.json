@@ -64,7 +64,7 @@
             "uuid": "1c697a0b-ae03-8d98-fd65-000000000009"
           },
           "level": "info",
-          "friendly_message": "Package(s) doesnotexist are absent: Nothing to do"
+          "friendly_message": "Package(s) doesnotexist are absent"
         }
       ],
       "keywords": [
