@@ -67,7 +67,7 @@
             "uuid": "1c697a0b-ae03-cd8e-501d-000000000009"
           },
           "level": "notice",
-          "friendly_message": "Package(s) neovim are absent: [\"Removed: neovim-0.5.1-1.fc34.x86_64\"]"
+          "friendly_message": "Package(s) neovim are absent"
         }
       ],
       "keywords": [

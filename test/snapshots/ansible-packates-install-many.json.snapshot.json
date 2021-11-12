@@ -73,7 +73,7 @@
             "uuid": "1c697a0b-ae03-c008-fb17-000000000009"
           },
           "level": "info",
-          "friendly_message": "Package(s) gcc,gcc-c++,make,cmake,vim-common,vim-minimal,vim,screen,tmux,bash,git are : Nothing to do"
+          "friendly_message": "Package(s) gcc, gcc-c++, make, cmake, vim-common, vim-minimal, vim, screen, tmux, bash and more are present"
         }
       ],
       "keywords": [

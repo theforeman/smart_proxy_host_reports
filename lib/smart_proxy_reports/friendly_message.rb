@@ -27,9 +27,17 @@ class FriendlyMessage
     msg
   end
 
+  def human_readable_array(array, length = 10)
+    return array if array.nil?
+    return array.slice(0, length).join(", ") + " and more" if array.length > length
+    array.join(", ")
+  end
+
   def package_message
-    detail = @result_tree["results"] || @result_tree["msg"] || "No details"
-    "Package(s) #{@module_args_tree["name"].join(",")} are #{@module_args_tree["state"]}: #{detail}"
+    packages = human_readable_array(@module_args_tree["name"])
+    state = "present"
+    state = @module_args_tree["state"] unless @module_args_tree["state"].nil?
+    "Package(s) #{packages} are #{state}"
   end
 
   def template_message
