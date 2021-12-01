@@ -1,5 +1,6 @@
 /Gemfile.lock
 /.idea
+/.byebug_history
 smart_proxy_reports-*.gem
 /contrib/upload-fixture.conf
 /test/fixtures/ansible-163*.json
