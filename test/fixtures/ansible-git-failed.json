@@ -1,0 +1,62 @@
+{
+    "check_mode": false,
+    "host": "localhost1",
+    "metrics": {
+        "time": {
+            "total": 0
+        }
+    },
+    "reported_at": "2021-12-10T11:04:53.830366",
+    "results": [
+        {
+            "failed": true,
+            "result": {
+                "_ansible_no_log": false,
+                "ansible_facts": {
+                    "discovered_interpreter_python": "/usr/bin/python"
+                },
+                "changed": false,
+                "invocation": {
+                    "module_args": {
+                        "accept_hostkey": false,
+                        "bare": false,
+                        "clone": true,
+                        "force": false,
+                        "recursive": true,
+                        "remote": "origin",
+                        "repo": "https://github.com/theforeman/foreman.git",
+                        "track_submodules": false,
+                        "update": true,
+                        "verify_commit": false,
+                        "version": "HEAD"
+                    }
+                },
+                "msg": "the destination directory must be specified unless clone=no"
+            },
+            "task": {
+                "action": "ansible.builtin.git",
+                "any_errors_fatal": false,
+                "async": 0,
+                "async_val": 0,
+                "become": false,
+                "become_method": "sudo",
+                "check_mode": false,
+                "connection": "smart",
+                "delay": 5,
+                "diff": false,
+                "finalized": true,
+                "name": "",
+                "poll": 15,
+                "retries": 3,
+                "squashed": true,
+                "throttle": 0,
+                "uuid": "28d0ea5c-4b17-47d2-5135-00000000000a"
+            }
+        }
+    ],
+    "status": {
+        "applied": 0,
+        "failed": 1,
+        "skipped": 0
+    }
+}

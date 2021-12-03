@@ -1,0 +1,76 @@
+{
+    "check_mode": false,
+    "host": "localhost1",
+    "metrics": {
+        "time": {
+            "total": 20
+        }
+    },
+    "reported_at": "2021-12-03T10:48:16.857538",
+    "results": [
+        {
+            "failed": false,
+            "result": {
+                "_ansible_no_log": false,
+                "ansible_facts": {
+                    "discovered_interpreter_python": "/usr/bin/python"
+                },
+                "changed": true,
+                "invocation": {
+                    "module_args": {
+                        "allow_downgrade": false,
+                        "autoremove": false,
+                        "bugfix": false,
+                        "disable_gpg_check": false,
+                        "download_only": false,
+                        "install_repoquery": true,
+                        "install_weak_deps": true,
+                        "installroot": "/",
+                        "lock_timeout": 30,
+                        "name": [
+                            "httpd"
+                        ],
+                        "security": false,
+                        "skip_broken": false,
+                        "update_cache": false,
+                        "update_only": false,
+                        "validate_certs": true
+                    }
+                },
+                "msg": "",
+                "rc": 0,
+                "results": [
+                    "Installed: mailcap-2.1.41-2.el7.noarch",
+                    "Installed: apr-1.4.8-7.el7.x86_64",
+                    "Installed: httpd-2.4.6-97.el7.centos.2.x86_64",
+                    "Installed: httpd-tools-2.4.6-97.el7.centos.2.x86_64",
+                    "Installed: apr-util-1.5.2-6.el7.x86_64"
+                ]
+            },
+            "task": {
+                "action": "ansible.builtin.dnf",
+                "any_errors_fatal": false,
+                "async": 0,
+                "async_val": 0,
+                "become": false,
+                "become_method": "sudo",
+                "check_mode": false,
+                "connection": "smart",
+                "delay": 5,
+                "diff": false,
+                "finalized": true,
+                "name": "",
+                "poll": 15,
+                "retries": 3,
+                "squashed": true,
+                "throttle": 0,
+                "uuid": "28d0ea5c-4b17-00b5-c36f-00000000000a"
+            }
+        }
+    ],
+    "status": {
+        "applied": 1,
+        "failed": 0,
+        "skipped": 0
+    }
+}

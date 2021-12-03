@@ -1,0 +1,95 @@
+{
+  "host_report": {
+    "format": "ansible",
+    "version": 1,
+    "host": "localhost1",
+    "reported_at": "",
+    "proxy": "localhost",
+    "body": {
+      "format": "ansible",
+      "id": "",
+      "host": "localhost1",
+      "proxy": "localhost",
+      "reported_at": "",
+      "reported_at_proxy": "",
+      "results": [
+        {
+          "failed": false,
+          "result": {
+            "_ansible_no_log": false,
+            "after": "7fe686a6030d755e1c8b690933cae41bf19d1d6f",
+            "ansible_facts": {
+              "discovered_interpreter_python": "/usr/bin/python"
+            },
+            "changed": true,
+            "invocation": {
+              "module_args": {
+                "accept_hostkey": false,
+                "bare": false,
+                "clone": true,
+                "dest": "/home/repo",
+                "force": false,
+                "recursive": true,
+                "remote": "origin",
+                "repo": "https://github.com/theforeman/foreman.git",
+                "track_submodules": false,
+                "update": true,
+                "verify_commit": false,
+                "version": "HEAD"
+              }
+            }
+          },
+          "task": {
+            "action": "ansible.builtin.git",
+            "any_errors_fatal": false,
+            "async": 0,
+            "async_val": 0,
+            "become": false,
+            "become_method": "sudo",
+            "check_mode": false,
+            "connection": "smart",
+            "delay": 5,
+            "diff": false,
+            "finalized": true,
+            "name": "",
+            "poll": 15,
+            "retries": 3,
+            "squashed": true,
+            "throttle": 0,
+            "uuid": "28d0ea5c-4b17-4ef1-9ba5-00000000000a"
+          },
+          "level": "notice",
+          "friendly_message": "Repository https://github.com/theforeman/foreman.git cloned into /home/repo"
+        }
+      ],
+      "summary": {
+        "foreman": {
+          "change": 1,
+          "nochange": 0,
+          "failure": 0
+        },
+        "native": {
+          "changed": 1,
+          "failures": 0,
+          "ignored": 0,
+          "ok": 0,
+          "rescued": 0,
+          "skipped": 0,
+          "unreachable": 0
+        }
+      },
+      "keywords": [
+        "AnsibleChanged"
+      ],
+      "telemetry": {
+      },
+      "check_mode": false
+    },
+    "keywords": [
+      "AnsibleChanged"
+    ],
+    "change": 1,
+    "nochange": 0,
+    "failure": 0
+  }
+}

@@ -1718,7 +1718,7 @@
             "uuid": "1c697a0b-ae03-bb52-ab34-000000000009"
           },
           "level": "info",
-          "friendly_message": "N/A"
+          "friendly_message": "/var/tmp/ansible-testing attributes changed: state, mode"
         },
         {
           "failed": false,
@@ -1839,7 +1839,7 @@
             "uuid": "1c697a0b-ae03-bb52-ab34-00000000000b"
           },
           "level": "info",
-          "friendly_message": "N/A"
+          "friendly_message": "/var/tmp/ansible-testing/symlink.txt attributes changed: state, src"
         },
         {
           "failed": false,
