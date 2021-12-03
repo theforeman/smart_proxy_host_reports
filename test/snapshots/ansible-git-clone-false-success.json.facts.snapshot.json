@@ -1,0 +1,10 @@
+{
+  "name": "localhost1",
+  "facts": {
+    "ansible_facts": {
+      "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "_type": "ansible",
+    "_timestamp": "2021-12-10T11:06:14.047844"
+  }
+}

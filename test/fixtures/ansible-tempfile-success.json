@@ -1,0 +1,62 @@
+{
+    "check_mode": false,
+    "host": "localhost1",
+    "metrics": {
+        "time": {
+            "total": 0
+        }
+    },
+    "reported_at": "2021-12-10T14:04:55.690799",
+    "results": [
+        {
+            "failed": false,
+            "result": {
+                "_ansible_no_log": false,
+                "ansible_facts": {
+                    "discovered_interpreter_python": "/usr/bin/python"
+                },
+                "changed": true,
+                "gid": 0,
+                "group": "root",
+                "invocation": {
+                    "module_args": {
+                        "prefix": "temp",
+                        "state": "directory",
+                        "suffix": "new"
+                    }
+                },
+                "mode": "0700",
+                "owner": "root",
+                "path": "/tmp/tempLYQ59Vnew",
+                "secontext": "unconfined_u:object_r:user_tmp_t:s0",
+                "size": 6,
+                "state": "directory",
+                "uid": 0
+            },
+            "task": {
+                "action": "ansible.builtin.tempfile",
+                "any_errors_fatal": false,
+                "async": 0,
+                "async_val": 0,
+                "become": false,
+                "become_method": "sudo",
+                "check_mode": false,
+                "connection": "smart",
+                "delay": 5,
+                "diff": false,
+                "finalized": true,
+                "name": "",
+                "poll": 15,
+                "retries": 3,
+                "squashed": true,
+                "throttle": 0,
+                "uuid": "28d0ea5c-4b17-6425-d4af-00000000000a"
+            }
+        }
+    ],
+    "status": {
+        "applied": 1,
+        "failed": 0,
+        "skipped": 0
+    }
+}

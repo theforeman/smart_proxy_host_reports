@@ -12,7 +12,13 @@ class FriendlyMessage
     return @result_tree["msg"] if @result["failed"]
 
     case @task_tree["action"]
+    when "ansible.builtin.assemble", "assemble" then msg = assemble_message
+    when "ansible.builtin.dnf", "dnf" then msg = dnf_message
+    when "ansible.builtin.git", "git" then msg = git_message
+    when "ansible.builtin.file", "file" then msg = file_message
     when "ansible.builtin.package", "package" then msg = package_message
+    when "ansible.builtin.systemd", "systemd" then msg = systemd_message
+    when "ansible.builtin.tempfile", "tempfile" then msg = tempfile_message
     when "ansible.builtin.known_hosts", "known_hosts" then msg = known_hosts_message
     when "ansible.builtin.pip", "pip" then msg = pip_message
     when "ansible.builtin.template", "template" then msg = template_message
@@ -39,10 +45,42 @@ class FriendlyMessage
     msg
   end
 
+  def assemble_message
+    "Concatenation of #{@result_tree["src"]} into #{@result_tree["dest"]}"
+  end
+
+  def dnf_message
+    package_message
+  end
+
+  def git_message
+    if @module_args_tree["clone"]
+      return "Repository #{@module_args_tree["repo"]} cloned into #{@module_args_tree["dest"]}"
+    end
+    "Check if clone of #{@module_args_tree["repo"]} exists"
+  end
+
   def human_readable_array(array, length = 10)
     return array if array.nil?
     return array.slice(0, length).join(", ") + " and more" if array.length > length
     array.join(", ")
+  end
+
+  def file_message
+    changes = []
+    unless @module_args_tree["follow"] then changes << "follow" end
+    if @module_args_tree["state"] != "file" then changes << "state" end
+    ["access_time_format", "modification_time_format"].each do |format|
+      if @module_args_tree[format] != "%Y%m%d%H%M.%S" then changes << format end
+    end
+    ["force", "recurse", "unsafe_writes"].each do |default|
+      if @module_args_tree[default] then changes << default end
+    end
+    ["access_time", "attributes", "group", "mode", "modification_time", "owner", "selevel", "serole", "setype", "seuser", "src"].each do |i|
+      unless @module_args_tree[i].nil? then changes << i end
+    end
+    file = @module_args_tree["path"]
+    "#{file} attributes changed: #{human_readable_array(changes)}"
   end
 
   def package_message
@@ -59,6 +97,14 @@ class FriendlyMessage
   def pip_message
     packages = human_readable_array(@module_args_tree["name"]) || "contained in #{@module_args_tree["requirements"]}"
     "Package(s) #{packages} are #{@module_args_tree["state"]}"
+  end
+
+  def systemd_message
+    "Service #{@module_args_tree["name"]} #{@module_args_tree["state"]}"
+  end
+
+  def tempfile_message
+    "Temporary #{@result_tree["state"]} created: #{@result_tree["path"]}"
   end
 
   def template_message
