@@ -13,8 +13,11 @@ class FriendlyMessage
 
     case @task_tree["action"]
     when "ansible.builtin.package", "package" then msg = package_message
+    when "ansible.builtin.known_hosts", "known_hosts" then msg = known_hosts_message
+    when "ansible.builtin.pip", "pip" then msg = pip_message
     when "ansible.builtin.template", "template" then msg = template_message
     when "ansible.builtin.service", "service" then msg = service_message
+    when "ansible.builtin.unarchive", "unarchive" then msg = unarchive_message
     when "ansible.builtin.group", "group" then msg = group_message
     when "ansible.builtin.user", "user" then msg = user_message
     when "ansible.builtin.cron", "cron" then msg = cron_message
@@ -40,12 +43,25 @@ class FriendlyMessage
     "Package(s) #{packages} are #{state}"
   end
 
+  def known_hosts_message
+    "#{@module_args_tree["name"]} is #{@module_args_tree["state"]} in #{@module_args_tree["path"]}"
+  end
+
+  def pip_message
+    packages = human_readable_array(@module_args_tree["name"]) || "contained in #{@module_args_tree["requirements"]}"
+    "Package(s) #{packages} are #{@module_args_tree["state"]}"
+  end
+
   def template_message
     "Render template #{@module_args_tree["_original_basename"]} to #{@result_tree["dest"]}"
   end
 
   def service_message
     "Service #{@result_tree["name"]} is #{@result_tree["state"]} and enabled: #{@result_tree["enabled"]}"
+  end
+
+  def unarchive_message
+    "Archive #{@module_args_tree["src"]} unpacked into #{@module_args_tree["dest"]}"
   end
 
   def group_message
