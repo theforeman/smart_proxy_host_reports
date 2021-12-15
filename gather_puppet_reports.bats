@@ -171,7 +171,7 @@ teardown() {
 	curl http://$HOSTNAME | grep "Hello World"
 }
 
-@test "noop run" {
+@test "noop run with expected changes" {
         yum -y remove httpd
         rm -f "$INDEX"
 
@@ -203,6 +203,14 @@ teardown() {
 	run -2 puppet agent --test --detailed-exitcodes
 
 	curl http://$HOSTNAME | grep "Hello World"
+}
+
+
+@test "noop run while in sync" {
+        puppet config set noop true
+        puppet agent --test --detailed-exitcodes
+
+        curl http://$HOSTNAME
 }
 
 # vim: ft=bash
