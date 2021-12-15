@@ -1,0 +1,77 @@
+{
+    "check_mode": false,
+    "host": "localhost1",
+    "metrics": {
+        "time": {
+            "total": 0
+        }
+    },
+    "reported_at": "2021-12-15T09:47:23.096603",
+    "results": [
+        {
+            "failed": false,
+            "result": {
+                "_ansible_no_log": false,
+                "ansible_facts": {
+                    "discovered_interpreter_python": "/usr/bin/python"
+                },
+                "changed": false,
+                "diff": {
+                    "after": "localhost1 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGjQGfTjlYzf2Gm15qsaEJo99ycMy2T0qI0/uT9uuRdA/SJ1DgfmIrdlsL6fXuX2aSG7YMs/Dj9yExAAQtbRJWk=\nlocalhost1.local ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGjQGfTjlYzf2Gm15qsaEJo99ycMy2T0qI0/uT9uuRdA/SJ1DgfmIrdlsL6fXuX2aSG7YMs/Dj9yExAAQtbRJWk=\n",
+                    "after_header": "/root/.ssh/known_hosts",
+                    "before": "localhost1 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGjQGfTjlYzf2Gm15qsaEJo99ycMy2T0qI0/uT9uuRdA/SJ1DgfmIrdlsL6fXuX2aSG7YMs/Dj9yExAAQtbRJWk=\nlocalhost1.local ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGjQGfTjlYzf2Gm15qsaEJo99ycMy2T0qI0/uT9uuRdA/SJ1DgfmIrdlsL6fXuX2aSG7YMs/Dj9yExAAQtbRJWk=\n",
+                    "before_header": "/root/.ssh/known_hosts"
+                },
+                "gid": 0,
+                "group": "root",
+                "hash_host": false,
+                "invocation": {
+                    "module_args": {
+                        "diff": {
+                            "after": "localhost1 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGjQGfTjlYzf2Gm15qsaEJo99ycMy2T0qI0/uT9uuRdA/SJ1DgfmIrdlsL6fXuX2aSG7YMs/Dj9yExAAQtbRJWk=\nlocalhost1.local ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGjQGfTjlYzf2Gm15qsaEJo99ycMy2T0qI0/uT9uuRdA/SJ1DgfmIrdlsL6fXuX2aSG7YMs/Dj9yExAAQtbRJWk=\n",
+                            "after_header": "/root/.ssh/known_hosts",
+                            "before": "localhost1 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGjQGfTjlYzf2Gm15qsaEJo99ycMy2T0qI0/uT9uuRdA/SJ1DgfmIrdlsL6fXuX2aSG7YMs/Dj9yExAAQtbRJWk=\nlocalhost1.local ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGjQGfTjlYzf2Gm15qsaEJo99ycMy2T0qI0/uT9uuRdA/SJ1DgfmIrdlsL6fXuX2aSG7YMs/Dj9yExAAQtbRJWk=\n",
+                            "before_header": "/root/.ssh/known_hosts"
+                        },
+                        "hash_host": false,
+                        "name": "host.example.com",
+                        "path": "/root/.ssh/known_hosts",
+                        "state": "absent"
+                    }
+                },
+                "mode": "0644",
+                "name": "host.example.com",
+                "owner": "root",
+                "path": "/root/.ssh/known_hosts",
+                "secontext": "unconfined_u:object_r:ssh_home_t:s0",
+                "size": 350,
+                "state": "file",
+                "uid": 0
+            },
+            "task": {
+                "action": "ansible.builtin.known_hosts",
+                "any_errors_fatal": false,
+                "async": 0,
+                "async_val": 0,
+                "become": false,
+                "become_method": "sudo",
+                "check_mode": false,
+                "connection": "smart",
+                "delay": 5,
+                "diff": false,
+                "finalized": true,
+                "name": "",
+                "poll": 15,
+                "retries": 3,
+                "squashed": true,
+                "throttle": 0,
+                "uuid": "28d0ea5c-4b17-d11b-529a-00000000000a"
+            }
+        }
+    ],
+    "status": {
+        "applied": 0,
+        "failed": 0,
+        "skipped": 0
+    }
+}

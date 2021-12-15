@@ -1,0 +1,147 @@
+{
+  "host_report": {
+    "format": "ansible",
+    "version": 1,
+    "host": "localhost1",
+    "reported_at": "",
+    "proxy": "localhost",
+    "body": {
+      "format": "ansible",
+      "id": "",
+      "host": "localhost1",
+      "proxy": "localhost",
+      "reported_at": "",
+      "results": [
+        {
+          "failed": false,
+          "result": {
+            "_ansible_no_log": false,
+            "_ansible_verbose_override": true,
+            "ansible_facts": {
+            },
+            "changed": false
+          },
+          "task": {
+            "action": "gather_facts",
+            "any_errors_fatal": false,
+            "async": 0,
+            "async_val": 0,
+            "become": false,
+            "become_method": "sudo",
+            "check_mode": false,
+            "connection": "smart",
+            "delay": 5,
+            "diff": false,
+            "finalized": true,
+            "name": "Gathering Facts",
+            "poll": 15,
+            "remote_user": "root",
+            "retries": 3,
+            "run_once": false,
+            "squashed": true,
+            "tags": [
+              "always"
+            ],
+            "throttle": 0,
+            "uuid": "28d0ea5c-4b17-e47c-5532-00000000000d"
+          },
+          "level": "info",
+          "friendly_message": "N/A"
+        },
+        {
+          "failed": false,
+          "result": {
+            "_ansible_no_log": false,
+            "changed": false,
+            "cmd": [
+              "/usr/bin/pip2",
+              "install",
+              "bottle",
+              "six",
+              "flake8"
+            ],
+            "invocation": {
+              "module_args": {
+                "editable": false,
+                "name": [
+                  "bottle",
+                  "six",
+                  "flake8"
+                ],
+                "state": "present",
+                "virtualenv_command": "virtualenv",
+                "virtualenv_site_packages": false
+              }
+            },
+            "name": [
+              "bottle",
+              "six",
+              "flake8"
+            ],
+            "state": "present",
+            "stderr": "  Running setup.py (path:/tmp/pip-build-Ee2UOz/importlib-metadata/setup.py) egg_info for package importlib-metadata produced metadata for project name unknown. Fix your #egg=importlib-metadata fragments.\nYou are using pip version 8.1.2, however version 21.3.1 is available.\nYou should consider upgrading via the 'pip install --upgrade pip' command.\n",
+            "stderr_lines": [
+              "  Running setup.py (path:/tmp/pip-build-Ee2UOz/importlib-metadata/setup.py) egg_info for package importlib-metadata produced metadata for project name unknown. Fix your #egg=importlib-metadata fragments.",
+              "You are using pip version 8.1.2, however version 21.3.1 is available.",
+              "You should consider upgrading via the 'pip install --upgrade pip' command."
+            ],
+            "stdout": "Requirement already satisfied (use --upgrade to upgrade): bottle in /usr/lib/python2.7/site-packages\nRequirement already satisfied (use --upgrade to upgrade): six in /usr/lib/python2.7/site-packages\nRequirement already satisfied (use --upgrade to upgrade): flake8 in /usr/lib/python2.7/site-packages\nRequirement already satisfied (use --upgrade to upgrade): pyflakes<2.5.0,>=2.4.0 in /usr/lib/python2.7/site-packages (from flake8)\nRequirement already satisfied (use --upgrade to upgrade): pycodestyle<2.9.0,>=2.8.0 in /usr/lib/python2.7/site-packages (from flake8)\nCollecting importlib-metadata<4.3; python_version < \"3.8\" (from flake8)\n  Using cached https://files.pythonhosted.org/packages/c7/7c/126a8686399ebe256b5e4343ea80b6f2ee91549969da2eef0bb2891b8d24/importlib_metadata-4.2.0.tar.gz\n  Requirement already satisfied (use --upgrade to upgrade): unknown from https://files.pythonhosted.org/packages/c7/7c/126a8686399ebe256b5e4343ea80b6f2ee91549969da2eef0bb2891b8d24/importlib_metadata-4.2.0.tar.gz#sha256=b7e52a1f8dec14a75ea73e0891f3060099ca1d8e6a462a4dff11c3e119ea1b31 in /usr/lib/python2.7/site-packages (from flake8)\nRequirement already satisfied (use --upgrade to upgrade): mccabe<0.7.0,>=0.6.0 in /usr/lib/python2.7/site-packages (from flake8)\n",
+            "stdout_lines": [
+              "Requirement already satisfied (use --upgrade to upgrade): bottle in /usr/lib/python2.7/site-packages",
+              "Requirement already satisfied (use --upgrade to upgrade): six in /usr/lib/python2.7/site-packages",
+              "Requirement already satisfied (use --upgrade to upgrade): flake8 in /usr/lib/python2.7/site-packages",
+              "Requirement already satisfied (use --upgrade to upgrade): pyflakes<2.5.0,>=2.4.0 in /usr/lib/python2.7/site-packages (from flake8)",
+              "Requirement already satisfied (use --upgrade to upgrade): pycodestyle<2.9.0,>=2.8.0 in /usr/lib/python2.7/site-packages (from flake8)",
+              "Collecting importlib-metadata<4.3; python_version < \"3.8\" (from flake8)",
+              "  Using cached https://files.pythonhosted.org/packages/c7/7c/126a8686399ebe256b5e4343ea80b6f2ee91549969da2eef0bb2891b8d24/importlib_metadata-4.2.0.tar.gz",
+              "  Requirement already satisfied (use --upgrade to upgrade): unknown from https://files.pythonhosted.org/packages/c7/7c/126a8686399ebe256b5e4343ea80b6f2ee91549969da2eef0bb2891b8d24/importlib_metadata-4.2.0.tar.gz#sha256=b7e52a1f8dec14a75ea73e0891f3060099ca1d8e6a462a4dff11c3e119ea1b31 in /usr/lib/python2.7/site-packages (from flake8)",
+              "Requirement already satisfied (use --upgrade to upgrade): mccabe<0.7.0,>=0.6.0 in /usr/lib/python2.7/site-packages (from flake8)"
+            ],
+            "ansible_facts": {
+            }
+          },
+          "task": {
+            "action": "pip",
+            "any_errors_fatal": false,
+            "async": 0,
+            "async_val": 0,
+            "become": false,
+            "become_method": "sudo",
+            "check_mode": false,
+            "connection": "smart",
+            "delay": 5,
+            "diff": false,
+            "finalized": true,
+            "name": "Install with name list",
+            "poll": 15,
+            "remote_user": "root",
+            "retries": 3,
+            "squashed": true,
+            "throttle": 0,
+            "uuid": "28d0ea5c-4b17-e47c-5532-000000000009"
+          },
+          "level": "info",
+          "friendly_message": "Package(s) bottle, six, flake8 are present"
+        }
+      ],
+      "keywords": [
+
+      ],
+      "telemetry": {
+      },
+      "status": {
+        "applied": 0,
+        "failed": 0,
+        "skipped": 0
+      },
+      "check_mode": false
+    },
+    "keywords": [
+
+    ],
+    "applied": 0,
+    "failed": 0,
+    "pending": 0,
+    "other": 0
+  }
+}
