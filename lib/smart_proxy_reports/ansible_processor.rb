@@ -1,6 +1,6 @@
-require_relative "friendly_message"
-
 # frozen_string_literal: true
+
+require_relative "friendly_message"
 
 module Proxy::Reports
   class AnsibleProcessor < Processor
