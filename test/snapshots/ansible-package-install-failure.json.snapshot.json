@@ -70,26 +70,36 @@
           "friendly_message": "Failed to install some of the specified packages"
         }
       ],
+      "summary": {
+        "foreman": {
+          "change": 0,
+          "nochange": 1,
+          "failure": 1
+        },
+        "native": {
+          "changed": 0,
+          "failures": 1,
+          "ignored": 0,
+          "ok": 0,
+          "rescued": 0,
+          "skipped": 0,
+          "unreachable": 0
+        }
+      },
       "keywords": [
-        "HasFailure",
-        "AnsibleTaskFailed:ansible.builtin.package"
+        "AnsibleFailure",
+        "AnsibleFailure:ansible.builtin.package"
       ],
       "telemetry": {
-      },
-      "status": {
-        "applied": 0,
-        "failed": 1,
-        "skipped": 0
       },
       "check_mode": false
     },
     "keywords": [
-      "HasFailure",
-      "AnsibleTaskFailed:ansible.builtin.package"
+      "AnsibleFailure",
+      "AnsibleFailure:ansible.builtin.package"
     ],
-    "applied": 0,
-    "failed": 1,
-    "pending": 0,
-    "other": 0
+    "change": 0,
+    "nochange": 1,
+    "failure": 1
   }
 }
