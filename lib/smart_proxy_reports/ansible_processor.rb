@@ -4,7 +4,7 @@ require_relative "friendly_message"
 
 module Proxy::Reports
   class AnsibleProcessor < Processor
-    KEYS_TO_COPY = %w[status check_mode].freeze
+    KEYS_TO_COPY = %w[check_mode].freeze
 
     def initialize(data, json_body: true)
       super(data, json_body: json_body)
@@ -12,12 +12,26 @@ module Proxy::Reports
         @data = JSON.parse(data)
       end
       @body = {}
+      @failure = 0
+      @change = 0
+      @nochange = 0
       logger.debug "Processing report #{report_id}"
       debug_payload("Input", @data)
     end
 
     def report_id
       @data["uuid"] || generated_report_id
+    end
+
+    def count_summary(result)
+      if result["result"]["changed"]
+        @change += 1
+      else
+        @nochange += 1
+      end
+      if result["failed"]
+        @failure += 1
+      end
     end
 
     def process_results
@@ -29,27 +43,30 @@ module Proxy::Reports
         friendly_message = FriendlyMessage.new(result)
         result["friendly_message"] = friendly_message.generate_message
         process_keywords(result)
+        count_summary(result)
       end
       @data["results"]
     rescue StandardError => e
-      logger.error "Unable to parse results", e
+      log_error("Unable to parse results", e)
       @data["results"]
     end
 
     def process
-      measure :process do
-        @body["format"] = "ansible"
-        @body["id"] = report_id
-        @body["host"] = hostname_from_config || @data["host"]
-        @body["proxy"] = Proxy::Reports::Plugin.settings.reported_proxy_hostname
-        @body["reported_at"] = @data["reported_at"]
+      @body["format"] = "ansible"
+      @body["id"] = report_id
+      @body["host"] = hostname_from_config || @data["host"]
+      @body["proxy"] = Proxy::Reports::Plugin.settings.reported_proxy_hostname
+      @body["reported_at"] = @data["reported_at"]
+      measure :process_results do
         @body["results"] = process_results
-        @body["keywords"] = keywords
-        @body["telemetry"] = telemetry
-        @body["errors"] = errors if errors?
-        KEYS_TO_COPY.each do |key|
-          @body[key] = @data[key]
-        end
+      end
+      @body["summary"] = build_summary
+      process_root_keywords
+      @body["keywords"] = keywords
+      @body["telemetry"] = telemetry
+      @body["errors"] = errors if errors?
+      KEYS_TO_COPY.each do |key|
+        @body[key] = @data[key]
       end
     end
 
@@ -63,10 +80,12 @@ module Proxy::Reports
         version: 1,
         host: @body["host"],
         reported_at: @body["reported_at"],
-        statuses: process_statuses,
         proxy: @body["proxy"],
-        body: @body,
+        change: @body["summary"]["foreman"]["change"],
+        nochange: @body["summary"]["foreman"]["nochange"],
+        failure: @body["summary"]["foreman"]["failure"],
         keywords: @body["keywords"],
+        body: @body,
       )
     end
 
@@ -86,12 +105,68 @@ module Proxy::Reports
       result["result"]["ansible_facts"] = {}
     end
 
+    # foreman-ansible-modules 3.0 does not contain summary field, convert it here
+    # https://github.com/theforeman/foreman-ansible-modules/pull/1325/files
+    def build_summary
+      if @data["summary"]
+        native = @data["summary"]
+      elsif (status = @data["status"])
+        native = {
+          "changed" => status["applied"] || 0,
+          "failures" => status["failed"] || 0,
+          "ignored" => 0,
+          "ok" => 0,
+          "rescued" => 0,
+          "skipped" => status["skipped"] || 0,
+          "unreachable" => 0,
+        }
+      else
+        native = {}
+      end
+      {
+        "foreman" => {
+          "change" => @change, "nochange" => @nochange, "failure" => @failure,
+        },
+        "native" => native,
+      }
+    rescue StandardError => e
+      log_error("Unable to build summary", e)
+      {
+        "foreman" => {
+          "change" => @change, "nochange" => @nochange, "failure" => @failure,
+        },
+        "native" => {},
+      }
+    end
+
+    def process_root_keywords
+      if (summary = @body["summary"])
+        if summary["changed"] && summary["changed"] > 0
+          add_keywords("AnsibleChanged")
+        elsif summary["failures"] && summary["failures"] > 0
+          add_keywords("AnsibleFailures")
+        elsif summary["unreachable"] && summary["unreachable"] > 0
+          add_keywords("AnsibleUnreachable")
+        elsif summary["rescued"] && summary["rescued"] > 0
+          add_keywords("AnsibleRescued")
+        elsif summary["ignored"] && summary["ignored"] > 0
+          add_keywords("AnsibleIgnored")
+        elsif summary["skipped"] && summary["skipped"] > 0
+          add_keywords("AnsibleSkipped")
+        end
+      end
+    rescue StandardError => e
+      log_error("Unable to parse root summary keywords", e)
+    end
+
     def process_keywords(result)
       if result["failed"]
-        add_keywords("HasFailure", "AnsibleTaskFailed:#{result["task"]["action"]}")
+        add_keywords("AnsibleFailure", "AnsibleFailure:#{result["task"]["action"]}")
       elsif result["result"]["changed"]
-        add_keywords("HasChange")
+        add_keywords("AnsibleChanged")
       end
+    rescue StandardError => e
+      log_error("Unable to parse keywords", e)
     end
 
     def process_level(result)
@@ -102,18 +177,9 @@ module Proxy::Reports
       else
         result["level"] = "info"
       end
-    end
-
-    def process_statuses
-      {
-        "applied" => @body["status"]["applied"],
-        "failed" => @body["status"]["failed"],
-        "pending" => @body["status"]["pending"] || 0, # It's only present in check mode
-        "other" => @body["status"]["skipped"],
-      }
     rescue StandardError => e
-      logger.error "Unable to process statuses", e
-      { "applied" => 0, "failed" => 0, "pending" => 0, "other" => 0 }
+      log_error("Unable to parse log level", e)
+      result["level"] = "info"
     end
   end
 end

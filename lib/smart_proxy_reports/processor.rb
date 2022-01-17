@@ -31,7 +31,7 @@ module Proxy::Reports
       @hostname_from_config ||= Proxy::Reports::Plugin.settings.override_hostname
     end
 
-    def build_report_root(format:, version:, host:, reported_at:, statuses:, proxy:, body:, keywords:)
+    def build_report_root(format:, version:, host:, reported_at:, proxy:, change:, nochange:, failure:, body:, keywords:)
       {
         "host_report" => {
           "format" => format,
@@ -41,7 +41,10 @@ module Proxy::Reports
           "proxy" => proxy,
           "body" => @json_body ? body.to_json : body,
           "keywords" => keywords,
-        }.merge(statuses),
+          "change" => change,
+          "nochange" => nochange,
+          "failure" => failure,
+        },
       }
       # TODO add metric with total time
     end
@@ -67,8 +70,14 @@ module Proxy::Reports
 
     attr_reader :errors
 
-    def log_error(message)
-      @errors << message.to_s
+    def log_error(message, exception = nil)
+      msg = if exception
+          "#{message}: #{exception}"
+        else
+          message
+        end
+      logger.error msg, exception
+      @errors << msg.to_s
     end
 
     def errors?
