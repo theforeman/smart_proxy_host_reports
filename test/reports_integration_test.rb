@@ -37,6 +37,6 @@ class ReportsIntegrationTest < Test::Unit::TestCase
     yaml = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-old.yaml"))
     post "/puppet", yaml, { "CONTENT_TYPE" => "application/x-yaml" }
     assert_equal "", last_response.body
-    assert_equal 200, last_response.status
+    assert_equal 202, last_response.status
   end
 end

@@ -47,6 +47,7 @@ module Proxy::Reports
       log_halt(415, "Missing body") if input.empty?
       json_body = to_bool(params[:json_body], true)
       processor = Processor.new_processor(format, input, json_body: json_body)
+      status 202
       processor.spool_report
     rescue => e
       log_halt 415, e, "Error during report processing: #{e.message}"
