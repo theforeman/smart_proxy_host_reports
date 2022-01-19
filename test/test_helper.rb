@@ -31,7 +31,7 @@ def check_hash_keys(hoa)
 end
 
 def setup_processor(type, filename)
-  input = File.read(File.join(File.dirname(__FILE__), "fixtures/#{filename}"))
+  input = File.read(File.join(__dir__, "fixtures/#{filename}"))
   ::Proxy::Reports::Processor.new_processor(type, input, json_body: false)
 end
 

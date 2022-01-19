@@ -34,7 +34,7 @@ class ReportsIntegrationTest < Test::Unit::TestCase
 
   def test_valid_puppet
     ::Proxy::Reports::SpooledHttpClient.instance.expects(:spool)
-    yaml = File.read(File.join(File.dirname(__FILE__), "fixtures/puppet6-foreman-old.yaml"))
+    yaml = File.read(File.join(__dir__, "fixtures/puppet6-foreman-old.yaml"))
     post "/puppet", yaml, { "CONTENT_TYPE" => "application/x-yaml" }
     assert_equal "", last_response.body
     assert_equal 202, last_response.status
