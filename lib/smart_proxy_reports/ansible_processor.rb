@@ -57,6 +57,7 @@ module Proxy::Reports
       @body["host"] = hostname_from_config || @data["host"]
       @body["proxy"] = Proxy::Reports::Plugin.settings.reported_proxy_hostname
       @body["reported_at"] = @data["reported_at"]
+      @body["reported_at_proxy"] = now_utc
       measure :process_results do
         @body["results"] = process_results
       end
@@ -79,7 +80,6 @@ module Proxy::Reports
         format: "ansible",
         version: 1,
         host: @body["host"],
-        reported_at: @body["reported_at"],
         proxy: @body["proxy"],
         change: @body["summary"]["foreman"]["change"],
         nochange: @body["summary"]["foreman"]["nochange"],
