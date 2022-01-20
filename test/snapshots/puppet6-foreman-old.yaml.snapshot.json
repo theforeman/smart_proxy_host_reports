@@ -11,6 +11,7 @@
       "host": "old.example.com",
       "proxy": "localhost",
       "reported_at": "",
+      "reported_at_proxy": "",
       "report_format": 6,
       "puppet_version": "4.10.12",
       "environment": "production",

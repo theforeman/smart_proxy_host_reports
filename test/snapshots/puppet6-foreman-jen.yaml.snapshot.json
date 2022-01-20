@@ -11,6 +11,7 @@
       "host": "jen.example.com",
       "proxy": "localhost",
       "reported_at": "",
+      "reported_at_proxy": "",
       "report_format": 11,
       "puppet_version": "6.19.1",
       "environment": "production",

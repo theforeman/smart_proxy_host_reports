@@ -11,6 +11,7 @@
       "host": "deb.example.com",
       "proxy": "localhost",
       "reported_at": "",
+      "reported_at_proxy": "",
       "report_format": 10,
       "puppet_version": "6.16.0",
       "environment": "production",

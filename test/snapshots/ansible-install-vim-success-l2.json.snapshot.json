@@ -11,6 +11,7 @@
       "host": "localhost2.local",
       "proxy": "localhost",
       "reported_at": "",
+      "reported_at_proxy": "",
       "results": [
         {
           "failed": false,
