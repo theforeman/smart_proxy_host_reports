@@ -84,13 +84,13 @@
           "failure": 0
         },
         "native": {
-          "ok": 1,
           "changed": 0,
           "failures": 0,
-          "unreachable": 0,
-          "rescued": 0,
           "ignored": 0,
-          "skipped": 0
+          "ok": 1,
+          "rescued": 0,
+          "skipped": 0,
+          "unreachable": 0
         }
       },
       "keywords": [

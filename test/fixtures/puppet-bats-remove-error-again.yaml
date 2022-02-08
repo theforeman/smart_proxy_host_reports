@@ -1,0 +1,505 @@
+--- !ruby/object:Puppet::Transaction::Report
+host: centos8.wisse.example.com
+time: '2021-12-14T15:32:51.767469799Z'
+configuration_version: 1639495974
+transaction_uuid: 98b5e098-fd86-4e92-a81d-235f02e9a35b
+report_format: 12
+puppet_version: 7.13.1
+status: changed
+transaction_completed: true
+noop: false
+noop_pending: false
+environment: production
+logs:
+- level: info
+  message: Using environment 'production'
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:52.182013685Z'
+  file:
+  line:
+- level: info
+  message: Retrieving pluginfacts
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:52.251019585Z'
+  file:
+  line:
+- level: info
+  message: Retrieving plugin
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:52.291940847Z'
+  file:
+  line:
+- level: info
+  message: Caching catalog for centos8.wisse.example.com
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:54.828485382Z'
+  file:
+  line:
+- level: info
+  message: Applying configuration version '1639495974'
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:54.833761369Z'
+  file:
+  line:
+- level: notice
+  message: created (corrective)
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/Package[httpd]/ensure"
+  tags:
+  - notice
+  - package
+  - httpd
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:57.616090237Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 2
+- level: notice
+  message: defined content as '{sha256}d2a84f4b8b650937ec8f73cd8be2c74add5a911ba64df27458ed8229da804a26'
+    (corrective)
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/var/www/html/index.html]/ensure"
+  tags:
+  - notice
+  - file
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:57.622399531Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 5
+- level: info
+  message: Scheduling refresh of Service[httpd]
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/var/www/html/index.html]"
+  tags:
+  - info
+  - file
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:57.622895275Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 5
+- level: notice
+  message: ensure changed 'stopped' to 'running' (corrective)
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/Service[httpd]/ensure"
+  tags:
+  - notice
+  - service
+  - httpd
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:58.036519459Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 11
+- level: info
+  message: Unscheduling refresh on Service[httpd]
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/Service[httpd]"
+  tags:
+  - info
+  - service
+  - httpd
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:58.036911735Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 11
+- level: notice
+  message: Applied catalog in 3.22 seconds
+  source: Puppet
+  tags:
+  - notice
+  time: '2021-12-14T15:32:58.046539927Z'
+  file:
+  line:
+metrics:
+  resources:
+    name: resources
+    label: Resources
+    values:
+    - - total
+      - Total
+      - 10
+    - - skipped
+      - Skipped
+      - 0
+    - - failed
+      - Failed
+      - 0
+    - - failed_to_restart
+      - Failed to restart
+      - 0
+    - - restarted
+      - Restarted
+      - 0
+    - - changed
+      - Changed
+      - 3
+    - - out_of_sync
+      - Out of sync
+      - 3
+    - - scheduled
+      - Scheduled
+      - 0
+    - - corrective_change
+      - Corrective change
+      - 3
+  time:
+    name: time
+    label: Time
+    values:
+    - - package
+      - Package
+      - 2.673776182
+    - - file
+      - File
+      - 0.005114285
+    - - service
+      - Service
+      - 0.413069021
+    - - schedule
+      - Schedule
+      - 0.00036269899999999996
+    - - filebucket
+      - Filebucket
+      - 4.337e-05
+    - - startup_time
+      - Startup time
+      - 0.413909693
+    - - plugin_sync
+      - Plugin sync
+      - 0.11393236199910461
+    - - fact_generation
+      - Fact generation
+      - 1.9812272710005345
+    - - convert_catalog
+      - Convert catalog
+      - 0.09827068400045391
+    - - config_retrieval
+      - Config retrieval
+      - 0.060645060999377165
+    - - transaction_evaluation
+      - Transaction evaluation
+      - 3.21118659899912
+    - - catalog_application
+      - Catalog application
+      - 3.2154626049996295
+    - - total
+      - Total
+      - 6.27919281
+  changes:
+    name: changes
+    label: Changes
+    values:
+    - - total
+      - Total
+      - 3
+  events:
+    name: events
+    label: Events
+    values:
+    - - total
+      - Total
+      - 3
+    - - failure
+      - Failure
+      - 0
+    - - success
+      - Success
+      - 3
+resource_statuses:
+  Package[httpd]:
+    title: httpd
+    file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+    line: 2
+    resource: Package[httpd]
+    resource_type: Package
+    provider_used: dnf
+    containment_path:
+    - Stage[main]
+    - Main
+    - Node[centos8.wisse.example.com]
+    - Package[httpd]
+    evaluation_time: 2.673776182
+    tags:
+    - package
+    - httpd
+    - node
+    - centos8.wisse.example.com
+    - class
+    time: '2021-12-14T15:32:54.943497531Z'
+    failed: false
+    failed_to_restart: false
+    changed: true
+    out_of_sync: true
+    skipped: false
+    change_count: 1
+    out_of_sync_count: 1
+    events:
+    - audited: false
+      property: ensure
+      previous_value: purged
+      desired_value: present
+      historical_value:
+      message: created (corrective)
+      name: package_installed
+      status: success
+      time: '2021-12-14T15:32:54.960146331Z'
+      redacted:
+      corrective_change: true
+    corrective_change: true
+  File[/var/www/html/index.html]:
+    title: "/var/www/html/index.html"
+    file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+    line: 5
+    resource: File[/var/www/html/index.html]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Main
+    - Node[centos8.wisse.example.com]
+    - File[/var/www/html/index.html]
+    evaluation_time: 0.005114285
+    tags:
+    - file
+    - node
+    - centos8.wisse.example.com
+    - class
+    time: '2021-12-14T15:32:57.617622061Z'
+    failed: false
+    failed_to_restart: false
+    changed: true
+    out_of_sync: true
+    skipped: false
+    change_count: 1
+    out_of_sync_count: 1
+    events:
+    - audited: false
+      property: ensure
+      previous_value: absent
+      desired_value: file
+      historical_value:
+      message: defined content as '{sha256}d2a84f4b8b650937ec8f73cd8be2c74add5a911ba64df27458ed8229da804a26'
+        (corrective)
+      name: file_created
+      status: success
+      time: '2021-12-14T15:32:57.617995397Z'
+      redacted:
+      corrective_change: true
+    corrective_change: true
+  Service[httpd]:
+    title: httpd
+    file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+    line: 11
+    resource: Service[httpd]
+    resource_type: Service
+    provider_used: systemd
+    containment_path:
+    - Stage[main]
+    - Main
+    - Node[centos8.wisse.example.com]
+    - Service[httpd]
+    evaluation_time: 0.413069021
+    tags:
+    - service
+    - httpd
+    - node
+    - centos8.wisse.example.com
+    - class
+    time: '2021-12-14T15:32:57.623713094Z'
+    failed: false
+    failed_to_restart: false
+    changed: true
+    out_of_sync: true
+    skipped: false
+    change_count: 1
+    out_of_sync_count: 1
+    events:
+    - audited: false
+      property: ensure
+      previous_value: stopped
+      desired_value: running
+      historical_value:
+      message: ensure changed 'stopped' to 'running' (corrective)
+      name: service_started
+      status: success
+      time: '2021-12-14T15:32:57.649317536Z'
+      redacted:
+      corrective_change: true
+    corrective_change: true
+  Schedule[puppet]:
+    title: puppet
+    file:
+    line:
+    resource: Schedule[puppet]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[puppet]
+    evaluation_time: 9.5115e-05
+    tags:
+    - schedule
+    - puppet
+    time: '2021-12-14T15:32:58.038081314Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[hourly]:
+    title: hourly
+    file:
+    line:
+    resource: Schedule[hourly]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[hourly]
+    evaluation_time: 3.8206e-05
+    tags:
+    - schedule
+    - hourly
+    time: '2021-12-14T15:32:58.038226457Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[daily]:
+    title: daily
+    file:
+    line:
+    resource: Schedule[daily]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[daily]
+    evaluation_time: 5.7673e-05
+    tags:
+    - schedule
+    - daily
+    time: '2021-12-14T15:32:58.038330001Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[weekly]:
+    title: weekly
+    file:
+    line:
+    resource: Schedule[weekly]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[weekly]
+    evaluation_time: 7.3202e-05
+    tags:
+    - schedule
+    - weekly
+    time: '2021-12-14T15:32:58.038431674Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[monthly]:
+    title: monthly
+    file:
+    line:
+    resource: Schedule[monthly]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[monthly]
+    evaluation_time: 5.3748e-05
+    tags:
+    - schedule
+    - monthly
+    time: '2021-12-14T15:32:58.038550828Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[never]:
+    title: never
+    file:
+    line:
+    resource: Schedule[never]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[never]
+    evaluation_time: 4.4755e-05
+    tags:
+    - schedule
+    - never
+    time: '2021-12-14T15:32:58.038658729Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Filebucket[puppet]:
+    title: puppet
+    file:
+    line:
+    resource: Filebucket[puppet]
+    resource_type: Filebucket
+    provider_used:
+    containment_path:
+    - Filebucket[puppet]
+    evaluation_time: 4.337e-05
+    tags:
+    - filebucket
+    - puppet
+    time: '2021-12-14T15:32:58.038780769Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+corrective_change: true
+catalog_uuid: f3822667-3000-4db1-87d6-5895ac970f2e
+cached_catalog_status: not_used

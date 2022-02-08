@@ -1,0 +1,473 @@
+--- !ruby/object:Puppet::Transaction::Report
+host: centos8.wisse.example.com
+time: '2021-12-14T15:32:05.730265760Z'
+configuration_version: 1639495928
+transaction_uuid: 29866708-398c-4f48-9fb1-c6e782d3d506
+report_format: 12
+puppet_version: 7.13.1
+status: failed
+transaction_completed: true
+noop: false
+noop_pending: false
+environment: production
+logs:
+- level: info
+  message: Using environment 'production'
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:06.098338597Z'
+  file:
+  line:
+- level: info
+  message: Retrieving pluginfacts
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:06.166239431Z'
+  file:
+  line:
+- level: info
+  message: Retrieving plugin
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:06.200085407Z'
+  file:
+  line:
+- level: info
+  message: Caching catalog for centos8.wisse.example.com
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:08.778585495Z'
+  file:
+  line:
+- level: info
+  message: Applying configuration version '1639495928'
+  source: Puppet
+  tags:
+  - info
+  time: '2021-12-14T15:32:08.782998115Z'
+  file:
+  line:
+- level: err
+  message: 'Execution of ''/bin/dnf -d 0 -e 1 -y install htttpd'' returned 1: Error:
+    Unable to find a match: htttpd'
+  source: Puppet
+  tags:
+  - err
+  time: '2021-12-14T15:32:09.655429635Z'
+  file:
+  line:
+- level: err
+  message: 'change from ''purged'' to ''present'' failed: Execution of ''/bin/dnf
+    -d 0 -e 1 -y install htttpd'' returned 1: Error: Unable to find a match: htttpd'
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/Package[htttpd]/ensure"
+  tags:
+  - err
+  - package
+  - htttpd
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:09.656464771Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 3
+- level: notice
+  message: 'Dependency Package[htttpd] has failures: true'
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/var/www/html/index.html]"
+  tags:
+  - notice
+  - file
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:09.656883969Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 7
+- level: warning
+  message: Skipping because of failed dependencies
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/var/www/html/index.html]"
+  tags:
+  - warning
+  - file
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:09.656989066Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 7
+- level: warning
+  message: Skipping because of failed dependencies
+  source: "/Stage[main]/Main/Node[centos8.wisse.example.com]/Service[httpd]"
+  tags:
+  - warning
+  - service
+  - httpd
+  - node
+  - centos8.wisse.example.com
+  - class
+  time: '2021-12-14T15:32:09.657635651Z'
+  file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+  line: 13
+- level: notice
+  message: Applied catalog in 0.88 seconds
+  source: Puppet
+  tags:
+  - notice
+  time: '2021-12-14T15:32:09.665412103Z'
+  file:
+  line:
+metrics:
+  resources:
+    name: resources
+    label: Resources
+    values:
+    - - total
+      - Total
+      - 10
+    - - skipped
+      - Skipped
+      - 2
+    - - failed
+      - Failed
+      - 1
+    - - failed_to_restart
+      - Failed to restart
+      - 0
+    - - restarted
+      - Restarted
+      - 0
+    - - changed
+      - Changed
+      - 0
+    - - out_of_sync
+      - Out of sync
+      - 1
+    - - scheduled
+      - Scheduled
+      - 0
+    - - corrective_change
+      - Corrective change
+      - 0
+  time:
+    name: time
+    label: Time
+    values:
+    - - package
+      - Package
+      - 0.770602865
+    - - schedule
+      - Schedule
+      - 0.00029524000000000005
+    - - filebucket
+      - Filebucket
+      - 5.0573e-05
+    - - startup_time
+      - Startup time
+      - 0.367584041
+    - - plugin_sync
+      - Plugin sync
+      - 0.11120972199933021
+    - - fact_generation
+      - Fact generation
+      - 1.981185041999197
+    - - convert_catalog
+      - Convert catalog
+      - 0.10550170600072306
+    - - config_retrieval
+      - Config retrieval
+      - 0.06009773699952348
+    - - transaction_evaluation
+      - Transaction evaluation
+      - 0.8803696690010838
+    - - catalog_application
+      - Catalog application
+      - 0.8846035790011229
+    - - total
+      - Total
+      - 3.935256805
+  changes:
+    name: changes
+    label: Changes
+    values:
+    - - total
+      - Total
+      - 0
+  events:
+    name: events
+    label: Events
+    values:
+    - - total
+      - Total
+      - 1
+    - - failure
+      - Failure
+      - 1
+    - - success
+      - Success
+      - 0
+resource_statuses:
+  Package[htttpd]:
+    title: htttpd
+    file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+    line: 3
+    resource: Package[htttpd]
+    resource_type: Package
+    provider_used: dnf
+    containment_path:
+    - Stage[main]
+    - Main
+    - Node[centos8.wisse.example.com]
+    - Package[htttpd]
+    evaluation_time: 0.770602865
+    tags:
+    - package
+    - htttpd
+    - node
+    - centos8.wisse.example.com
+    - class
+    time: '2021-12-14T15:32:08.885990625Z'
+    failed: true
+    failed_to_restart: false
+    changed: false
+    out_of_sync: true
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 1
+    events:
+    - audited: false
+      property: ensure
+      previous_value: purged
+      desired_value: present
+      historical_value:
+      message: 'change from ''purged'' to ''present'' failed: Execution of ''/bin/dnf
+        -d 0 -e 1 -y install htttpd'' returned 1: Error: Unable to find a match: htttpd'
+      name: package_installed
+      status: failure
+      time: '2021-12-14T15:32:09.655577989Z'
+      redacted:
+      corrective_change: false
+    corrective_change: false
+  File[/var/www/html/index.html]:
+    title: "/var/www/html/index.html"
+    file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+    line: 7
+    resource: File[/var/www/html/index.html]
+    resource_type: File
+    provider_used: posix
+    containment_path:
+    - Stage[main]
+    - Main
+    - Node[centos8.wisse.example.com]
+    - File[/var/www/html/index.html]
+    evaluation_time:
+    tags:
+    - file
+    - node
+    - centos8.wisse.example.com
+    - class
+    time: '2021-12-14T15:32:09.656782245Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: true
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Service[httpd]:
+    title: httpd
+    file: "/etc/puppetlabs/code/environments/production/manifests/site.pp"
+    line: 13
+    resource: Service[httpd]
+    resource_type: Service
+    provider_used: systemd
+    containment_path:
+    - Stage[main]
+    - Main
+    - Node[centos8.wisse.example.com]
+    - Service[httpd]
+    evaluation_time:
+    tags:
+    - service
+    - httpd
+    - node
+    - centos8.wisse.example.com
+    - class
+    time: '2021-12-14T15:32:09.657543919Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: true
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[puppet]:
+    title: puppet
+    file:
+    line:
+    resource: Schedule[puppet]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[puppet]
+    evaluation_time: 0.000128843
+    tags:
+    - schedule
+    - puppet
+    time: '2021-12-14T15:32:09.657975157Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[hourly]:
+    title: hourly
+    file:
+    line:
+    resource: Schedule[hourly]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[hourly]
+    evaluation_time: 3.9324e-05
+    tags:
+    - schedule
+    - hourly
+    time: '2021-12-14T15:32:09.658157580Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[daily]:
+    title: daily
+    file:
+    line:
+    resource: Schedule[daily]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[daily]
+    evaluation_time: 3.4983e-05
+    tags:
+    - schedule
+    - daily
+    time: '2021-12-14T15:32:09.658244603Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[weekly]:
+    title: weekly
+    file:
+    line:
+    resource: Schedule[weekly]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[weekly]
+    evaluation_time: 2.9835e-05
+    tags:
+    - schedule
+    - weekly
+    time: '2021-12-14T15:32:09.658336091Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[monthly]:
+    title: monthly
+    file:
+    line:
+    resource: Schedule[monthly]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[monthly]
+    evaluation_time: 3.1527e-05
+    tags:
+    - schedule
+    - monthly
+    time: '2021-12-14T15:32:09.658482917Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Schedule[never]:
+    title: never
+    file:
+    line:
+    resource: Schedule[never]
+    resource_type: Schedule
+    provider_used:
+    containment_path:
+    - Schedule[never]
+    evaluation_time: 3.0728e-05
+    tags:
+    - schedule
+    - never
+    time: '2021-12-14T15:32:09.658555485Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+  Filebucket[puppet]:
+    title: puppet
+    file:
+    line:
+    resource: Filebucket[puppet]
+    resource_type: Filebucket
+    provider_used:
+    containment_path:
+    - Filebucket[puppet]
+    evaluation_time: 5.0573e-05
+    tags:
+    - filebucket
+    - puppet
+    time: '2021-12-14T15:32:09.658645057Z'
+    failed: false
+    failed_to_restart: false
+    changed: false
+    out_of_sync: false
+    skipped: false
+    change_count: 0
+    out_of_sync_count: 0
+    events: []
+    corrective_change: false
+corrective_change: false
+catalog_uuid: 3fec0d31-8662-41ea-94c6-18635139a27c
+cached_catalog_status: not_used

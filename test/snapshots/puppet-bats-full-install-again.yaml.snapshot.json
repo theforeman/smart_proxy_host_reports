@@ -1,0 +1,351 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "centos8.wisse.example.com",
+    "reported_at": "",
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "centos8.wisse.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "reported_at_proxy": "",
+      "report_format": 12,
+      "puppet_version": "7.13.1",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              11
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              1
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              3
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              4
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              3
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "file",
+              "File",
+              0.006462589
+            ],
+            [
+              "package",
+              "Package",
+              2.74165533
+            ],
+            [
+              "service",
+              "Service",
+              0.410103854
+            ],
+            [
+              "schedule",
+              "Schedule",
+              0.00036052299999999996
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              8.23e-05
+            ],
+            [
+              "startup_time",
+              "Startup time",
+              0.376367043
+            ],
+            [
+              "plugin_sync",
+              "Plugin sync",
+              0.12122226599967689
+            ],
+            [
+              "fact_generation",
+              "Fact generation",
+              1.9867385470006411
+            ],
+            [
+              "convert_catalog",
+              "Convert catalog",
+              0.10559012299927417
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              0.059865884999453556
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              3.268299613000636
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              3.2721857090000412
+            ],
+            [
+              "total",
+              "Total",
+              6.310802908
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              3
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              4
+            ],
+            [
+              "failure",
+              "Failure",
+              1
+            ],
+            [
+              "success",
+              "Success",
+              3
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "info",
+          "Puppet",
+          "Using environment 'production'"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Retrieving pluginfacts"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Retrieving plugin"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Caching catalog for centos8.wisse.example.com"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Applying configuration version '1639495958'"
+        ],
+        [
+          "err",
+          "Puppet",
+          "Could not set 'file' on ensure: No such file or directory @ rb_sysopen - /path/that/does/not/exist/causes/failures (file: /etc/puppetlabs/code/environments/production/manifests/site.pp, line: 3)"
+        ],
+        [
+          "err",
+          "Puppet",
+          "Could not set 'file' on ensure: No such file or directory @ rb_sysopen - /path/that/does/not/exist/causes/failures (file: /etc/puppetlabs/code/environments/production/manifests/site.pp, line: 3)\nWrapped exception:\nNo such file or directory @ rb_sysopen - /path/that/does/not/exist/causes/failures"
+        ],
+        [
+          "err",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/path/that/does/not/exist/causes/failures]/ensure",
+          "change from 'absent' to 'file' failed: Could not set 'file' on ensure: No such file or directory @ rb_sysopen - /path/that/does/not/exist/causes/failures (file: /etc/puppetlabs/code/environments/production/manifests/site.pp, line: 3)"
+        ],
+        [
+          "notice",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/Package[httpd]/ensure",
+          "created (corrective)"
+        ],
+        [
+          "notice",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/var/www/html/index.html]/ensure",
+          "defined content as '{sha256}d2a84f4b8b650937ec8f73cd8be2c74add5a911ba64df27458ed8229da804a26' (corrective)"
+        ],
+        [
+          "info",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/var/www/html/index.html]",
+          "Scheduling refresh of Service[httpd]"
+        ],
+        [
+          "notice",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/Service[httpd]/ensure",
+          "ensure changed 'stopped' to 'running' (corrective)"
+        ],
+        [
+          "info",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/Service[httpd]",
+          "Unscheduling refresh on Service[httpd]"
+        ],
+        [
+          "info",
+          "Node[centos8.wisse.example.com]",
+          "Unscheduling all events on Node[centos8.wisse.example.com]"
+        ],
+        [
+          "notice",
+          "Puppet",
+          "Applied catalog in 3.27 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "File[/path/that/does/not/exist/causes/failures]",
+        "Package[httpd]",
+        "File[/var/www/html/index.html]",
+        "Service[httpd]",
+        "Schedule[puppet]",
+        "Schedule[hourly]",
+        "Schedule[daily]",
+        "Schedule[weekly]",
+        "Schedule[monthly]",
+        "Schedule[never]",
+        "Filebucket[puppet]"
+      ],
+      "summary": {
+        "foreman": {
+          "change": 3,
+          "nochange": 7,
+          "failure": 1
+        },
+        "native": {
+          "total": 11,
+          "skipped": 0,
+          "failed": 1,
+          "failed_to_restart": 0,
+          "restarted": 0,
+          "changed": 3,
+          "out_of_sync": 4,
+          "scheduled": 0,
+          "corrective_change": 3
+        }
+      },
+      "evaluation_times": [
+        [
+          "Package[httpd]",
+          2.74165533
+        ],
+        [
+          "Service[httpd]",
+          0.410103854
+        ],
+        [
+          "File[/var/www/html/index.html]",
+          0.004976569
+        ],
+        [
+          "File[/path/that/does/not/exist/causes/failures]",
+          0.00148602
+        ],
+        [
+          "Schedule[puppet]",
+          0.000110045
+        ],
+        [
+          "Schedule[daily]",
+          9.68e-05
+        ],
+        [
+          "Filebucket[puppet]",
+          8.23e-05
+        ],
+        [
+          "Schedule[hourly]",
+          5.6374e-05
+        ],
+        [
+          "Schedule[weekly]",
+          3.68e-05
+        ],
+        [
+          "Schedule[monthly]",
+          3.1536e-05
+        ],
+        [
+          "Schedule[never]",
+          2.8968e-05
+        ]
+      ],
+      "telemetry": {
+      },
+      "keywords": [
+        "PuppetStatusFailed",
+        "PuppetFailed:File[/path/that/does/not/exist/causes/failures]",
+        "PuppetFailed",
+        "PuppetOutOfSync",
+        "PuppetEnvironment:production",
+        "PuppetCorrectiveChange"
+      ]
+    },
+    "keywords": [
+      "PuppetStatusFailed",
+      "PuppetFailed:File[/path/that/does/not/exist/causes/failures]",
+      "PuppetFailed",
+      "PuppetOutOfSync",
+      "PuppetEnvironment:production",
+      "PuppetCorrectiveChange"
+    ],
+    "change": 3,
+    "nochange": 7,
+    "failure": 1
+  }
+}

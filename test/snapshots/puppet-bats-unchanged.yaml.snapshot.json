@@ -1,0 +1,293 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "centos8.wisse.example.com",
+    "reported_at": "",
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "centos8.wisse.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "reported_at_proxy": "",
+      "report_format": 12,
+      "puppet_version": "7.13.1",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              10
+            ],
+            [
+              "skipped",
+              "Skipped",
+              0
+            ],
+            [
+              "failed",
+              "Failed",
+              0
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              0
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "package",
+              "Package",
+              0.000315225
+            ],
+            [
+              "file",
+              "File",
+              0.001345523
+            ],
+            [
+              "service",
+              "Service",
+              0.01788955
+            ],
+            [
+              "schedule",
+              "Schedule",
+              0.000249362
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              8.9834e-05
+            ],
+            [
+              "startup_time",
+              "Startup time",
+              0.383009099
+            ],
+            [
+              "plugin_sync",
+              "Plugin sync",
+              0.10500076099924627
+            ],
+            [
+              "fact_generation",
+              "Fact generation",
+              1.964477450999766
+            ],
+            [
+              "convert_catalog",
+              "Convert catalog",
+              0.09431288999985554
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              0.07030378800118342
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              0.13256296399958956
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              0.13666926000041713
+            ],
+            [
+              "total",
+              "Total",
+              3.153936096
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ],
+            [
+              "failure",
+              "Failure",
+              0
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "info",
+          "Puppet",
+          "Using environment 'production'"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Retrieving pluginfacts"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Retrieving plugin"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Caching catalog for centos8.wisse.example.com"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Applying configuration version '1639495947'"
+        ],
+        [
+          "notice",
+          "Puppet",
+          "Applied catalog in 0.14 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "Package[httpd]",
+        "File[/var/www/html/index.html]",
+        "Service[httpd]",
+        "Schedule[puppet]",
+        "Schedule[hourly]",
+        "Schedule[daily]",
+        "Schedule[weekly]",
+        "Schedule[monthly]",
+        "Schedule[never]",
+        "Filebucket[puppet]"
+      ],
+      "summary": {
+        "foreman": {
+          "change": 0,
+          "nochange": 10,
+          "failure": 0
+        },
+        "native": {
+          "total": 10,
+          "skipped": 0,
+          "failed": 0,
+          "failed_to_restart": 0,
+          "restarted": 0,
+          "changed": 0,
+          "out_of_sync": 0,
+          "scheduled": 0,
+          "corrective_change": 0
+        }
+      },
+      "evaluation_times": [
+        [
+          "Service[httpd]",
+          0.01788955
+        ],
+        [
+          "File[/var/www/html/index.html]",
+          0.001345523
+        ],
+        [
+          "Package[httpd]",
+          0.000315225
+        ],
+        [
+          "Filebucket[puppet]",
+          8.9834e-05
+        ],
+        [
+          "Schedule[daily]",
+          5.8827e-05
+        ],
+        [
+          "Schedule[puppet]",
+          4.8057e-05
+        ],
+        [
+          "Schedule[never]",
+          4.2942e-05
+        ],
+        [
+          "Schedule[hourly]",
+          3.5029e-05
+        ],
+        [
+          "Schedule[weekly]",
+          3.3531e-05
+        ],
+        [
+          "Schedule[monthly]",
+          3.0976e-05
+        ]
+      ],
+      "telemetry": {
+      },
+      "keywords": [
+        "PuppetStatusUnchanged",
+        "PuppetEnvironment:production"
+      ]
+    },
+    "keywords": [
+      "PuppetStatusUnchanged",
+      "PuppetEnvironment:production"
+    ],
+    "change": 0,
+    "nochange": 10,
+    "failure": 0
+  }
+}

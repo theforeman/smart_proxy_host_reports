@@ -1,0 +1,280 @@
+{
+  "host_report": {
+    "format": "puppet",
+    "version": 1,
+    "host": "centos8.wisse.example.com",
+    "reported_at": "",
+    "proxy": "localhost",
+    "body": {
+      "format": "puppet",
+      "id": "",
+      "host": "centos8.wisse.example.com",
+      "proxy": "localhost",
+      "reported_at": "",
+      "reported_at_proxy": "",
+      "report_format": 12,
+      "puppet_version": "7.13.1",
+      "environment": "production",
+      "metrics": {
+        "resources": {
+          "name": "resources",
+          "label": "Resources",
+          "values": [
+            [
+              "total",
+              "Total",
+              10
+            ],
+            [
+              "skipped",
+              "Skipped",
+              2
+            ],
+            [
+              "failed",
+              "Failed",
+              1
+            ],
+            [
+              "failed_to_restart",
+              "Failed to restart",
+              0
+            ],
+            [
+              "restarted",
+              "Restarted",
+              0
+            ],
+            [
+              "changed",
+              "Changed",
+              0
+            ],
+            [
+              "out_of_sync",
+              "Out of sync",
+              1
+            ],
+            [
+              "scheduled",
+              "Scheduled",
+              0
+            ],
+            [
+              "corrective_change",
+              "Corrective change",
+              0
+            ]
+          ]
+        },
+        "time": {
+          "name": "time",
+          "label": "Time",
+          "values": [
+            [
+              "package",
+              "Package",
+              0.770602865
+            ],
+            [
+              "schedule",
+              "Schedule",
+              0.00029524000000000005
+            ],
+            [
+              "filebucket",
+              "Filebucket",
+              5.0573e-05
+            ],
+            [
+              "startup_time",
+              "Startup time",
+              0.367584041
+            ],
+            [
+              "plugin_sync",
+              "Plugin sync",
+              0.11120972199933021
+            ],
+            [
+              "fact_generation",
+              "Fact generation",
+              1.981185041999197
+            ],
+            [
+              "convert_catalog",
+              "Convert catalog",
+              0.10550170600072306
+            ],
+            [
+              "config_retrieval",
+              "Config retrieval",
+              0.06009773699952348
+            ],
+            [
+              "transaction_evaluation",
+              "Transaction evaluation",
+              0.8803696690010838
+            ],
+            [
+              "catalog_application",
+              "Catalog application",
+              0.8846035790011229
+            ],
+            [
+              "total",
+              "Total",
+              3.935256805
+            ]
+          ]
+        },
+        "changes": {
+          "name": "changes",
+          "label": "Changes",
+          "values": [
+            [
+              "total",
+              "Total",
+              0
+            ]
+          ]
+        },
+        "events": {
+          "name": "events",
+          "label": "Events",
+          "values": [
+            [
+              "total",
+              "Total",
+              1
+            ],
+            [
+              "failure",
+              "Failure",
+              1
+            ],
+            [
+              "success",
+              "Success",
+              0
+            ]
+          ]
+        }
+      },
+      "logs": [
+        [
+          "info",
+          "Puppet",
+          "Using environment 'production'"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Retrieving pluginfacts"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Retrieving plugin"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Caching catalog for centos8.wisse.example.com"
+        ],
+        [
+          "info",
+          "Puppet",
+          "Applying configuration version '1639495928'"
+        ],
+        [
+          "err",
+          "Puppet",
+          "Execution of '/bin/dnf -d 0 -e 1 -y install htttpd' returned 1: Error: Unable to find a match: htttpd"
+        ],
+        [
+          "err",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/Package[htttpd]/ensure",
+          "change from 'purged' to 'present' failed: Execution of '/bin/dnf -d 0 -e 1 -y install htttpd' returned 1: Error: Unable to find a match: htttpd"
+        ],
+        [
+          "notice",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/var/www/html/index.html]",
+          "Dependency Package[htttpd] has failures: true"
+        ],
+        [
+          "warning",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/File[/var/www/html/index.html]",
+          "Skipping because of failed dependencies"
+        ],
+        [
+          "warning",
+          "/Stage[main]/Main/Node[centos8.wisse.example.com]/Service[httpd]",
+          "Skipping because of failed dependencies"
+        ],
+        [
+          "notice",
+          "Puppet",
+          "Applied catalog in 0.88 seconds"
+        ]
+      ],
+      "resource_statuses": [
+        "Package[htttpd]",
+        "File[/var/www/html/index.html]",
+        "Service[httpd]",
+        "Schedule[puppet]",
+        "Schedule[hourly]",
+        "Schedule[daily]",
+        "Schedule[weekly]",
+        "Schedule[monthly]",
+        "Schedule[never]",
+        "Filebucket[puppet]"
+      ],
+      "summary": {
+        "foreman": {
+          "change": 0,
+          "nochange": 9,
+          "failure": 1
+        },
+        "native": {
+          "total": 10,
+          "skipped": 2,
+          "failed": 1,
+          "failed_to_restart": 0,
+          "restarted": 0,
+          "changed": 0,
+          "out_of_sync": 1,
+          "scheduled": 0,
+          "corrective_change": 0
+        }
+      },
+      "evaluation_times": [
+
+      ],
+      "telemetry": {
+      },
+      "keywords": [
+        "PuppetStatusFailed",
+        "PuppetFailed:Package[htttpd]",
+        "PuppetFailed",
+        "PuppetOutOfSync",
+        "PuppetEnvironment:production",
+        "PuppetSkipped"
+      ],
+      "errors": [
+        "Unable to parse evaluation_times: comparison of Array with Array failed"
+      ]
+    },
+    "keywords": [
+      "PuppetStatusFailed",
+      "PuppetFailed:Package[htttpd]",
+      "PuppetFailed",
+      "PuppetOutOfSync",
+      "PuppetEnvironment:production",
+      "PuppetSkipped"
+    ],
+    "change": 0,
+    "nochange": 9,
+    "failure": 1
+  }
+}

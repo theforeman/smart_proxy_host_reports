@@ -11,6 +11,7 @@
       "host": "localhost1",
       "proxy": "localhost",
       "reported_at": "",
+      "reported_at_proxy": "",
       "results": [
         {
           "failed": false,
@@ -128,24 +129,34 @@
           "friendly_message": "Package(s) contained in /my_app/requirements.txt are present"
         }
       ],
+      "summary": {
+        "foreman": {
+          "change": 0,
+          "nochange": 2,
+          "failure": 0
+        },
+        "native": {
+          "changed": 0,
+          "failures": 0,
+          "ignored": 0,
+          "ok": 0,
+          "rescued": 0,
+          "skipped": 0,
+          "unreachable": 0
+        }
+      },
       "keywords": [
 
       ],
       "telemetry": {
-      },
-      "status": {
-        "applied": 0,
-        "failed": 0,
-        "skipped": 0
       },
       "check_mode": false
     },
     "keywords": [
 
     ],
-    "applied": 0,
-    "failed": 0,
-    "pending": 0,
-    "other": 0
+    "change": 0,
+    "nochange": 2,
+    "failure": 0
   }
 }
