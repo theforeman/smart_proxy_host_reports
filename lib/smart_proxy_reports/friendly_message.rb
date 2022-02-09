@@ -22,6 +22,15 @@ class FriendlyMessage
     when "ansible.builtin.user", "user" then msg = user_message
     when "ansible.builtin.cron", "cron" then msg = cron_message
     when "ansible.builtin.copy", "copy" then msg = copy_message
+    when "ansible.posix.authorized_key", "authorized_key" then msg = authorized_key_message
+    when "ansible.posix.acl", "acl" then msg = @result_tree["msg"]
+    when "ansible.posix.at", "at" then msg = at_message
+    when "ansible.posix.firewalld", "firewalld" then msg = @result_tree["msg"]
+    when "ansible.posix.mount", "mount" then msg = mount_message
+    when "ansible.posix.seboolean", "seboolean" then msg = seboolean_message
+    when "ansible.posix.selinux", "selinux" then msg = @result_tree["msg"]
+    when "ansible.posix.sysctl", "sysctl" then msg = sysctl_message
+    when "ansible.posix.patch", "patch" then msg = patch_message
     when "ansible.builtin.command", "ansible.builtin.shell", "command", "shell" then msg = @result_tree["stdout_lines"]
     end
     msg
@@ -78,5 +87,54 @@ class FriendlyMessage
 
   def copy_message
     "Copy #{@module_args_tree["_original_basename"]} to #{@result_tree["dest"]}"
+  end
+
+  def authorized_key_message
+    "Key #{@module_args_tree["key"]} #{@module_args_tree["state"]} for user #{@module_args_tree["user"]}"
+  end
+
+  def at_message
+    time = ""
+    to_exec = @module_args_tree["script_file"] || @module_args_tree["command"]
+    if @module_args_tree["count"] && @module_args_tree["units"] then time = " in #{@module_args_tree["count"]} #{@module_args_tree["units"]}" end
+    if @module_args_tree["count"] && @module_args_tree["units"] then verb = "will be " else verb = "is " end
+    state = verb + @module_args_tree["state"]
+    "#{to_exec} #{state}#{time}"
+  end
+
+  def mount_message
+    path = @module_args_tree["path"] || @module_args_tree["name"]
+    if @module_args_tree["backup"] then backup = "backup created" else backup = "no backup" end
+    message = "Mountpoint #{path} #{@module_args_tree["state"]}, #{backup}"
+    if @module_args_tree["boot"] then message += ", mounted on boot" end
+    message
+  end
+
+  def seboolean_message
+    if @module_args_tree["state"] then state = "on" else state = "off" end
+    if @module_args_tree["persistent"] then persistent = "" else persistent = "do not" end
+    persistent += "keep it persistent across reboots"
+    "Set #{@module_args_tree["name"]} flag #{state}, #{persistent}"
+  end
+
+  def sysctl_message
+    value = @module_args_tree["value"] || @module_args_tree["val"]
+    if value == "" then value = "" else value = " to " + value end
+    present = @module_args_tree["state"] == "present"
+    if present then action, path = "Set", "in " else action, path = "Remove", "from " end
+    path += @module_args_tree["sysctl_file"]
+    if @module_args_tree["sysctl_set"] then sys_set = ", verify token value with the sysctl command" else sys_set = "" end
+    if @module_args_tree["ignoreerrors"] then ignore = ", errors ignored" else ignore = "" end
+    "#{action} #{@module_args_tree["name"]}#{value} #{path}#{sys_set}#{ignore}"
+  end
+
+  def patch_message
+    src = @module_args_tree["src"] || @module_args_tree["patchfile"]
+    if @module_args_tree["remote_src"] then src += " (from remote machine)" end
+    if @module_args_tree["state"] == "present" then action = "Apply" else action = "Revert" end
+    if @module_args_tree["basedir"] then basedir = ", applied in #{@module_args_tree["basedir"]}" else basedir = "" end
+    if @module_args_tree["dest"] then dest = ", file #{@module_args_tree["dest"]} to be patched" else dest = "" end
+    if @module_args_tree["backup"] then backup = ", backup produced" else backup = "" end
+    "#{action} patch #{src}#{basedir}#{dest}#{backup}"
   end
 end
