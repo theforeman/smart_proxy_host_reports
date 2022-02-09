@@ -1,0 +1,132 @@
+{
+  "host_report": {
+    "format": "ansible",
+    "version": 1,
+    "host": "localhost1",
+    "reported_at": "",
+    "proxy": "localhost",
+    "body": {
+      "format": "ansible",
+      "id": "",
+      "host": "localhost1",
+      "proxy": "localhost",
+      "reported_at": "",
+      "reported_at_proxy": "",
+      "results": [
+        {
+          "failed": false,
+          "result": {
+            "_ansible_no_log": false,
+            "_ansible_verbose_override": true,
+            "ansible_facts": {
+            },
+            "changed": false
+          },
+          "task": {
+            "action": "gather_facts",
+            "any_errors_fatal": false,
+            "async": 0,
+            "async_val": 0,
+            "become": false,
+            "become_method": "sudo",
+            "check_mode": false,
+            "connection": "smart",
+            "delay": 5,
+            "diff": false,
+            "finalized": true,
+            "name": "Gathering Facts",
+            "poll": 15,
+            "remote_user": "root",
+            "retries": 3,
+            "run_once": false,
+            "squashed": true,
+            "tags": [
+              "always"
+            ],
+            "throttle": 0,
+            "uuid": "28d0ea5c-4b17-80a1-2cce-00000000000d"
+          },
+          "level": "info",
+          "friendly_message": "N/A"
+        },
+        {
+          "failed": false,
+          "result": {
+            "_ansible_no_log": false,
+            "changed": true,
+            "dump": "0",
+            "fstab": "/etc/fstab",
+            "fstype": "iso9660",
+            "invocation": {
+              "module_args": {
+                "backup": false,
+                "boot": true,
+                "fstype": "iso9660",
+                "opts": "ro,noauto",
+                "path": "/mnt/dvd",
+                "src": "/dev/sr0",
+                "state": "present"
+              }
+            },
+            "name": "/mnt/dvd",
+            "opts": "ro,noauto",
+            "passno": "0",
+            "src": "/dev/sr0",
+            "ansible_facts": {
+            }
+          },
+          "task": {
+            "action": "mount",
+            "any_errors_fatal": false,
+            "async": 0,
+            "async_val": 0,
+            "become": false,
+            "become_method": "sudo",
+            "check_mode": false,
+            "connection": "smart",
+            "delay": 5,
+            "diff": false,
+            "finalized": true,
+            "name": "Firewalld",
+            "poll": 15,
+            "remote_user": "root",
+            "retries": 3,
+            "squashed": true,
+            "throttle": 0,
+            "uuid": "28d0ea5c-4b17-80a1-2cce-000000000009"
+          },
+          "level": "notice",
+          "friendly_message": "Mountpoint /mnt/dvd present, no backup, mounted on boot"
+        }
+      ],
+      "summary": {
+        "foreman": {
+          "change": 1,
+          "nochange": 1,
+          "failure": 0
+        },
+        "native": {
+          "changed": 1,
+          "failures": 0,
+          "ignored": 0,
+          "ok": 0,
+          "rescued": 0,
+          "skipped": 0,
+          "unreachable": 0
+        }
+      },
+      "keywords": [
+        "AnsibleChanged"
+      ],
+      "telemetry": {
+      },
+      "check_mode": false
+    },
+    "keywords": [
+      "AnsibleChanged"
+    ],
+    "change": 1,
+    "nochange": 1,
+    "failure": 0
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "host_report": {
+    "format": "ansible",
+    "version": 1,
+    "host": "localhost1",
+    "reported_at": "",
+    "proxy": "localhost",
+    "body": {
+      "format": "ansible",
+      "id": "",
+      "host": "localhost1",
+      "proxy": "localhost",
+      "reported_at": "",
+      "reported_at_proxy": "",
+      "results": [
+        {
+          "failed": false,
+          "result": {
+            "_ansible_no_log": false,
+            "_ansible_verbose_override": true,
+            "ansible_facts": {
+            },
+            "changed": false
+          },
+          "task": {
+            "action": "gather_facts",
+            "any_errors_fatal": false,
+            "async": 0,
+            "async_val": 0,
+            "become": false,
+            "become_method": "sudo",
+            "check_mode": false,
+            "connection": "smart",
+            "delay": 5,
+            "diff": false,
+            "finalized": true,
+            "name": "Gathering Facts",
+            "poll": 15,
+            "remote_user": "root",
+            "retries": 3,
+            "run_once": false,
+            "squashed": true,
+            "tags": [
+              "always"
+            ],
+            "throttle": 0,
+            "uuid": "28d0ea5c-4b17-5078-5bb8-00000000000d"
+          },
+          "level": "info",
+          "friendly_message": "N/A"
+        },
+        {
+          "failed": false,
+          "result": {
+            "_ansible_no_log": false,
+            "changed": false,
+            "invocation": {
+              "module_args": {
+                "ignoreerrors": true,
+                "name": "kernel.domainname",
+                "reload": false,
+                "state": "absent",
+                "sysctl_file": "/etc/sysctl2.conf",
+                "sysctl_set": true,
+                "value": ""
+              }
+            },
+            "ansible_facts": {
+            }
+          },
+          "task": {
+            "action": "sysctl",
+            "any_errors_fatal": false,
+            "async": 0,
+            "async_val": 0,
+            "become": false,
+            "become_method": "sudo",
+            "check_mode": false,
+            "connection": "smart",
+            "delay": 5,
+            "diff": false,
+            "finalized": true,
+            "name": "Sysctl",
+            "poll": 15,
+            "remote_user": "root",
+            "retries": 3,
+            "squashed": true,
+            "throttle": 0,
+            "uuid": "28d0ea5c-4b17-5078-5bb8-000000000009"
+          },
+          "level": "info",
+          "friendly_message": "Remove kernel.domainname from /etc/sysctl2.conf, verify token value with the sysctl command, errors ignored"
+        }
+      ],
+      "summary": {
+        "foreman": {
+          "change": 0,
+          "nochange": 2,
+          "failure": 0
+        },
+        "native": {
+          "changed": 0,
+          "failures": 0,
+          "ignored": 0,
+          "ok": 0,
+          "rescued": 0,
+          "skipped": 0,
+          "unreachable": 0
+        }
+      },
+      "keywords": [
+
+      ],
+      "telemetry": {
+      },
+      "check_mode": false
+    },
+    "keywords": [
+
+    ],
+    "change": 0,
+    "nochange": 2,
+    "failure": 0
+  }
+}
