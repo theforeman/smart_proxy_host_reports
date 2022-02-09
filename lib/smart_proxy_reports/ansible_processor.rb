@@ -34,12 +34,12 @@ module Proxy::Reports
       end
     end
 
-    def process_results
+    def process_results(facts = true)
       @data["results"]&.each do |result|
         raise("Report do not contain required 'results/result' element") unless result["result"]
         raise("Report do not contain required 'results/task' element") unless result["task"]
-        process_facts(result)
         process_level(result)
+        process_facts unless facts
         friendly_message = FriendlyMessage.new(result)
         result["friendly_message"] = friendly_message.generate_message
         process_keywords(result)
@@ -51,7 +51,7 @@ module Proxy::Reports
       @data["results"]
     end
 
-    def process
+    def process(facts = true)
       @body["format"] = "ansible"
       @body["id"] = report_id
       @body["host"] = hostname_from_config || @data["host"]
@@ -59,7 +59,7 @@ module Proxy::Reports
       @body["reported_at"] = @data["reported_at"]
       @body["reported_at_proxy"] = now_utc
       measure :process_results do
-        @body["results"] = process_results
+        @body["results"] = process_results(facts)
       end
       @body["summary"] = build_summary
       process_root_keywords
@@ -72,7 +72,7 @@ module Proxy::Reports
     end
 
     def build_report
-      process
+      process(false)
       if debug_payload?
         logger.debug { JSON.pretty_generate(@body) }
       end
@@ -95,14 +95,41 @@ module Proxy::Reports
       payload = measure :format do
         report_hash.to_json
       end
-      SpooledHttpClient.instance.spool(report_id, payload)
+      SpooledHttpClient.instance.spool("report", report_id, payload)
+    end
+
+    def find_facts_task
+      @data["results"]&.each do |result|
+        unless result["result"].nil? && result["result"]["ansible_facts"].nil?
+          return result
+        end
+      end
+    end
+
+    def build_facts
+      process
+      if debug_payload?
+        logger.debug { JSON.pretty_generate(@body) }
+      end
+      facts = find_facts_task
+      {
+        "name" => @hostname_from_config || @data["host"],
+        "facts" => {
+          "ansible_facts" => facts,
+          "_type" => "ansible",
+          "_timestamp" => @data["reported_at"],
+        },
+      }
     end
 
     private
 
-    def process_facts(result)
-      # TODO: add fact processing and sending to the fact endpoint
-      result["result"]["ansible_facts"] = {}
+    def spool_facts(facts)
+      SpooledHttpClient.instance.spool("facts", report_id, facts)
+    end
+
+    def process_facts
+      spool_facts(build_facts)
     end
 
     # foreman-ansible-modules 3.0 does not contain summary field, convert it here
@@ -180,6 +207,16 @@ module Proxy::Reports
     rescue StandardError => e
       log_error("Unable to parse log level", e)
       result["level"] = "info"
+    end
+  end
+
+  def search_for_facts(result)
+    if result.respond_to?(:key?) && result.key?(:ansible_facts)
+      result[:ansible_facts]
+    elsif result.respond_to?(:each)
+      r = nil
+      result.find { |*a| r = search_for_facts(a.last) }
+      r
     end
   end
 end
