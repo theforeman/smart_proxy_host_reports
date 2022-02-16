@@ -5,7 +5,7 @@ class SpooledHttpClientTest < Test::Unit::TestCase
     @foreman_url = "http://foreman.example.com"
     ::Proxy::SETTINGS.stubs(:foreman_url).returns(@foreman_url)
     ::Proxy::Reports::Plugin.settings.stubs(:keep_reports).returns(true)
-    Proxy::Reports::SpooledHttpClient.any_instance.stubs(:file_timestamp).returns("time")
+    Proxy::Reports::SpooledHttpClient.any_instance.stubs(:unique_filename).returns("time")
     @tmpdir = Dir.mktmpdir("spool-http-client-test")
     @client = ::Proxy::Reports::SpooledHttpClient.instance.initialize_directory(@tmpdir)
   end
@@ -28,45 +28,45 @@ class SpooledHttpClientTest < Test::Unit::TestCase
   end
 
   def test_spool_plain
-    @client.spool("report", "uuid", "something")
-    assert assert_spool("todo", "time-report-uuid", "something")
+    @client.spool(:report, "something")
+    assert assert_spool("todo", "time-report", "something")
   end
 
   def test_move_plain
-    @client.spool("report", "uuid", "something")
-    @client.spool_move("todo", "done", "time-report-uuid")
-    assert assert_spool("done", "time-report-uuid")
+    @client.spool(:report, "something")
+    @client.spool_move("todo", "done", "time-report")
+    assert assert_spool("done", "time-report")
   end
 
   def test_process_plain
     stub_request(:post, @foreman_url + "/api/v2/host_reports").with(:body => "body").to_return(:status => [200, "OK"], :body => "body")
-    @client.spool("report", "uuid", "body")
+    @client.spool(:report, "body")
     @client.process
-    assert assert_spool("done", "time-report-uuid")
+    assert assert_spool("done", "time-report")
   end
 
   def test_process_plain_two
     stub_request(:post, @foreman_url + "/api/v2/host_reports").with(:body => "body").to_return(:status => [200, "OK"], :body => "body")
-    @client.spool("report", "uuid1", "body")
-    @client.spool("report", "uuid2", "body")
+    @client.spool(:report, "body")
+    @client.spool(:report, "body")
     @client.process
-    assert assert_spool("done", "time-report-uuid1")
-    assert assert_spool("done", "time-report-uuid2")
+    assert assert_spool("done", "time-report")
+    assert assert_spool("done", "time-report")
   end
 
   def test_process_plain_facts
     stub_request(:post, @foreman_url + "/api/v2/hosts/facts").with(:body => "body").to_return(:status => [200, "OK"], :body => "body")
-    @client.spool("facts", "uuid", "body")
+    @client.spool(:ansible_facts, "body")
     @client.process
-    assert assert_spool("done", "time-facts-uuid")
+    assert assert_spool("done", "time-ansible_facts")
   end
 
   def test_process_plain_two_facts
     stub_request(:post, @foreman_url + "/api/v2/hosts/facts").with(:body => "body").to_return(:status => [200, "OK"], :body => "body")
-    @client.spool("facts", "uuid1", "body")
-    @client.spool("facts", "uuid2", "body")
+    @client.spool(:ansible_facts, "body")
+    @client.spool(:ansible_facts, "body")
     @client.process
-    assert assert_spool("done", "time-facts-uuid1")
-    assert assert_spool("done", "time-facts-uuid2")
+    assert assert_spool("done", "time-ansible_facts")
+    assert assert_spool("done", "time-ansible_facts")
   end
 end

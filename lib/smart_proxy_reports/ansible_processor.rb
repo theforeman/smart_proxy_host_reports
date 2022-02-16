@@ -34,12 +34,11 @@ module Proxy::Reports
       end
     end
 
-    def process_results(facts = true)
+    def process_results
       @data["results"]&.each do |result|
         raise("Report do not contain required 'results/result' element") unless result["result"]
         raise("Report do not contain required 'results/task' element") unless result["task"]
         process_level(result)
-        process_facts unless facts
         friendly_message = FriendlyMessage.new(result)
         result["friendly_message"] = friendly_message.generate_message
         process_keywords(result)
@@ -51,7 +50,7 @@ module Proxy::Reports
       @data["results"]
     end
 
-    def process(facts = true)
+    def process
       @body["format"] = "ansible"
       @body["id"] = report_id
       @body["host"] = hostname_from_config || @data["host"]
@@ -59,7 +58,7 @@ module Proxy::Reports
       @body["reported_at"] = @data["reported_at"]
       @body["reported_at_proxy"] = now_utc
       measure :process_results do
-        @body["results"] = process_results(facts)
+        @body["results"] = process_results
       end
       @body["summary"] = build_summary
       process_root_keywords
@@ -72,7 +71,7 @@ module Proxy::Reports
     end
 
     def build_report
-      process(false)
+      process
       if debug_payload?
         logger.debug { JSON.pretty_generate(@body) }
       end
@@ -90,30 +89,39 @@ module Proxy::Reports
     end
 
     def spool_report
+      facts_hash = measure :build_facts do
+        build_facts
+      end
+      if facts_hash
+        debug_payload("Facts output", facts_hash)
+        payload = measure :format_facts do
+          facts_hash.to_json
+        end
+        SpooledHttpClient.instance.spool(:ansible_facts, payload)
+      end
+
       report_hash = build_report
       debug_payload("Output", report_hash)
       payload = measure :format do
         report_hash.to_json
       end
-      SpooledHttpClient.instance.spool("report", report_id, payload)
+      SpooledHttpClient.instance.spool(:report, payload)
     end
 
     def find_facts_task
       @data["results"]&.each do |result|
-        unless result["result"].nil? && result["result"]["ansible_facts"].nil?
-          return result
+        if result["result"] && result["result"]["ansible_facts"]
+          return result["result"]["ansible_facts"]
         end
       end
+      false
     end
 
     def build_facts
-      process
-      if debug_payload?
-        logger.debug { JSON.pretty_generate(@body) }
-      end
       facts = find_facts_task
+      return nil unless facts
       {
-        "name" => @hostname_from_config || @data["host"],
+        "name" => hostname_from_config || @data["host"],
         "facts" => {
           "ansible_facts" => facts,
           "_type" => "ansible",
@@ -123,14 +131,6 @@ module Proxy::Reports
     end
 
     private
-
-    def spool_facts(facts)
-      SpooledHttpClient.instance.spool("facts", report_id, facts)
-    end
-
-    def process_facts
-      spool_facts(build_facts)
-    end
 
     # foreman-ansible-modules 3.0 does not contain summary field, convert it here
     # https://github.com/theforeman/foreman-ansible-modules/pull/1325/files
@@ -210,7 +210,7 @@ module Proxy::Reports
     end
   end
 
-  def search_for_facts(result)
+  def search_for_facts2222222222222222(result)
     if result.respond_to?(:key?) && result.key?(:ansible_facts)
       result[:ansible_facts]
     elsif result.respond_to?(:each)

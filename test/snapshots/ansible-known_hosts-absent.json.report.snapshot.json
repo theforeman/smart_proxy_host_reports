@@ -79,7 +79,7 @@
       "summary": {
         "foreman": {
           "change": 0,
-          "nochange": 2,
+          "nochange": 1,
           "failure": 0
         },
         "native": {
@@ -97,10 +97,7 @@
       ],
       "telemetry": {
       },
-      "check_mode": false,
-      "errors": [
-        "Unable to parse results: no implicit conversion of nil into String"
-      ]
+      "check_mode": false
     },
     "keywords": [
 

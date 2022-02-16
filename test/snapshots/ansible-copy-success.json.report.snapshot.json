@@ -68,7 +68,7 @@
       ],
       "summary": {
         "foreman": {
-          "change": 2,
+          "change": 1,
           "nochange": 0,
           "failure": 0
         },
@@ -87,10 +87,7 @@
       ],
       "telemetry": {
       },
-      "check_mode": false,
-      "errors": [
-        "Unable to parse results: no implicit conversion of nil into String"
-      ]
+      "check_mode": false
     },
     "keywords": [
       "AnsibleChanged"

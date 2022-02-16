@@ -53,39 +53,11 @@ module Proxy::Reports
     end
 
     def get_endpoint(name)
-      return "/api/v2/host_reports" if name[name.index("-") + 1] == "r"
-      return "/api/v2/hosts/facts"
-    end
-
-    def connect(http, factory)
-      processed = 0
-      files = Dir.glob(spool_path("todo", "*")).sort
-      files.each do |filename|
-        basename = File.basename(filename)
-        endpoint = get_endpoint(basename)
-        logger.debug "Sending report #{basename}"
-        begin
-          post = factory.create_post(endpoint, File.read(filename))
-          response = http.request(post)
-          logger.info "Report #{basename} sent with HTTP response #{response.code}"
-          logger.debug { "Response body: #{response.body}" }
-          if response.code.start_with?("2")
-            if Proxy::Reports::Plugin.settings.keep_reports
-              spool_move("todo", "done", basename)
-            else
-              FileUtils.rm_f spool_path("todo", basename)
-            end
-          else
-            logger.debug { "Moving failed report to 'fail' spool directory" }
-            spool_move("todo", "done", basename)
-          end
-          processed += 1
-        rescue StandardError => e
-          logger.warn "Unable to send #{basename}, will try on next request: #{e}", e
-          raise if ENV["RACK_ENV"] == "test"
-        end
+      if name&.end_with? 'ansible_facts'
+        "/api/v2/hosts/facts"
+      else
+        "/api/v2/host_reports"
       end
-      processed
     end
 
     def process
@@ -95,7 +67,31 @@ module Proxy::Reports
       # send all files via a single persistent HTTP connection
       logger.debug "Opening HTTP connection to Foreman"
       client.http.start do |http|
-        processed += connect(http, factory)
+        Dir.glob(spool_path("todo", "*")).sort.each do |filename|
+          basename = File.basename(filename)
+          endpoint = get_endpoint(basename)
+          logger.debug "Sending report #{basename}"
+          begin
+            post = factory.create_post(endpoint, File.read(filename))
+            response = http.request(post)
+            logger.info "Report #{basename} sent with HTTP response #{response.code}"
+            logger.debug { "Response body: #{response.body}" }
+            if response.code.start_with?("2")
+              if Proxy::Reports::Plugin.settings.keep_reports
+                spool_move("todo", "done", basename)
+              else
+                FileUtils.rm_f spool_path("todo", basename)
+              end
+            else
+              logger.debug { "Moving failed report to 'fail' spool directory" }
+              spool_move("todo", "done", basename)
+            end
+            processed += 1
+          rescue StandardError => e
+            logger.warn "Unable to send #{basename}, will try on next request: #{e}", e
+            raise if ENV["RACK_ENV"] == "test"
+          end
+        end
       end
       logger.debug "Finished uploading #{processed} reports, closing connection"
     end
@@ -104,16 +100,20 @@ module Proxy::Reports
       @worker.wakeup if @worker
     end
 
-    def file_timestamp
-      Process.clock_gettime(Process::CLOCK_REALTIME, :second).to_s(36)
-    end
-
-    def spool(prefix, filename, data)
-      filename = file_timestamp + "-" + prefix + "-" + filename.gsub(/[^0-9a-z]/i, "")
+    def spool(prefix, data)
+      filename = unique_filename + "-" + prefix.to_s
       file = spool_path("temp", filename)
       File.open(file, "w") { |f| f.write(data) }
       spool_move("temp", "todo", filename)
       wakeup
+    end
+
+    private
+
+    # Ensure that files are named so they can be sorted and processed in the same order
+    def unique_filename
+      Process.clock_gettime(Process::CLOCK_REALTIME, :second).to_s(36) +
+        Process.clock_gettime(Process::CLOCK_MONOTONIC, :nanosecond).to_s(36)
     end
   end
 end

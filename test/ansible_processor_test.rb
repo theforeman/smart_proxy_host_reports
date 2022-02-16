@@ -10,7 +10,7 @@ class AnsibleProcessorTest < Test::Unit::TestCase
     report = processor.build_report
     facts = processor.build_facts
     assert check_hash_keys(report), "All keys are strings: #{report.inspect}"
-    assert check_hash_keys(facts), "All keys are strings: #{facts.inspect}"
+    assert(check_hash_keys(facts), "All keys are strings: #{facts.inspect}") if facts
   end
 
   Dir.glob(File.join(__dir__, "fixtures", "ansible*json")).each do |fixture_filename|

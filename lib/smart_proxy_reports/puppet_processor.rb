@@ -142,7 +142,7 @@ module Proxy::Reports
       payload = measure :format do
         report_hash.to_json
       end
-      SpooledHttpClient.instance.spool("report", report_id, payload)
+      SpooledHttpClient.instance.spool(:report, payload)
     end
 
     private
