@@ -53,7 +53,7 @@ module Proxy::Reports
     end
 
     def get_endpoint(name)
-      if name&.end_with? 'ansible_facts'
+      if name&.end_with? "ansible_facts"
         "/api/v2/hosts/facts"
       else
         "/api/v2/host_reports"
