@@ -209,14 +209,4 @@ module Proxy::Reports
       result["level"] = "info"
     end
   end
-
-  def search_for_facts2222222222222222(result)
-    if result.respond_to?(:key?) && result.key?(:ansible_facts)
-      result[:ansible_facts]
-    elsif result.respond_to?(:each)
-      r = nil
-      result.find { |*a| r = search_for_facts(a.last) }
-      r
-    end
-  end
 end
