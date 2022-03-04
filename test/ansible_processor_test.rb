@@ -23,7 +23,7 @@ class AnsibleProcessorTest < Test::Unit::TestCase
       snapshot_filename_r = File.join(File.dirname(__FILE__), "snapshots", "#{File.basename(fixture_filename)}.report.snapshot.json")
       snapshot_filename_f = File.join(File.dirname(__FILE__), "snapshots", "#{File.basename(fixture_filename)}.facts.snapshot.json")
       assert_snapshot(result_report, snapshot_filename_r)
-      assert_snapshot(result_facts, snapshot_filename_f)
+      assert_snapshot(result_facts, snapshot_filename_f) if result_facts
     end
   end
 end
