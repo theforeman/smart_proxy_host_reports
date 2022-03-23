@@ -15,13 +15,16 @@ Send a POST HTTP call to `/reports/FORMAT` where FORMAT is one of the following 
 Accepts Puppet Server YAML format:
 
 * [Example input](test/fixtures/puppet6-foreman-web.yaml)
-* [Example output](test/snapshots/foreman-web.json)
+* [Example output](test/snapshots/puppet6-foreman-web.yaml.snapshot.json)
 
 ## Development setup
 
 Few words about setting up a dev setup.
 
 ### Ansible
+
+* [Example input](test/fixtures/ansible-systemd-stop.json)
+* [Example output](test/snapshots/ansible-systemd-stop.json.report.snapshot.json)
 
 Checkoud foreman-ansible-modules and build it via `make` command. Configure
 Ansible collection path to the build directory:
